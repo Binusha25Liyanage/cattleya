@@ -7,7 +7,7 @@ const generateLimiter = new RateLimiterMemory({ points: 10, duration: 60 * 60 })
 
 export async function generalRateLimiter(req: Request, res: Response, next: NextFunction) {
   try {
-    await generalLimiter.consume(req.ip);
+    await generalLimiter.consume(req.ip || req.socket.remoteAddress || "anonymous");
     next();
   } catch {
     res.status(429).json({ success: false, message: "Too many requests" });
@@ -16,7 +16,7 @@ export async function generalRateLimiter(req: Request, res: Response, next: Next
 
 export async function authRateLimiter(req: Request, res: Response, next: NextFunction) {
   try {
-    await authLimiter.consume(req.ip);
+    await authLimiter.consume(req.ip || req.socket.remoteAddress || "anonymous");
     next();
   } catch {
     res.status(429).json({ success: false, message: "Too many auth requests" });
@@ -25,7 +25,7 @@ export async function authRateLimiter(req: Request, res: Response, next: NextFun
 
 export async function generateDesignRateLimiter(req: Request, res: Response, next: NextFunction) {
   try {
-    const key = (req as Request & { user?: { sub?: string } }).user?.sub || req.ip;
+    const key = (req as Request & { user?: { sub?: string } }).user?.sub || req.ip || req.socket.remoteAddress || "anonymous";
     await generateLimiter.consume(key);
     next();
   } catch {
