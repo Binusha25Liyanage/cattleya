@@ -1,0 +1,19 @@
+{
+  "name": "cattleya",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w frontend",
+    "build": "npm run build -w frontend && npm run build -w backend",
+    "start": "npm run start -w frontend",
+    "lint": "npm run lint -w frontend && npm run lint -w backend",
+    "seed": "npm run seed -w backend",
+    "migrate": "npm run migrate -w backend",
+    "worker": "npm run worker -w backend",
+    "studio": "npm run studio -w backend"
+  }
+}

@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f5f0e8;
+  color: #1a1a1a;
+  font-family: var(--font-body), sans-serif;
+}
+
+* {
+  border-color: rgba(201, 168, 76, 0.18);
+}
+
+.cattleya-bg {
+  background:
+    radial-gradient(circle at top, rgba(201, 168, 76, 0.14), transparent 28%),
+    linear-gradient(180deg, #0a0a0a 0%, #111111 50%, #f5f0e8 50%, #f5f0e8 100%);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #00c9a7 0%, #7b2fbe 48%, #ff6b9d 100%);
+}

@@ -1,0 +1,148 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String         @id @default(cuid())
+  name          String
+  email         String         @unique
+  passwordHash  String
+  phone         String?
+  avatar        String?
+  role          Role           @default(CUSTOMER)
+  isActive      Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  orders        Order[]
+  reviews       Review[]
+  customDesigns CustomDesign[]
+  addresses     Address[]
+}
+
+enum Role { ADMIN CUSTOMER }
+
+model Product {
+  id          String          @id @default(cuid())
+  name        String
+  slug        String          @unique
+  description String
+  category    ProductCategory
+  basePrice   Decimal
+  images      String[]
+  tags        String[]
+  isActive    Boolean         @default(true)
+  isFeatured  Boolean         @default(false)
+  createdAt   DateTime        @default(now())
+  variants    ProductVariant[]
+  orderItems  OrderItem[]
+  reviews     Review[]
+}
+
+enum ProductCategory {
+  TSHIRT SHIRT SARONG FROCK CROP_TOP SAREE LUNGI
+}
+
+model ProductVariant {
+  id            String      @id @default(cuid())
+  productId     String
+  product       Product     @relation(fields: [productId], references: [id])
+  size          String
+  color         String
+  colorHex      String
+  priceModifier Decimal     @default(0)
+  stockQty      Int         @default(0)
+  sku           String      @unique
+  orderItems    OrderItem[]
+}
+
+model Order {
+  id              String        @id @default(cuid())
+  userId          String
+  user            User          @relation(fields: [userId], references: [id])
+  status          OrderStatus   @default(PENDING)
+  total           Decimal
+  shippingAddress Json
+  paymentStatus   PaymentStatus @default(UNPAID)
+  paymentRef      String?
+  paymentMethod   String?
+  notes           String?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  items           OrderItem[]
+}
+
+enum OrderStatus {
+  PENDING CONFIRMED PROCESSING SHIPPED DELIVERED CANCELLED REFUNDED
+}
+
+enum PaymentStatus { UNPAID PAID FAILED REFUNDED }
+
+model OrderItem {
+  id             String         @id @default(cuid())
+  orderId        String
+  order          Order          @relation(fields: [orderId], references: [id])
+  productId      String
+  product        Product        @relation(fields: [productId], references: [id])
+  variantId      String
+  variant        ProductVariant @relation(fields: [variantId], references: [id])
+  quantity       Int
+  unitPrice      Decimal
+  customDesignId String?
+  customDesign   CustomDesign?  @relation(fields: [customDesignId], references: [id])
+}
+
+model CustomDesign {
+  id             String       @id @default(cuid())
+  userId         String
+  user           User         @relation(fields: [userId], references: [id])
+  promptText     String
+  enhancedPrompt String
+  imageUrl       String?
+  styleParams    Json
+  status         DesignStatus @default(PENDING)
+  jobId          String?
+  jobStatus      String       @default("waiting")
+  createdAt      DateTime     @default(now())
+  orderItems     OrderItem[]
+}
+
+enum DesignStatus { PENDING APPROVED REJECTED }
+
+model Review {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  rating    Int
+  comment   String?
+  images    String[]
+  createdAt DateTime @default(now())
+}
+
+model Address {
+  id         String  @id @default(cuid())
+  userId     String
+  user       User    @relation(fields: [userId], references: [id])
+  label      String
+  line1      String
+  line2      String?
+  city       String
+  district   String
+  postalCode String
+  isDefault  Boolean @default(false)
+}
+
+model Coupon {
+  id          String   @id @default(cuid())
+  code        String   @unique
+  discountPct Int
+  maxUses     Int
+  usedCount   Int      @default(0)
+  expiresAt   DateTime
+  isActive    Boolean  @default(true)
+}
