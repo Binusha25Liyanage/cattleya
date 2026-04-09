@@ -23,7 +23,10 @@ model User {
   addresses     Address[]
 }
 
-enum Role { ADMIN CUSTOMER }
+enum Role {
+  ADMIN
+  CUSTOMER
+}
 
 model Product {
   id          String          @id @default(cuid())
@@ -43,7 +46,13 @@ model Product {
 }
 
 enum ProductCategory {
-  TSHIRT SHIRT SARONG FROCK CROP_TOP SAREE LUNGI
+  TSHIRT
+  SHIRT
+  SARONG
+  FROCK
+  CROP_TOP
+  SAREE
+  LUNGI
 }
 
 model ProductVariant {
@@ -76,10 +85,21 @@ model Order {
 }
 
 enum OrderStatus {
-  PENDING CONFIRMED PROCESSING SHIPPED DELIVERED CANCELLED REFUNDED
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
 }
 
-enum PaymentStatus { UNPAID PAID FAILED REFUNDED }
+enum PaymentStatus {
+  UNPAID
+  PAID
+  FAILED
+  REFUNDED
+}
 
 model OrderItem {
   id             String         @id @default(cuid())
@@ -110,7 +130,11 @@ model CustomDesign {
   orderItems     OrderItem[]
 }
 
-enum DesignStatus { PENDING APPROVED REJECTED }
+enum DesignStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
 
 model Review {
   id        String   @id @default(cuid())
