@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order History | CATTLEYA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&amp;family=Inter:wght@300;400;600;700&amp;family=Newsreader:opsz,wght@6..72,400;6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#ebe7e7",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#00518c",
+                    "on-secondary-container": "#606161",
+                    "surface-container": "#f0edec",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "secondary-container": "#dddddd",
+                    "surface-container-low": "#f6f3f2",
+                    "surface-container-highest": "#e5e2e1",
+                    "tertiary-container": "#006ab4",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-secondary-fixed-variant": "#454747",
+                    "secondary-fixed": "#e2e2e2",
+                    "tertiary-fixed": "#d2e4ff",
+                    "surface-tint": "#c00017",
+                    "surface-dim": "#dcd9d9",
+                    "on-primary-container": "#ffdfdc",
+                    "primary-fixed-dim": "#ffb3ac",
+                    "outline-variant": "#e7bdb8",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#93000f",
+                    "surface-bright": "#fcf9f8",
+                    "on-background": "#1c1b1b",
+                    "tertiary-fixed-dim": "#9fcaff",
+                    "on-tertiary-fixed": "#001c37",
+                    "secondary": "#5d5f5f",
+                    "outline": "#926e6b",
+                    "on-tertiary-container": "#d9e8ff",
+                    "on-primary-fixed": "#410003",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#00497e",
+                    "surface": "#fcf9f8",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "primary": "#a30012",
+                    "primary-container": "#d0021b",
+                    "inverse-surface": "#313030",
+                    "primary-fixed": "#ffdad6",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "background": "#fcf9f8",
+                    "inverse-primary": "#ffb3ac",
+                    "on-surface-variant": "#5d3f3c",
+                    "on-surface": "#1c1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader"],
+                    "body": ["Inter"],
+                    "label": ["Inter"],
+                    "cinzel": ["Cinzel"],
+                    "garamond": ["Cormorant Garamond"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .plasma-gradient {
+            background: linear-gradient(135deg, #a30012 0%, #d0021b 100%);
+        }
+        .mercury-card-hover:hover {
+            border-left: 4px solid #a30012;
+            background-color: #e5e2e1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary">
+<div class="flex min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 sticky top-0 bg-[#f0edec] dark:bg-[#313030] flex flex-col py-12 gap-8 z-40">
+<div class="px-8 mb-4">
+<p class="font-['Cormorant_Garamond'] italic text-lg text-[#606161] dark:text-[#c6c6c6]">Welcome back</p>
+<p class="font-['Inter'] text-[10px] tracking-widest uppercase opacity-60">Member since 2023</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 py-3 text-[#606161] dark:text-[#c6c6c6] pl-5 hover:bg-[#ebe7e7] dark:hover:bg-[#1c1b1b] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Cormorant_Garamond'] italic text-lg">Dashboard</span>
+</a>
+<!-- Active Tab: Order History -->
+<a class="flex items-center gap-4 py-3 text-[#d0021b] font-bold border-l-4 border-[#d0021b] pl-4 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="history" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-['Cormorant_Garamond'] italic text-lg">Order History</span>
+</a>
+<a class="flex items-center gap-4 py-3 text-[#606161] dark:text-[#c6c6c6] pl-5 hover:bg-[#ebe7e7] dark:hover:bg-[#1c1b1b] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="auto_fix">auto_fix</span>
+<span class="font-['Cormorant_Garamond'] italic text-lg">My Atelier</span>
+</a>
+<a class="flex items-center gap-4 py-3 text-[#606161] dark:text-[#c6c6c6] pl-5 hover:bg-[#ebe7e7] dark:hover:bg-[#1c1b1b] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-['Cormorant_Garamond'] italic text-lg">Addresses</span>
+</a>
+<div class="mt-auto pt-8">
+<a class="flex items-center gap-4 py-3 text-[#606161] dark:text-[#c6c6c6] pl-5 hover:bg-[#ebe7e7] dark:hover:bg-[#1c1b1b] transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-['Cormorant_Garamond'] italic text-lg">Sign Out</span>
+</a>
+</div>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- Header Section -->
+<header class="pt-24 pb-16 px-12 max-w-6xl w-full mx-auto">
+<h1 class="font-cinzel text-5xl font-light tracking-[0.3em] text-on-surface mb-4">ORDER HISTORY</h1>
+<p class="font-garamond italic text-2xl text-secondary">A chronicle of your artisanal acquisitions.</p>
+</header>
+<!-- Orders Section -->
+<section class="px-12 pb-24 max-w-6xl w-full mx-auto space-y-12">
+<!-- Order Card 1 -->
+<div class="bg-surface-container-high mercury-card-hover transition-all duration-300 overflow-hidden flex flex-col md:flex-row items-center p-8 gap-8 group">
+<div class="flex-1 space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold tracking-widest text-sm">#CT-9921</span>
+<span class="bg-primary-container text-on-primary text-[10px] uppercase tracking-widest px-3 py-1 rounded-sm">Delivered</span>
+</div>
+<div>
+<p class="text-on-surface font-cinzel text-lg tracking-wider">November 12, 2024</p>
+<p class="text-secondary text-sm font-label">2 Items • Total $2,450.00</p>
+</div>
+<div class="flex gap-4 pt-2">
+<div class="h-20 w-16 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Close-up of intricate hand-painted silk textile with golden batik patterns and rich floral motifs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGweBv2baIdF1lWqQ0dyvE50trdSrirQXV5g71k-cXFXp4xw94IhejMNTwtOZ7gU3H5_TfKLnTqT4XQ8KXAzeln-mAbMbB3NnI0uNTG1KGcAlSl4Rm1rIp7N8f2EtH74zhmtrVSbWEpgWc7Wi10puiVanpZ5hpO12BisZX8tL80nxtqSV3B5BbIrqtJ_iU5MWWLlwgjLLf_4xE3UFm7_V8xzXUPqDClRCpCt2MmxwPS18kZftoTAY3B-BuTU81B6jBkxoJIp_yeik"/>
+</div>
+<div class="h-20 w-16 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Exquisite artisanal ceramic vase with deep crimson glaze and minimalist texture on a stone pedestal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuj8n_HiNeBWQgj18flGzO5vR-erRUFcvMcWvbssIK-D3hmMvE-x9pmeGseAxmUVANFtzbjMnIE78q4mcFfzn7v_zfqpLHsjUjat61E7vBm9uVYwwdFzVTo6QPL59fGC0KXK2Twog_XRNuqqVSm5KZOFb7U25BIc_H7fTV4dVqJ7Q7sx3DXGZexCaSIoP0VZmKh6FMWE3zdOQv1WgZUzmADsldBtzW1gxa9WWle3lcm181tD_K-AQFzZ9Nb-lDB7JdPqDsa1BX_lo"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row md:flex-col gap-4 w-full md:w-auto">
+<button class="plasma-gradient text-on-primary px-8 py-3 text-[10px] tracking-widest uppercase font-bold hover:shadow-lg transition-all active:scale-95 whitespace-nowrap">
+                            Track Order
+                        </button>
+<button class="border border-primary-container text-primary-container px-8 py-3 text-[10px] tracking-widest uppercase font-bold hover:bg-primary-container hover:text-white transition-all active:scale-95 whitespace-nowrap">
+                            View Details
+                        </button>
+</div>
+</div>
+<!-- Order Card 2 -->
+<div class="bg-surface-container-high mercury-card-hover transition-all duration-300 overflow-hidden flex flex-col md:flex-row items-center p-8 gap-8 group">
+<div class="flex-1 space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold tracking-widest text-sm">#CT-8742</span>
+<span class="bg-tertiary-container text-on-tertiary text-[10px] uppercase tracking-widest px-3 py-1 rounded-sm">In Transit</span>
+</div>
+<div>
+<p class="text-on-surface font-cinzel text-lg tracking-wider">October 28, 2024</p>
+<p class="text-secondary text-sm font-label">1 Item • Total $1,120.00</p>
+</div>
+<div class="flex gap-4 pt-2">
+<div class="h-20 w-16 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Ethereal white linen garment draped elegantly over a mahogany chair in a sunlit artist studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz7_gMzWrcUbNbW4sjVtxHO1uAAiheH8xaAy7yXS3NGSPygmcKspZ6ofOGgN0yfmOpJNFHnUavA-iHWD_zkDQ95muDOs1Ht-Rt_spty_ZRpgFRDSPwW7mkKWheQ0uYSh2kd3WDiZqaIurzmyN_UXqJXc7KGNH2rBgK8pUjZSFxKTp-cuySiHS0tq2FySIR9cTHXWM8xavv8Z9ZazFdZWRExxh0w8nXGmMTMNpBCoqBxF2CuszAWFHUD8MOifr9VusmYJcNKvhxpJY"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row md:flex-col gap-4 w-full md:w-auto">
+<button class="plasma-gradient text-on-primary px-8 py-3 text-[10px] tracking-widest uppercase font-bold hover:shadow-lg transition-all active:scale-95 whitespace-nowrap">
+                            Track Order
+                        </button>
+<button class="border border-primary-container text-primary-container px-8 py-3 text-[10px] tracking-widest uppercase font-bold hover:bg-primary-container hover:text-white transition-all active:scale-95 whitespace-nowrap">
+                            View Details
+                        </button>
+</div>
+</div>
+<!-- Order Card 3 (Editorial Style Layout) -->
+<div class="bg-surface-container-high mercury-card-hover transition-all duration-300 overflow-hidden flex flex-col md:flex-row items-center p-8 gap-8 group">
+<div class="flex-1 space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold tracking-widest text-sm">#CT-7105</span>
+<span class="bg-primary-container text-on-primary text-[10px] uppercase tracking-widest px-3 py-1 rounded-sm">Delivered</span>
+</div>
+<div>
+<p class="text-on-surface font-cinzel text-lg tracking-wider">September 15, 2024</p>
+<p class="text-secondary text-sm font-label">3 Items • Total $4,890.00</p>
+</div>
+<div class="flex gap-4 pt-2">
+<div class="h-20 w-16 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Close up of fine woven bamboo texture in a luxury accessory with soft ambient morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5FpYgaTedsH0snk-xewqrY8vcy4DUGhFXrx-DdDM33e7E0WXHUcBlkYvGIyxvv1ALkcPdDGPKdkiPY_yGbXvlzAl3aTnhJ4BfcLE3qtJ1AQvAjqZWQyUGZryEJ4pMC0L-iB7Dxhccd4D24buSJy7DBGg8Y8heyhYUsFRsTcyzDj7dUErm2JUtX1sU_C_1k3u2MLAypjnYGbkY5ICJ2XTmguvQ80zAji_NMMF7b_0SBcOfFvYC2PREvMSBX57E6hNdQFjsuLD1860"/>
+</div>
+<div class="h-20 w-16 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Abstract view of hand-poured gold jewelry elements on a dark reflective surface with cinematic highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp8hYXvbVqXJlvlEYzz9UkL5jE_q_yk0eabXCYM1Sz9Du7iUhFwVBBlUlIBdQbBNLIs8DHRLzsL7v93hkF0IP8ntWHlFM3AMmEERUe8VOmLF67CHLfTb8ERZEJ0lQ5BP2490Sh9OTQ74OBxduDdDIB2HBgnj49fPUx92ssdhzRQ1p5ALIUevk0tsPztRWAwuA2p1aUR4OIqCtz2v2BbrLR6P9CdzTtizbaUZJ4MHUa3In0AGwozVLQ8fLjd3bq8foBHC9T4QvXmi0"/>
+</div>
+<div class="h-20 w-16 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Textured artisanal wallpaper sample with ethereal cloud patterns in muted earth tones and mercury silver accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnzf69lMfDTDepftTLThFQ2DE5b-zZIOP23kpXjvta82sgAvPXEmd234zP2KiVRVHcP0sJTyVzqgewaxePnqU9_qHFcnu4rEorAfReO2YJjRE2UFi6_5oo49DgJgA5Xv9cABPZ0Db-cMzUV6KcxkOnurWQP93Ma-pJ7fLM5JSndbo35tE3HWQmLEW_NPIv0uVZodrSizHQnRN_R97_OemM4clshUcbcDMEyYxYVlEFy-NDFwjgno6r9AB9YKQcROKeyc_xnZFbxxY"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row md:flex-col gap-4 w-full md:w-auto">
+<button class="plasma-gradient text-on-primary px-8 py-3 text-[10px] tracking-widest uppercase font-bold hover:shadow-lg transition-all active:scale-95 whitespace-nowrap">
+                            Track Order
+                        </button>
+<button class="border border-primary-container text-primary-container px-8 py-3 text-[10px] tracking-widest uppercase font-bold hover:bg-primary-container hover:text-white transition-all active:scale-95 whitespace-nowrap">
+                            View Details
+                        </button>
+</div>
+</div>
+<!-- Footer-like empty state hint -->
+<div class="pt-16 border-t border-outline-variant/10 text-center">
+<p class="font-garamond italic text-xl text-secondary/60">"Each piece is a verse in the poetry of heaven."</p>
+</div>
+</section>
+<!-- Footer Component -->
+<footer class="bg-[#1c1b1b] dark:bg-[#0d0d0d] flex flex-col items-center py-16 px-8 space-y-8 w-full mt-auto">
+<div class="text-[#d0021b] font-['Cinzel'] text-xl tracking-[0.4em] uppercase">CATTLEYA</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Inter'] text-[10px] tracking-widest uppercase text-[#606161] hover:text-[#d0021b] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-[10px] tracking-widest uppercase text-[#606161] hover:text-[#d0021b] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-[10px] tracking-widest uppercase text-[#606161] hover:text-[#d0021b] transition-colors" href="#">Sustainability</a>
+<a class="font-['Inter'] text-[10px] tracking-widest uppercase text-[#606161] hover:text-[#d0021b] transition-colors" href="#">Contact</a>
+</div>
+<p class="font-['Inter'] text-[10px] tracking-widest uppercase text-[#606161] text-center opacity-80">© 2024 CATTLEYA. THE IMMENSE BEAUTY OF HEAVEN.</p>
+</footer>
+</main>
+</div>
+<!-- Hidden Empty State Template (for logic reference) -->
+<div class="hidden fixed inset-0 z-0 flex items-center justify-center p-12 bg-surface" id="empty-state">
+<div class="max-w-md text-center space-y-8">
+<span class="material-symbols-outlined text-6xl text-outline-variant" data-icon="auto_awesome">auto_awesome</span>
+<div class="space-y-4">
+<h2 class="font-cinzel text-3xl tracking-widest">A VOID AWAITING ART</h2>
+<p class="font-garamond italic text-xl text-secondary">Your chronicle is currently a blank canvas. Begin your journey into the immense beauty of heaven today.</p>
+</div>
+<button class="plasma-gradient text-on-primary px-12 py-4 text-[12px] tracking-[0.2em] uppercase font-bold shadow-xl">
+                Explore Collections
+            </button>
+</div>
+</div>
+</body></html>

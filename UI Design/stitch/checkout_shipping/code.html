@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout | CATTLEYA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;family=Inter:wght@300;400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-container": "#006ab4",
+                        "secondary-container": "#dddddd",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "background": "#fcf9f8",
+                        "inverse-primary": "#ffb3ac",
+                        "tertiary-fixed": "#d2e4ff",
+                        "on-tertiary-fixed-variant": "#00497e",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-container-high": "#ebe7e7",
+                        "on-primary-container": "#ffdfdc",
+                        "tertiary": "#00518c",
+                        "primary": "#a30012",
+                        "on-secondary-container": "#606161",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "surface-dim": "#dcd9d9",
+                        "primary-fixed": "#ffdad6",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "surface-tint": "#c00017",
+                        "on-tertiary-container": "#d9e8ff",
+                        "on-surface": "#1c1b1b",
+                        "on-surface-variant": "#5d3f3c",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#d0021b",
+                        "tertiary-fixed-dim": "#9fcaff",
+                        "secondary": "#5d5f5f",
+                        "outline": "#926e6b",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#001c37",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container": "#f0edec",
+                        "on-primary-fixed": "#410003",
+                        "outline-variant": "#e7bdb8",
+                        "surface-bright": "#fcf9f8",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-primary-fixed-variant": "#93000f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Cinzel"],
+                        "editorial": ["Cormorant Garamond"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .plasma-gradient {
+            background: linear-gradient(135deg, #a30012 0%, #d0021b 100%);
+        }
+        .tonal-shift-bg {
+            background-color: #fcf9f8;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed">
+<!-- TopNavBar: Suppressed Navigation for Checkout Focus -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf9f8]/80 backdrop-blur-xl shadow-[0_32px_64px_-15px_rgba(28,27,27,0.04)]">
+<div class="flex justify-between items-center px-8 h-20 w-full mx-auto">
+<a class="text-2xl font-normal tracking-[0.3em] text-[#1c1b1b] font-headline uppercase" href="#">CATTLEYA</a>
+<div class="flex items-center gap-6">
+<span class="text-xs font-label uppercase tracking-widest text-secondary">Secure Checkout</span>
+<span class="material-symbols-outlined text-on-surface" data-icon="lock">lock</span>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+<!-- Progress Bar -->
+<div class="mb-16">
+<div class="flex items-center justify-center gap-4 max-w-2xl mx-auto">
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-8 h-8 rounded-full plasma-gradient text-on-primary flex items-center justify-center text-xs font-bold">1</div>
+<span class="text-[10px] uppercase tracking-[0.2em] font-bold text-primary">Shipping</span>
+</div>
+<div class="h-[1px] w-16 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center text-xs text-outline">2</div>
+<span class="text-[10px] uppercase tracking-[0.2em] text-secondary">Payment</span>
+</div>
+<div class="h-[1px] w-16 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center text-xs text-outline">3</div>
+<span class="text-[10px] uppercase tracking-[0.2em] text-secondary">Confirm</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Left Column: Shipping Details -->
+<div class="lg:col-span-7 space-y-12">
+<section>
+<h1 class="font-headline text-3xl tracking-[0.15em] uppercase mb-2">Shipping Address</h1>
+<p class="font-editorial italic text-lg text-secondary mb-8">Select a sanctuary for your acquisition to arrive.</p>
+<!-- Saved Addresses Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+<!-- Active Card -->
+<div class="relative p-6 bg-surface-container-lowest shadow-[0_32px_64px_-15px_rgba(28,27,27,0.04)] border-l-4 border-primary transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Default Sanctuary</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h3 class="font-bold text-sm tracking-wide mb-1">Eleanor Vance</h3>
+<p class="text-xs text-on-secondary-container leading-relaxed">
+                                742 Evergreen Terrace<br/>
+                                Springfield, IL 62704<br/>
+                                United States
+                            </p>
+</div>
+<!-- Inactive Mercury Card -->
+<div class="p-6 bg-surface-container-high hover:bg-surface-container-highest transition-all duration-300 cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary">The Atelier</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors text-sm" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+</div>
+<h3 class="font-bold text-sm tracking-wide mb-1">Eleanor Vance</h3>
+<p class="text-xs text-on-secondary-container leading-relaxed">
+                                12 Place Vendôme<br/>
+                                75001 Paris<br/>
+                                France
+                            </p>
+</div>
+</div>
+<!-- New Address Form -->
+<div class="bg-surface-container-low p-10">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-secondary" data-icon="add_location">add_location</span>
+<h2 class="font-headline text-lg tracking-widest uppercase">Add New Address</h2>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-1">
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">First Name</label>
+<input class="w-full bg-surface-container-lowest border-none py-3 px-4 focus:ring-2 focus:ring-primary/20 transition-all text-sm outline-none" placeholder="First Name" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Last Name</label>
+<input class="w-full bg-surface-container-lowest border-none py-3 px-4 focus:ring-2 focus:ring-primary/20 transition-all text-sm outline-none" placeholder="Last Name" type="text"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Street Address</label>
+<input class="w-full bg-surface-container-lowest border-none py-3 px-4 focus:ring-2 focus:ring-primary/20 transition-all text-sm outline-none" placeholder="House number and street name" type="text"/>
+</div>
+<div class="grid grid-cols-3 gap-6">
+<div class="space-y-1">
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">City</label>
+<input class="w-full bg-surface-container-lowest border-none py-3 px-4 focus:ring-2 focus:ring-primary/20 transition-all text-sm outline-none" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">State</label>
+<input class="w-full bg-surface-container-lowest border-none py-3 px-4 focus:ring-2 focus:ring-primary/20 transition-all text-sm outline-none" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Zip Code</label>
+<input class="w-full bg-surface-container-lowest border-none py-3 px-4 focus:ring-2 focus:ring-primary/20 transition-all text-sm outline-none" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-4">
+<input class="rounded-none text-primary focus:ring-primary border-outline-variant" id="save-address" type="checkbox"/>
+<label class="text-xs text-secondary font-label uppercase tracking-wider" for="save-address">Save this address to my profile</label>
+</div>
+</form>
+</div>
+</section>
+<div class="flex justify-between items-center pt-8">
+<button class="group flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span>
+                        Back to Cart
+                    </button>
+<button class="plasma-gradient text-on-primary px-12 py-4 font-label uppercase tracking-[0.2em] text-xs font-bold shadow-xl hover:scale-105 active:scale-95 transition-transform">
+                        Proceed to Payment
+                    </button>
+</div>
+</div>
+<!-- Right Column: Order Summary (Sticky) -->
+<div class="lg:col-span-5 lg:sticky lg:top-32">
+<div class="bg-surface-container-high p-8 shadow-[0_32px_64px_-15px_rgba(28,27,27,0.04)] border border-outline-variant/10">
+<h2 class="font-headline text-lg tracking-[0.2em] uppercase mb-8 border-b border-outline-variant/20 pb-4">Order Summary</h2>
+<div class="space-y-8 mb-10">
+<!-- Item 1 -->
+<div class="flex gap-4">
+<div class="w-20 h-24 bg-surface-variant flex-shrink-0 relative overflow-hidden">
+<img alt="Batik Silk Scarf" class="w-full h-full object-cover" data-alt="luxury hand-painted batik silk scarf with intricate celestial patterns and rich indigo and gold tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA95stEaVEM4vNWrmJ16QrRuMKJ-4g82ke96Mr9NCuX3vIMoA915SLMntzeswD5lDq2WLOjagdUksDFzUkwhWJ7NWgxsbAr3GZVNk8gwCxil9GEunA3iOsbspyOhfyUJ70EU1RlyqcGC2KdrNgF6mqM3DF6TZLVCc1uRyDop9Ryx0-0ZYUDqQv9OIJA6tbhhiaW6hJ_A7mBnPdY5_bQ4DW9uAByRVlof-5XlaiLkVDS8ZbU8_fgPPJ4BaCuZuQfPg2iYJNZFUkMQlM"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h4 class="text-xs font-bold uppercase tracking-wider mb-1">Celestial Indigo Scarf</h4>
+<p class="text-[10px] text-secondary uppercase tracking-widest">Hand-painted Silk / Large</p>
+</div>
+<span class="text-xs font-bold tracking-widest">$450.00</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-4">
+<div class="w-20 h-24 bg-surface-variant flex-shrink-0 relative overflow-hidden">
+<img alt="High Jewelry Ring" class="w-full h-full object-cover" data-alt="magnificent gold ring featuring a rare crimson gemstone set amidst intricate filigree inspired by batik motifs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqmXIHEpwpjqJdl0uJHjQqMbUyAZNE0zS0zqhHS7l9fcr6UEFIieB1HfBc_b2tK-sL_z6FHekQ8Pj6PwtrQ7eJt-OdSWNtYhZIL9W9sfIbTRS1IcA4A-H-tx270bo7NN1IuZ5ZPYlVDz70vDswNQP_f4JcRbUq5pk4-jHrxkEgiEjXto9cpc9Ge1BCZMQb114az_IKwxMOKjn7CozDaDqU_dT-s_Cn0ohbrZVr2sId0u6rpdOrmqYyEO8Ql_-bvO-iMGiVOmAX91g"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h4 class="text-xs font-bold uppercase tracking-wider mb-1">Cattleya Blossom Ring</h4>
+<p class="text-[10px] text-secondary uppercase tracking-widest">18K Gold / Ruby / Size 7</p>
+</div>
+<span class="text-xs font-bold tracking-widest">$3,200.00</span>
+</div>
+</div>
+</div>
+<div class="space-y-4 pt-6 border-t border-outline-variant/20">
+<div class="flex justify-between items-center text-xs text-secondary uppercase tracking-widest">
+<span>Subtotal</span>
+<span class="text-on-surface">$3,650.00</span>
+</div>
+<div class="flex justify-between items-center text-xs text-secondary uppercase tracking-widest">
+<span>Shipping</span>
+<span class="text-on-surface">Complimentary</span>
+</div>
+<div class="flex justify-between items-center text-xs text-secondary uppercase tracking-widest">
+<span>Taxes (Calculated)</span>
+<span class="text-on-surface">$292.00</span>
+</div>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/20">
+<span class="text-sm font-headline tracking-widest uppercase">Total</span>
+<span class="text-xl font-bold tracking-widest text-primary-container">$3,942.00</span>
+</div>
+</div>
+<div class="mt-8">
+<div class="bg-surface-container-low p-4 flex gap-3">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="auto_awesome">auto_awesome</span>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest leading-relaxed">
+                                You are receiving <span class="text-primary font-bold">White Glove Delivery</span>. Each piece is handled as a sacred artifact.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer: Simple Transactional Style -->
+<footer class="bg-on-background text-surface py-16 px-12 mt-24 border-t border-inverse-surface">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
+<div class="space-y-4">
+<span class="font-headline text-lg tracking-widest uppercase">CATTLEYA</span>
+<p class="text-[10px] font-label uppercase tracking-[0.1em] text-surface-variant/60 max-w-xs">
+                    THE IMMENSE BEAUTY OF HEAVEN. CRAFTED BY HAND, GUIDED BY HERITAGE.
+                </p>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">Concierge</h5>
+<a class="text-[10px] uppercase tracking-[0.1em] text-surface-variant hover:text-primary transition-colors" href="#">Client Services</a>
+<a class="text-[10px] uppercase tracking-[0.1em] text-surface-variant hover:text-primary transition-colors" href="#">Sustainability</a>
+<a class="text-[10px] uppercase tracking-[0.1em] text-surface-variant hover:text-primary transition-colors" href="#">Returns &amp; Exchanges</a>
+</div>
+<div class="flex flex-col gap-3 text-right">
+<p class="text-[10px] uppercase tracking-[0.1em] text-surface-variant/40">
+                    © 2024 CATTLEYA. IMMENSE BEAUTY OF HEAVEN.
+                </p>
+<div class="flex justify-end gap-6 pt-4 grayscale opacity-50">
+<span class="material-symbols-outlined" data-icon="credit_card">credit_card</span>
+<span class="material-symbols-outlined" data-icon="contactless">contactless</span>
+<span class="material-symbols-outlined" data-icon="lock_reset">lock_reset</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

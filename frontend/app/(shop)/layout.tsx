@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { CustomerChatBubble } from "@/components/chat/CustomerChatBubble";
 
 export default function ShopLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -7,6 +8,7 @@ export default function ShopLayout({ children }: { children: React.ReactNode }) 
       <Navbar />
       <main>{children}</main>
       <Footer />
+      <CustomerChatBubble />
     </div>
   );
 }

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CATTLEYA Admin Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;family=Inter:wght@400;500;600&amp;family=Newsreader:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-secondary-fixed-variant": "#454747",
+                "tertiary-container": "#006ab4",
+                "secondary-container": "#dddddd",
+                "on-secondary": "#ffffff",
+                "inverse-on-surface": "#f3f0ef",
+                "surface-container-low": "#f6f3f2",
+                "surface": "#fcf9f8",
+                "inverse-surface": "#313030",
+                "background": "#fcf9f8",
+                "inverse-primary": "#ffb3ac",
+                "tertiary-fixed": "#d2e4ff",
+                "on-tertiary-fixed-variant": "#00497e",
+                "surface-variant": "#e5e2e1",
+                "surface-container-highest": "#e5e2e1",
+                "surface-container-high": "#ebe7e7",
+                "on-primary-container": "#ffdfdc",
+                "tertiary": "#00518c",
+                "primary": "#a30012",
+                "on-secondary-container": "#606161",
+                "secondary-fixed": "#e2e2e2",
+                "on-primary": "#ffffff",
+                "on-background": "#1c1b1b",
+                "surface-dim": "#dcd9d9",
+                "primary-fixed": "#ffdad6",
+                "primary-fixed-dim": "#ffb3ac",
+                "surface-tint": "#c00017",
+                "on-tertiary-container": "#d9e8ff",
+                "on-surface": "#1c1b1b",
+                "on-surface-variant": "#5d3f3c",
+                "on-tertiary": "#ffffff",
+                "primary-container": "#d0021b",
+                "tertiary-fixed-dim": "#9fcaff",
+                "secondary": "#5d5f5f",
+                "outline": "#926e6b",
+                "on-error-container": "#93000a",
+                "on-error": "#ffffff",
+                "error-container": "#ffdad6",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed": "#001c37",
+                "on-secondary-fixed": "#1a1c1c",
+                "surface-container": "#f0edec",
+                "on-primary-fixed": "#410003",
+                "outline-variant": "#e7bdb8",
+                "surface-bright": "#fcf9f8",
+                "error": "#ba1a1a",
+                "secondary-fixed-dim": "#c6c6c6",
+                "on-primary-fixed-variant": "#93000f"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "fontFamily": {
+                "headline": ["Newsreader"],
+                "body": ["Inter"],
+                "label": ["Inter"],
+                "cinzel": ["Cinzel"],
+                "cormorant": ["Cormorant Garamond"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .plasma-gradient {
+            background: linear-gradient(135deg, #a30012 0%, #d0021b 100%);
+        }
+        .mercury-gradient {
+            background: linear-gradient(180deg, #e2e2e2 0%, #c6c6c6 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 h-full w-64 border-r-0 bg-[#313030] dark:bg-[#1c1b1b] flex flex-col h-screen py-6 shadow-2xl z-50">
+<div class="px-6 mb-10">
+<h1 class="font-['Cinzel'] text-[#fcf9f8] tracking-[0.2em] text-xl">CATTLEYA</h1>
+<p class="font-['Inter'] font-medium text-sm text-[#ebe7e7]/60">Admin Console</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center text-[#fcf9f8] bg-[#D0021B] rounded-sm mx-2 px-4 py-3 mb-2 font-['Inter'] font-medium text-sm transition-all translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center text-[#ebe7e7]/60 mx-2 px-4 py-3 mb-2 font-['Inter'] font-medium text-sm hover:bg-[#fcf9f8]/10 hover:text-[#fcf9f8] transition-all" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="payments">payments</span>
+<span>Revenue</span>
+</a>
+<a class="flex items-center text-[#ebe7e7]/60 mx-2 px-4 py-3 mb-2 font-['Inter'] font-medium text-sm hover:bg-[#fcf9f8]/10 hover:text-[#fcf9f8] transition-all" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="shopping_bag">shopping_bag</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center text-[#ebe7e7]/60 mx-2 px-4 py-3 mb-2 font-['Inter'] font-medium text-sm hover:bg-[#fcf9f8]/10 hover:text-[#fcf9f8] transition-all" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="auto_awesome">auto_awesome</span>
+<span>AI Metrics</span>
+</a>
+<a class="flex items-center text-[#ebe7e7]/60 mx-2 px-4 py-3 mb-2 font-['Inter'] font-medium text-sm hover:bg-[#fcf9f8]/10 hover:text-[#fcf9f8] transition-all" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="inventory_2">inventory_2</span>
+<span>Inventory</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-[#ebe7e7]/10 pt-4">
+<a class="flex items-center text-[#ebe7e7]/60 mx-2 px-4 py-3 mb-2 font-['Inter'] font-medium text-sm hover:bg-[#fcf9f8]/10 hover:text-[#fcf9f8] transition-all" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="help">help</span>
+<span>Support</span>
+</a>
+<a class="flex items-center text-[#ebe7e7]/60 mx-2 px-4 py-3 mb-2 font-['Inter'] font-medium text-sm hover:bg-[#fcf9f8]/10 hover:text-[#fcf9f8] transition-all" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen bg-surface">
+<!-- TopNavBar Shell -->
+<header class="sticky top-0 z-40 w-full px-8 py-4 flex justify-between items-center bg-white/80 dark:bg-[#313030]/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4">
+<h2 class="font-['Newsreader'] uppercase tracking-widest text-[#D0021B] text-sm">Dashboard Overview</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="absolute inset-y-0 left-3 flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-lg" data-icon="search">search</span>
+</span>
+<input class="bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary focus:bg-surface-container-lowest transition-all w-64" placeholder="Search analytics..." type="text"/>
+</div>
+<div class="flex gap-4 text-[#606161]">
+<button class="hover:text-[#D0021B] transition-colors duration-300 scale-95 active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:text-[#D0021B] transition-colors duration-300 scale-95 active:opacity-80">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<img alt="Admin profile" class="w-10 h-10 rounded-full border border-outline-variant/20" data-alt="Close-up portrait of a professional business executive in a tailored suit with soft studio lighting and clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATVyIrcoHAYeG8qp4ke-ha7FU74PlwMBdnXYC5crIMDiyU16rUHCPlQ4_Ecw_Dq_09Av6DBwkcbZphufFVqvkFtdlFz4Mo1yKCnadhv33GOzNK3G8-yyEYT0UCYMvZoeg66OpGD4PdT59boppORch4LnO0qME9HaBfzOydakl1aPmlQWT33BWa58V_UIFi90nj7IyYWcQ9Bqhz8eJEIIn79ANJjoJCcbFehszOQ8a7ebWWM4KTPT68buoOsfeV7QWLlAzZ79GXhfc"/>
+</div>
+</header>
+<div class="p-8 space-y-12">
+<!-- Hero Stats Row -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-high p-6 group hover:bg-surface-container-highest transition-all relative overflow-hidden">
+<div class="absolute left-0 top-0 h-full w-1 bg-primary transform scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-2">Net Revenue</p>
+<h3 class="font-cinzel text-2xl font-bold">$124,502.00</h3>
+<p class="text-primary text-xs mt-2 font-medium flex items-center">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span> +14.2% from last month
+                    </p>
+</div>
+<div class="bg-surface-container-high p-6 group hover:bg-surface-container-highest transition-all relative overflow-hidden">
+<div class="absolute left-0 top-0 h-full w-1 bg-primary transform scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-2">Total Orders</p>
+<h3 class="font-cinzel text-2xl font-bold">1,842</h3>
+<p class="text-primary text-xs mt-2 font-medium flex items-center">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span> +5.7% from last month
+                    </p>
+</div>
+<div class="bg-surface-container-high p-6 group hover:bg-surface-container-highest transition-all relative overflow-hidden">
+<div class="absolute left-0 top-0 h-full w-1 bg-primary transform scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-2">AI Generations</p>
+<h3 class="font-cinzel text-2xl font-bold">8,291</h3>
+<p class="text-primary text-xs mt-2 font-medium flex items-center">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span> +22.4% from last month
+                    </p>
+</div>
+<div class="bg-surface-container-high p-6 group hover:bg-surface-container-highest transition-all relative overflow-hidden">
+<div class="absolute left-0 top-0 h-full w-1 bg-primary transform scale-y-0 group-hover:scale-y-100 transition-transform origin-top"></div>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant mb-2">Customer LTV</p>
+<h3 class="font-cinzel text-2xl font-bold">$428.50</h3>
+<p class="text-on-secondary-fixed-variant text-xs mt-2 font-medium flex items-center">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="horizontal_rule">horizontal_rule</span> Stable
+                    </p>
+</div>
+</section>
+<!-- Main Charts Bento Grid -->
+<section class="grid grid-cols-12 gap-8">
+<!-- 1. Revenue Over Time (Large Line Chart) -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-8 shadow-sm">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h4 class="font-cinzel text-xl tracking-tight uppercase">Revenue Over Time</h4>
+<p class="font-cormorant italic text-on-surface-variant">An overview of fiscal performance across the current quarter</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container-low text-[10px] font-bold uppercase tracking-tighter">7 Days</span>
+<span class="px-3 py-1 plasma-gradient text-on-primary text-[10px] font-bold uppercase tracking-tighter shadow-md">30 Days</span>
+<span class="px-3 py-1 bg-surface-container-low text-[10px] font-bold uppercase tracking-tighter">1 Year</span>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 relative">
+<!-- Simplified Visualization Logic -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+<div class="border-b border-outline-variant"></div>
+<div class="border-b border-outline-variant"></div>
+<div class="border-b border-outline-variant"></div>
+<div class="border-b border-outline-variant"></div>
+</div>
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 800 200">
+<path d="M0,180 Q100,160 200,100 T400,120 T600,40 T800,60" fill="none" stroke="url(#plasma)" stroke-width="4"></path>
+<defs>
+<lineargradient id="plasma" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:#a30012;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#d0021b;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute bottom-[-24px] left-0 right-0 flex justify-between px-2 text-[10px] font-label text-on-surface-variant uppercase tracking-widest">
+<span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span>
+</div>
+</div>
+</div>
+<!-- 2. Orders by Status (Pie Chart) -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container p-8">
+<h4 class="font-cinzel text-lg tracking-tight uppercase mb-2">Orders by Status</h4>
+<p class="font-cormorant italic text-on-surface-variant mb-8">Operational distribution</p>
+<div class="flex flex-col items-center gap-8">
+<div class="relative w-48 h-48 rounded-full border-[20px] border-surface-container-high flex items-center justify-center">
+<div class="absolute inset-0 rounded-full border-[20px] border-primary" style="clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 80%);"></div>
+<div class="text-center">
+<span class="block font-cinzel text-3xl font-bold">1,842</span>
+<span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">Total</span>
+</div>
+</div>
+<div class="w-full space-y-3">
+<div class="flex justify-between items-center text-xs">
+<div class="flex items-center"><span class="w-2 h-2 rounded-full bg-primary mr-2"></span> Delivered</div>
+<span class="font-bold">64%</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<div class="flex items-center"><span class="w-2 h-2 rounded-full bg-on-secondary-fixed-variant mr-2"></span> Processing</div>
+<span class="font-bold">22%</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<div class="flex items-center"><span class="w-2 h-2 rounded-full bg-outline-variant mr-2"></span> Shipped</div>
+<span class="font-bold">14%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Top 5 Products (Horizontal Bar Chart) -->
+<div class="col-span-12 lg:col-span-6 bg-surface-container-high p-8">
+<h4 class="font-cinzel text-lg tracking-tight uppercase mb-6">Top 5 Products</h4>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between text-xs uppercase tracking-widest">
+<span>Celestial Silk Scarf</span>
+<span class="font-bold">$42,100</span>
+</div>
+<div class="h-2 bg-surface-container w-full">
+<div class="h-full plasma-gradient" style="width: 92%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs uppercase tracking-widest">
+<span>Imperial Batik Wrap</span>
+<span class="font-bold">$38,400</span>
+</div>
+<div class="h-2 bg-surface-container w-full">
+<div class="h-full plasma-gradient" style="width: 84%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs uppercase tracking-widest">
+<span>Eternal Bloom Chemise</span>
+<span class="font-bold">$29,200</span>
+</div>
+<div class="h-2 bg-surface-container w-full">
+<div class="h-full plasma-gradient" style="width: 65%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs uppercase tracking-widest">
+<span>Midnight Garden Kimono</span>
+<span class="font-bold">$21,050</span>
+</div>
+<div class="h-2 bg-surface-container w-full">
+<div class="h-full plasma-gradient" style="width: 48%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs uppercase tracking-widest">
+<span>Phoenix Rising Foulard</span>
+<span class="font-bold">$18,900</span>
+</div>
+<div class="h-2 bg-surface-container w-full">
+<div class="h-full plasma-gradient" style="width: 42%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. AI Designs Generated (Line Chart) -->
+<div class="col-span-12 lg:col-span-6 bg-inverse-surface text-surface p-8 shadow-2xl">
+<div class="flex justify-between items-start mb-10">
+<div>
+<h4 class="font-cinzel text-lg tracking-[0.2em] uppercase text-primary-fixed-dim">AI Designs Generated</h4>
+<p class="font-cormorant italic text-surface-variant/60">Creative engine velocity &amp; computational output</p>
+</div>
+<span class="material-symbols-outlined text-primary-fixed-dim" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="h-40 flex items-end gap-1">
+<!-- Bar chart variant for variety -->
+<div class="flex-1 bg-surface-variant/20 hover:bg-primary-container transition-colors group relative" style="height: 40%">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] opacity-0 group-hover:opacity-100 transition-opacity">1.2k</span>
+</div>
+<div class="flex-1 bg-surface-variant/20 hover:bg-primary-container transition-colors group relative" style="height: 55%">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] opacity-0 group-hover:opacity-100 transition-opacity">1.8k</span>
+</div>
+<div class="flex-1 bg-surface-variant/20 hover:bg-primary-container transition-colors group relative" style="height: 45%">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] opacity-0 group-hover:opacity-100 transition-opacity">1.5k</span>
+</div>
+<div class="flex-1 bg-surface-variant/20 hover:bg-primary-container transition-colors group relative" style="height: 75%">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] opacity-0 group-hover:opacity-100 transition-opacity">2.4k</span>
+</div>
+<div class="flex-1 bg-surface-variant/20 hover:bg-primary-container transition-colors group relative" style="height: 90%">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] opacity-0 group-hover:opacity-100 transition-opacity">3.1k</span>
+</div>
+<div class="flex-1 bg-surface-variant/20 hover:bg-primary-container transition-colors group relative" style="height: 80%">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] opacity-0 group-hover:opacity-100 transition-opacity">2.8k</span>
+</div>
+<div class="flex-1 bg-surface-variant/20 hover:bg-primary-container transition-colors group relative" style="height: 95%">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] opacity-0 group-hover:opacity-100 transition-opacity">3.4k</span>
+</div>
+</div>
+<div class="mt-4 flex justify-between text-[10px] uppercase tracking-widest text-surface-variant/40">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+<div class="mt-8 pt-6 border-t border-surface-variant/10 flex justify-between items-center">
+<div>
+<span class="text-[10px] uppercase tracking-widest block opacity-60">Highest Velocity</span>
+<span class="font-cinzel text-xl">3,412 <span class="text-xs font-sans text-primary-fixed-dim">pts/day</span></span>
+</div>
+<div class="text-right">
+<span class="text-[10px] uppercase tracking-widest block opacity-60">Avg. Generation Time</span>
+<span class="font-cinzel text-xl">4.2s</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Activity / Task Focused Section -->
+<section class="bg-surface-container-low p-8">
+<h4 class="font-cinzel text-xl tracking-tight uppercase mb-8">Recent Creative Sessions</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-6 flex gap-4 items-center">
+<img alt="AI Batik Pattern" class="w-16 h-16 object-cover" data-alt="Abstract Indonesian Batik pattern design with intricate geometric swirls in shades of deep red and gold over black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDII9pWxadzo6yL_GQTRHBEmOP67Epooe3Qw-vsGwYX3uuBBwbtgMfAofCntI96kf7lq1a7v5kqHoGXG2mQmydJ-RoNFAldFyA2b3YqZZmrv0Hypx_LCbbOKxDyIvfexQk4OQIiGHTMBhACHDHiWnS00sFiPgViQ1C0yP5TN18GbFCzQdJd6SrkV5dbR9612LNAaRg64dmgfbum6efgQPP7pJ5QjppqxiEifGGfCI74v0etaewBrE7Z2O-0lVQDq_sAuaMZl41JCA0"/>
+<div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-primary">New Generation</p>
+<h5 class="font-cinzel text-sm">Crimson Fractal</h5>
+<p class="text-[10px] text-on-surface-variant">Processed in 3.2s</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 flex gap-4 items-center">
+<img alt="Luxury Fabric" class="w-16 h-16 object-cover" data-alt="Close-up of premium silk fabric texture with soft ripples and elegant sheen in a light cream palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsabisr2NoryBgjOAmTWFMhKO_qSwk7gpqmPgs9AHeNVn2YA7O538BEZ0hvFUqXKMiKrwsJm3-sgdEZHO4vomnGiDaATdOzax3Whhyiu8IEq5eqfkVqo1Ql23keluC-4NzD-FjcMDzWFLe93jratUfI-LysxDnNtx_cA-yEmJz7ymdXVcyc_eOeRLtPNpx2twrZ0egH49EMpu3AvcoLu3OqMaAUFeArTg4o_1BTZvTlecKkbgS12ey1k5P6mgm7_nyBpkD23JlHzg"/>
+<div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-secondary">Inventory Update</p>
+<h5 class="font-cinzel text-sm">Opal Silk Weave</h5>
+<p class="text-[10px] text-on-surface-variant">+40 Units received</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 flex gap-4 items-center">
+<img alt="Batik Workshop" class="w-16 h-16 object-cover" data-alt="Artisan hands carefully applying wax to fabric for batik design in a sunlit traditional studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe3T9qMbjBsclAOiQdm_vmTstcJg4m_GilbHaLQg7do7y1hhP4fdwOOmRqgU-rC75rjNBBRK4YnohB23O4DISWWUccRrNhH_XDVHEbxjh3YkJIxtebOBnzpqF-Ey4ke9I1Sjz5NskVhXoYt0WJCE8d_lrdyulFvbr9j3I9NjDvK1QXmwtncmQL0duEHD16CrE688YlgHdaJa7Z8hX79mI9d6Yzieba4K6DwLrDVyxm6nz4hq41vkkollvniWCl6BmNCrmRDTbLw4s"/>
+<div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-primary">System Alert</p>
+<h5 class="font-cinzel text-sm">Design Pipeline</h5>
+<p class="text-[10px] text-on-surface-variant">Batch processing 85%</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer class="mt-20 bg-inverse-surface py-12 px-8 text-surface/40 text-center">
+<div class="font-cinzel text-surface tracking-[0.4em] mb-4">CATTLEYA</div>
+<p class="text-xs uppercase tracking-[0.2em]">The Immense Beauty of Heaven — Administrative Analytics</p>
+<p class="mt-8 text-[10px] opacity-40">© 2024 CATTLEYA ARTISANAL DESIGN. ALL RIGHTS RESERVED.</p>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CATTLEYA | Admin Orders Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&amp;family=Inter:wght@300;400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1c1b1b",
+                    "surface-dim": "#dcd9d9",
+                    "primary": "#a30012",
+                    "tertiary": "#00518c",
+                    "primary-fixed": "#ffdad6",
+                    "background": "#fcf9f8",
+                    "on-tertiary-fixed-variant": "#00497e",
+                    "on-primary": "#ffffff",
+                    "outline": "#926e6b",
+                    "inverse-on-surface": "#f3f0ef",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "surface-tint": "#c00017",
+                    "secondary-container": "#dddddd",
+                    "inverse-primary": "#ffb3ac",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#ffb3ac",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#e2e2e2",
+                    "tertiary-fixed-dim": "#9fcaff",
+                    "inverse-surface": "#313030",
+                    "primary-container": "#d0021b",
+                    "surface-container-low": "#f6f3f2",
+                    "surface": "#fcf9f8",
+                    "on-primary-fixed-variant": "#93000f",
+                    "on-secondary-fixed-variant": "#454747",
+                    "on-secondary-container": "#606161",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#d9e8ff",
+                    "on-primary-fixed": "#410003",
+                    "on-primary-container": "#ffdfdc",
+                    "on-background": "#1c1b1b",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#006ab4",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-bright": "#fcf9f8",
+                    "tertiary-fixed": "#d2e4ff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#001c37",
+                    "on-surface-variant": "#5d3f3c",
+                    "surface-variant": "#e5e2e1",
+                    "secondary": "#5d5f5f",
+                    "outline-variant": "#e7bdb8",
+                    "surface-container-high": "#ebe7e7",
+                    "surface-container": "#f0edec"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Cinzel", "serif"],
+                    "editorial": ["Cormorant Garamond", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .plasma-gradient {
+            background: linear-gradient(135deg, #a30012 0%, #d0021b 100%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f0edec;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d0021b;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-hidden">
+<!-- Sidebar Navigation Shell -->
+<aside class="fixed inset-y-0 left-0 w-64 z-50 overflow-y-auto bg-[#313030] dark:bg-[#1c1b1b] shadow-xl transition-all duration-300">
+<div class="px-6 py-8">
+<h1 class="font-['Cinzel'] text-xl tracking-[0.2em] text-white">CATTLEYA</h1>
+<p class="font-['Cinzel'] tracking-widest uppercase text-[10px] text-gray-400 mt-1">Luxury Batik Admin</p>
+</div>
+<nav class="mt-4 space-y-1">
+<a class="text-gray-400 hover:text-white flex items-center px-6 py-4 transition-all hover:bg-white/10 group" href="#">
+<span class="material-symbols-outlined mr-4 group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-['Cinzel'] tracking-widest uppercase text-sm">Dashboard</span>
+</a>
+<a class="bg-white/5 text-white border-l-4 border-[#d0021b] flex items-center px-6 py-4 transition-all group" href="#">
+<span class="material-symbols-outlined mr-4 text-primary">shopping_bag</span>
+<span class="font-['Cinzel'] tracking-widest uppercase text-sm">Orders</span>
+</a>
+<a class="text-gray-400 hover:text-white flex items-center px-6 py-4 transition-all hover:bg-white/10 group" href="#">
+<span class="material-symbols-outlined mr-4 group-hover:text-primary transition-colors">inventory_2</span>
+<span class="font-['Cinzel'] tracking-widest uppercase text-sm">Inventory</span>
+</a>
+<a class="text-gray-400 hover:text-white flex items-center px-6 py-4 transition-all hover:bg-white/10 group" href="#">
+<span class="material-symbols-outlined mr-4 group-hover:text-primary transition-colors">group</span>
+<span class="font-['Cinzel'] tracking-widest uppercase text-sm">Customers</span>
+</a>
+<a class="text-gray-400 hover:text-white flex items-center px-6 py-4 transition-all hover:bg-white/10 group" href="#">
+<span class="material-symbols-outlined mr-4 group-hover:text-primary transition-colors">brush</span>
+<span class="font-['Cinzel'] tracking-widest uppercase text-sm">Artisans</span>
+</a>
+<a class="text-gray-400 hover:text-white flex items-center px-6 py-4 transition-all hover:bg-white/10 group" href="#">
+<span class="material-symbols-outlined mr-4 group-hover:text-primary transition-colors">settings</span>
+<span class="font-['Cinzel'] tracking-widest uppercase text-sm">Settings</span>
+</a>
+</nav>
+<div class="absolute bottom-8 left-0 w-full px-6">
+<button class="w-full py-3 border border-white/20 text-white font-['Cinzel'] text-xs tracking-widest uppercase hover:bg-white hover:text-inverse-surface transition-all">
+                View Storefront
+            </button>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<main class="ml-64 h-screen flex flex-col overflow-hidden bg-surface-container-low">
+<!-- Top Navigation Bar -->
+<header class="flex justify-between items-center w-full px-8 py-4 bg-[#fcf9f8]/80 backdrop-blur-xl sticky top-0 z-40">
+<div class="flex items-center space-x-4">
+<h2 class="font-['Cinzel'] text-lg font-bold text-[#1c1b1b]">Admin Portal</h2>
+<div class="h-4 w-px bg-outline-variant/30"></div>
+<div class="flex items-center bg-surface-container rounded-sm px-3 py-1.5">
+<span class="material-symbols-outlined text-sm text-gray-500 mr-2">search</span>
+<input class="bg-transparent border-none text-xs focus:ring-0 w-48 text-on-surface" placeholder="Global Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<nav class="flex space-x-6 text-sm font-['Inter'] tracking-tight">
+<a class="text-gray-500 hover:text-[#1c1b1b] transition-colors" href="#">Overview</a>
+<a class="text-[#d0021b] border-b-2 border-[#d0021b] font-semibold" href="#">Reports</a>
+<a class="text-gray-500 hover:text-[#1c1b1b] transition-colors" href="#">Archive</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">help_outline</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/50">
+<img class="w-full h-full object-cover" data-alt="professional profile portrait of a luxury brand administrator in a tailored suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBtE4RHzzBO8meTVCqVZkRtxHDl2jmU4fVOPTiQpF3ywk-kaNxW0dwL9a3HcRqy7cHYEXFHzGosQXNU-Fx75jy0GhLgP2avIJaGPYuix_GfVBopcxRqDODIJdNQ-QOL1cV250i0z714NyULhwRM-1g7ZN2Il6fRnWycCjrRROAHpoiGhZPodYhnnr-z0GNZx7kceY4Ij6UzL27I3mxwdpubonAYWxv8h-Hor_mYDfUMNfpl88hz9GKf657ZY4eiDafPXU29vEVzqs"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-8">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-['Cinzel'] text-4xl tracking-wider text-on-surface">Orders</h2>
+<p class="font-editorial italic text-lg text-on-surface-variant mt-2">Managing the flow of ethereal craftsmanship</p>
+</div>
+<button class="flex items-center px-5 py-2 border border-outline-variant bg-surface-container-lowest text-on-surface font-label text-sm hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined mr-2 text-primary">download</span>
+                    Export CSV
+                </button>
+</div>
+<!-- Filter Bar -->
+<section class="bg-surface-container rounded-sm p-4 mb-8 flex flex-wrap items-center gap-4 shadow-sm">
+<div class="flex-1 min-w-[300px] relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary">search</span>
+<input class="w-full bg-surface-container-lowest border-none pl-10 pr-4 py-2 text-sm rounded-sm focus:ring-1 focus:ring-primary/20" placeholder="Search by Order ID, customer name..." type="text"/>
+</div>
+<select class="bg-surface-container-lowest border-none text-sm px-4 py-2 rounded-sm focus:ring-1 focus:ring-primary/20 min-w-[140px]">
+<option>Status: All</option>
+<option>Pending</option>
+<option>Processing</option>
+<option>Shipped</option>
+<option>Delivered</option>
+</select>
+<select class="bg-surface-container-lowest border-none text-sm px-4 py-2 rounded-sm focus:ring-1 focus:ring-primary/20 min-w-[160px]">
+<option>Payment: All</option>
+<option>Paid</option>
+<option>Unpaid</option>
+<option>Refunded</option>
+</select>
+<div class="flex items-center bg-surface-container-lowest px-4 py-2 rounded-sm cursor-pointer border-none min-w-[200px]">
+<span class="material-symbols-outlined text-primary mr-2 text-lg">calendar_today</span>
+<span class="text-sm text-gray-500">Date Range: Oct 1 - Oct 31</span>
+</div>
+</section>
+<!-- Orders Table -->
+<div class="bg-surface-container-lowest overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-high">
+<tr class="font-['Cinzel'] text-[10px] tracking-widest uppercase text-on-surface-variant">
+<th class="px-6 py-4 font-bold">Order ID</th>
+<th class="px-6 py-4 font-bold">Customer</th>
+<th class="px-6 py-4 font-bold">Items</th>
+<th class="px-6 py-4 font-bold text-right">Total</th>
+<th class="px-6 py-4 font-bold">Payment</th>
+<th class="px-6 py-4 font-bold">Status</th>
+<th class="px-6 py-4 font-bold">Date</th>
+<th class="px-6 py-4 font-bold text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Table Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer border-l-4 border-transparent hover:border-primary">
+<td class="px-6 py-4 font-medium text-sm">#CT-9921</td>
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center mr-3 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="portrait of an elegant customer with a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVrQuJmFCS7FiZG0ToNVedShqS_job5H9YxHzWl0ujaxEgaBGdW25aJbqY4z_Thj5ZhS1l8ay2amylYjx6SH0aiAczOBW05m3dBp2MF3RFeE6ohCz7IxNC21OSycaCrB2dU04jz874gML1ns64SD17cZHW_9d0R4HXpfcolb5-w_WsqNNBZABR6mVfETPidwzMYPs2iL9caJlOCRebU332m4PH_9g9dKgK1OUJjmLZePuaMZFi1SguymeT6fJiGyTTgbhWMFkuC68"/>
+</div>
+<span class="text-sm font-semibold">Julian Vance</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-xs">
+<p class="font-semibold text-on-surface">3 Items</p>
+<p class="text-on-surface-variant truncate w-32">Silk Batik Scarf (+2)</p>
+</div>
+</td>
+<td class="px-6 py-4 text-right text-sm font-bold text-primary">$1,240.00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-tighter">Paid</span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-sm bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/20">
+                                    Processing
+                                </span>
+</td>
+<td class="px-6 py-4 text-xs text-on-surface-variant">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-center space-x-3">
+<button class="material-symbols-outlined text-gray-400 hover:text-primary transition-colors text-lg" title="View Details">visibility</button>
+<button class="material-symbols-outlined text-gray-400 hover:text-primary transition-colors text-lg" title="Print Invoice">print</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer border-l-4 border-transparent hover:border-primary">
+<td class="px-6 py-4 font-medium text-sm">#CT-9918</td>
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center mr-3 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="portrait of a woman in high-end fashion setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7p-DHlAHzpgLDX39saJMQK00tqlza00C_J935_KQSldL7yB9Axem_f8SK74d5yUFEpFGClHskWaoTb_hudJQO-xQXBi077Vi-p6P-9ILUWVjHwnnp7L4M26HSLGsKZSwLu9TdWNZX2j1d3pMMmx6h2KTS0rz9EnmBNC-SWeomIuWq8dl8RovNqhXlKbwj7EW4VVhUDylqAEo3ZjZRqVHKHCAzVSXVEDLn-YYiR-vhWBinkISflF7tYIr_fe-Uum8reVPh9Vk4Ezw"/>
+</div>
+<span class="text-sm font-semibold">Elara Thorne</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-xs">
+<p class="font-semibold text-on-surface">1 Item</p>
+<p class="text-on-surface-variant truncate w-32">Parang Keris Robe</p>
+</div>
+</td>
+<td class="px-6 py-4 text-right text-sm font-bold text-primary">$850.00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-700 text-[10px] font-bold uppercase tracking-tighter">Awaiting</span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-sm bg-gray-100 text-gray-600 text-[10px] font-bold uppercase tracking-widest border border-gray-200">
+                                    Pending
+                                </span>
+</td>
+<td class="px-6 py-4 text-xs text-on-surface-variant">Oct 23, 2023</td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-center space-x-3">
+<button class="material-symbols-outlined text-gray-400 hover:text-primary transition-colors text-lg">visibility</button>
+<button class="material-symbols-outlined text-gray-400 hover:text-primary transition-colors text-lg">print</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer border-l-4 border-transparent hover:border-primary">
+<td class="px-6 py-4 font-medium text-sm">#CT-9850</td>
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center mr-3 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="man in architectural workspace looking at camera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSSmEkjj6DgzeopE9S-nteHuWogisEWB5e5n7gjRZDrFa7ap73p0vSREACPYn8YFIIyQUX50h--Z6M4TqshbR-MPPFd3BU-CiKBJBk4FSJCfrvdV2jtR3ihubhwMgfAbzJoNZkpXiH-16Cob6zUs2KVaHSV_UXrLmNSlwO1L6ITVXhUc_YpGJkbuen9w6zw0aNnN16iNwIq4rp7TR-xAIUVrxyetGxgqxxbmLBfG4O5BLlKSiNqFZmqHp3lbyfStKBD7VC1ql__zs"/>
+</div>
+<span class="text-sm font-semibold">Silas Vane</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-xs">
+<p class="font-semibold text-on-surface">2 Items</p>
+<p class="text-on-surface-variant truncate w-32">Midnight Indigo Tie (+1)</p>
+</div>
+</td>
+<td class="px-6 py-4 text-right text-sm font-bold text-primary">$420.00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-tighter">Paid</span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-sm bg-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-widest border border-blue-200">
+                                    Shipped
+                                </span>
+</td>
+<td class="px-6 py-4 text-xs text-on-surface-variant">Oct 21, 2023</td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-center space-x-3">
+<button class="material-symbols-outlined text-gray-400 hover:text-primary transition-colors text-lg">visibility</button>
+<button class="material-symbols-outlined text-gray-400 hover:text-primary transition-colors text-lg">print</button>
+</div>
+</td>
+</tr>
+<!-- Table Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer border-l-4 border-transparent hover:border-primary">
+<td class="px-6 py-4 font-medium text-sm">#CT-9811</td>
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center mr-3 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="profile of a woman with vibrant lighting and professional look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD10df_sF6SJfiVL7AcS1mwfq1yfuQJbIH3kuZBZqr0JlQmCnBGoTavQPdy0ygHlZ2Ejt50AHkAw9inpbbF919P4ecdOS1XLnQfT-J2fnKzvs3YujxfMmyP4iADYVTmOv1ZQ_hyu_W_NmMtovezbyKAADuT_z9tufuzlozAnqUbxmYAjPc1UpRpRIjx4feADHxOIYrGXhA0MgQA8A3ivaanjjwnzqdV4FbnFEX1kiJuhG84al9rMac2BmvMbCbt0e2klmURxToUcjI"/>
+</div>
+<span class="text-sm font-semibold">Marcella Wu</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<div class="text-xs">
+<p class="font-semibold text-on-surface">5 Items</p>
+<p class="text-on-surface-variant truncate w-32">Custom Bridal Batik Set</p>
+</div>
+</td>
+<td class="px-6 py-4 text-right text-sm font-bold text-primary">$3,400.00</td>
+<td class="px-6 py-4">
+<span class="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-tighter">Paid</span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-sm bg-green-100 text-green-700 text-[10px] font-bold uppercase tracking-widest border border-green-200">
+                                    Delivered
+                                </span>
+</td>
+<td class="px-6 py-4 text-xs text-on-surface-variant">Oct 19, 2023</td>
+<td class="px-6 py-4">
+<div class="flex items-center justify-center space-x-3">
+<button class="material-symbols-outlined text-gray-400 hover:text-primary transition-colors text-lg">visibility</button>
+<button class="material-symbols-outlined text-gray-400 hover:text-primary transition-colors text-lg">print</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Mockup -->
+<div class="mt-8 flex justify-between items-center text-sm">
+<p class="text-on-surface-variant">Showing <span class="font-bold text-on-surface">1-10</span> of <span class="font-bold text-on-surface">248</span> orders</p>
+<div class="flex space-x-2">
+<button class="p-2 border border-outline-variant hover:bg-surface-container transition-all"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
+<button class="px-4 py-2 bg-primary text-white font-bold text-xs">1</button>
+<button class="px-4 py-2 hover:bg-surface-container transition-all text-xs font-bold">2</button>
+<button class="px-4 py-2 hover:bg-surface-container transition-all text-xs font-bold">3</button>
+<button class="p-2 border border-outline-variant hover:bg-surface-container transition-all"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
+</div>
+</div>
+</div>
+<!-- Detail Slide-over Mockup (Right Sidebar Panel) -->
+<div class="fixed top-0 right-0 h-full w-[450px] bg-surface-container-lowest shadow-2xl z-[60] flex flex-col border-l border-outline-variant/10 transform translate-x-0 transition-transform duration-500">
+<div class="p-8 flex-1 overflow-y-auto custom-scrollbar">
+<!-- Header -->
+<div class="flex justify-between items-start mb-10">
+<div>
+<span class="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Order Details</span>
+<h3 class="font-['Cinzel'] text-3xl text-on-surface mt-1">#CT-9921</h3>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">close</button>
+</div>
+<!-- Customer Info -->
+<section class="mb-10">
+<h4 class="font-['Cinzel'] text-[10px] tracking-[0.2em] text-on-surface-variant uppercase mb-4">Customer Information</h4>
+<div class="flex items-center p-4 bg-surface-container-low rounded-sm">
+<div class="w-12 h-12 rounded-sm overflow-hidden mr-4 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Julian Vance customer profile image in high-end editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGvPlphsle-3SohnuVS93XhFmvyn0UogwXyBLiOrIpj3glgIVD5S7NMAMgCB3MGr5hLQW7OvpQA3mODuBEkTbdnSLc-Ooatj_MOwhPzBuqfEv2jTTYJfuN4svlb2a56oIIWDvB0Uu3VLmOcHlXKA8KUXfc--ZlIykSG37_IZ6mm_Ur3I2-ce2q3vyPoQ3VJQsdk0P_nU21Qio5TSfCIW68GTZznqgTFipUbkmVgu8OulWw692mWAmo651mH3rsL6DjPWxEHDeSS2E"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Julian Vance</p>
+<p class="text-xs text-on-surface-variant">julian.vance@celestialmail.com</p>
+<p class="text-[10px] text-on-surface-variant mt-1">+1 (555) 092-1182</p>
+</div>
+</div>
+</section>
+<!-- Items Table -->
+<section class="mb-10">
+<h4 class="font-['Cinzel'] text-[10px] tracking-[0.2em] text-on-surface-variant uppercase mb-4">Ordered Items</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between py-3 border-b border-surface-container">
+<div class="flex items-center">
+<div class="w-10 h-10 bg-surface-container-high rounded-sm mr-4 overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="close-up detail of luxurious red and gold silk batik fabric texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvUoPBq7Ubr71dc6-7SaNKX2Tp0qeadGmCgBzn0K2ym3WfUPADnt4Awt6ffaaRobWxXRSgvACn3oxb1J0i2jqyIW7ha-nqpDiKwfNsaxHM63Hw9bFJgqjIH2cRHD5AG0qHtFc9VbVzsTqSLs56xsI360bOjCwrjDJkkvHA5ImswlscyaXR_ksZzHYzP2I5X9X5ENORY92ymScZpZSawUNES-M-UK6d7xnXPLXISlH2Q9JnkKHWLNmOMgi-Hoe1-6DPFZMs6JJ0y2o"/>
+</div>
+<div>
+<p class="text-sm font-semibold">Silk Batik Scarf</p>
+<p class="text-[10px] text-on-surface-variant">Qty: 1</p>
+</div>
+</div>
+<p class="text-sm font-bold">$320.00</p>
+</div>
+<div class="flex items-center justify-between py-3 border-b border-surface-container">
+<div class="flex items-center">
+<div class="w-10 h-10 bg-surface-container-high rounded-sm mr-4 overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="deep blue artisanal batik textile with complex geometric patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUny-xUd8ZjFTyoYt5h6-Pfjzsl8zez9540Ib7ND_xRkw9KxmpWfOS9YyvthGhPl3OOj85pEBveAqTDXOMchO7_CuenqwCPbE3YEXx9Xn1JmwaovIp5IbsoiwlZ8PhnJhW7ODTNY6UjYUD8wKHVorHxTZK_WNFvAeMjSZOKszDCQpv3FeWPFdwANgdxMGEniv6lQEpw0FyCPyda3j0lvpP_TToeC9CxCVEoAUuJuBqZK8FCEfzkt1UfH8-iO3YS0HhMrtazlmSong"/>
+</div>
+<div>
+<p class="text-sm font-semibold">Royal Indigo Wrap</p>
+<p class="text-[10px] text-on-surface-variant">Qty: 2</p>
+</div>
+</div>
+<p class="text-sm font-bold">$920.00</p>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t-2 border-primary/10">
+<div class="flex justify-between items-center">
+<span class="font-['Cinzel'] text-xs tracking-widest">Total Amount</span>
+<span class="text-xl font-bold text-primary">$1,240.00</span>
+</div>
+</div>
+</section>
+<!-- Order Timeline -->
+<section class="mb-10">
+<h4 class="font-['Cinzel'] text-[10px] tracking-[0.2em] text-on-surface-variant uppercase mb-6">Order Timeline</h4>
+<div class="relative pl-6 space-y-8 before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-[2px] before:bg-surface-container">
+<div class="relative">
+<div class="absolute -left-[23px] top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-primary/10"></div>
+<p class="text-sm font-bold">Order Placed</p>
+<p class="text-[10px] text-on-surface-variant italic">Oct 24, 2023 at 09:12 AM</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[23px] top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-primary/10"></div>
+<p class="text-sm font-bold">Payment Confirmed</p>
+<p class="text-[10px] text-on-surface-variant italic">Oct 24, 2023 at 09:15 AM</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[23px] top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-primary/10"></div>
+<p class="text-sm font-bold">Processing</p>
+<p class="text-[10px] text-on-surface-variant italic">Oct 25, 2023 at 11:45 AM</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[23px] top-1 w-4 h-4 rounded-full bg-surface-container border-2 border-outline-variant"></div>
+<p class="text-sm font-bold text-gray-400">Shipped</p>
+<p class="text-[10px] text-on-surface-variant italic">Pending dispatch</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer Actions -->
+<div class="p-8 bg-surface-container-low grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center py-3 plasma-gradient text-white font-['Cinzel'] text-[10px] tracking-widest uppercase hover:opacity-90 transition-all">
+                    Update Status
+                </button>
+<button class="flex items-center justify-center py-3 border border-outline text-on-surface font-['Cinzel'] text-[10px] tracking-widest uppercase hover:bg-surface-container transition-all">
+                    Print Invoice
+                </button>
+</div>
+</div>
+</main>
+</body></html>

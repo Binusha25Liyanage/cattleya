@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CATTLEYA | Products Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Cormorant+Garamond:ital,wght@0,400;1,400&amp;family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#1c1b1b",
+                      "inverse-surface": "#313030",
+                      "on-error": "#ffffff",
+                      "surface-variant": "#e5e2e1",
+                      "on-surface": "#1c1b1b",
+                      "surface-container-low": "#f6f3f2",
+                      "secondary-fixed": "#e2e2e2",
+                      "outline-variant": "#e7bdb8",
+                      "tertiary": "#00518c",
+                      "secondary": "#5d5f5f",
+                      "primary-container": "#d0021b",
+                      "primary": "#a30012",
+                      "surface-container-high": "#ebe7e7",
+                      "surface": "#fcf9f8",
+                      "tertiary-fixed": "#d2e4ff",
+                      "on-primary-fixed-variant": "#93000f",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#f3f0ef",
+                      "on-tertiary-fixed": "#001c37",
+                      "tertiary-fixed-dim": "#9fcaff",
+                      "surface-container": "#f0edec",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed-dim": "#c6c6c6",
+                      "on-tertiary": "#ffffff",
+                      "outline": "#926e6b",
+                      "on-tertiary-fixed-variant": "#00497e",
+                      "on-surface-variant": "#5d3f3c",
+                      "inverse-primary": "#ffb3ac",
+                      "surface-tint": "#c00017",
+                      "surface-bright": "#fcf9f8",
+                      "primary-fixed-dim": "#ffb3ac",
+                      "tertiary-container": "#006ab4",
+                      "error": "#ba1a1a",
+                      "on-secondary-container": "#606161",
+                      "on-tertiary-container": "#d9e8ff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#e5e2e1",
+                      "background": "#fcf9f8",
+                      "primary-fixed": "#ffdad6",
+                      "on-primary-container": "#ffdfdc",
+                      "surface-dim": "#dcd9d9",
+                      "secondary-container": "#dddddd",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "on-primary-fixed": "#410003",
+                      "on-primary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#454747"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Cinzel"],
+                      "body": ["Inter"],
+                      "label": ["Inter"],
+                      "editorial": ["Cormorant Garamond"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .plasma-gradient {
+            background: linear-gradient(135deg, #a30012 0%, #d0021b 100%);
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fcf9f8;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e5e2e1;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-screen w-64 bg-neutral-900 dark:bg-black flex flex-col h-full py-8 z-[60] tonal-layering-mercury flat-void">
+<div class="px-8 mb-12">
+<h1 class="font-['Cinzel'] text-white tracking-[0.3em] text-2xl font-bold uppercase">CATTLEYA</h1>
+<p class="font-['Inter'] text-[10px] font-medium uppercase tracking-[0.2em] text-neutral-500 mt-2">Luxury Editorial Admin</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Dashboard (Inactive) -->
+<a class="flex items-center text-neutral-400 px-6 py-4 hover:bg-neutral-800 hover:text-neutral-200 transition-all duration-200 ease-in-out font-['Inter'] text-xs font-medium uppercase tracking-widest group" href="#">
+<span class="material-symbols-outlined mr-4 opacity-70 group-hover:opacity-100" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<!-- Products (Active) -->
+<a class="flex items-center text-white border-l-4 border-red-600 bg-neutral-800 px-6 py-4 transition-all duration-200 ease-in-out font-['Inter'] text-xs font-medium uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined mr-4 text-red-600" data-icon="inventory_2">inventory_2</span>
+                Products
+            </a>
+<!-- Collections -->
+<a class="flex items-center text-neutral-400 px-6 py-4 hover:bg-neutral-800 hover:text-neutral-200 transition-all duration-200 ease-in-out font-['Inter'] text-xs font-medium uppercase tracking-widest group" href="#">
+<span class="material-symbols-outlined mr-4 opacity-70 group-hover:opacity-100" data-icon="auto_awesome_motion">auto_awesome_motion</span>
+                Collections
+            </a>
+<!-- Orders -->
+<a class="flex items-center text-neutral-400 px-6 py-4 hover:bg-neutral-800 hover:text-neutral-200 transition-all duration-200 ease-in-out font-['Inter'] text-xs font-medium uppercase tracking-widest group" href="#">
+<span class="material-symbols-outlined mr-4 opacity-70 group-hover:opacity-100" data-icon="shopping_bag">shopping_bag</span>
+                Orders
+            </a>
+<!-- Customers -->
+<a class="flex items-center text-neutral-400 px-6 py-4 hover:bg-neutral-800 hover:text-neutral-200 transition-all duration-200 ease-in-out font-['Inter'] text-xs font-medium uppercase tracking-widest group" href="#">
+<span class="material-symbols-outlined mr-4 opacity-70 group-hover:opacity-100" data-icon="group">group</span>
+                Customers
+            </a>
+<!-- Analytics -->
+<a class="flex items-center text-neutral-400 px-6 py-4 hover:bg-neutral-800 hover:text-neutral-200 transition-all duration-200 ease-in-out font-['Inter'] text-xs font-medium uppercase tracking-widest group" href="#">
+<span class="material-symbols-outlined mr-4 opacity-70 group-hover:opacity-100" data-icon="leaderboard">leaderboard</span>
+                Analytics
+            </a>
+</nav>
+<div class="px-6 py-8 border-t border-neutral-800 mt-auto">
+<a class="flex items-center text-neutral-400 py-3 hover:text-white transition-all font-['Inter'] text-xs font-medium uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="help">help</span>
+                Support
+            </a>
+<a class="flex items-center text-neutral-400 py-3 hover:text-white transition-all font-['Inter'] text-xs font-medium uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="settings">settings</span>
+                Settings
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar Shell -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-8 py-4 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md shadow-[0_32px_64px_-15px_rgba(28,27,27,0.04)] no-border tonal-shift-bg">
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 text-lg">search</span>
+<input class="bg-surface-container-low border-none text-sm font-['Inter'] px-10 py-2 w-72 rounded-lg focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search across catalog..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="relative text-neutral-500 hover:text-red-700 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<div class="flex items-center gap-3 pl-6 border-l border-surface-variant">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface uppercase tracking-wider font-headline">Adriana Volkov</p>
+<p class="text-[10px] text-neutral-500 font-editorial italic">Senior Curator</p>
+</div>
+<img alt="Admin profile" class="w-10 h-10 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500" data-alt="professional portrait of a high-end fashion curator with sleek dark hair and minimalist jewelry in soft editorial studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB61JTE6ZRxBQR_H2v2A3zHO0C-jH--i3T8A3ZekeYqq3Y1AiZfrWuFEvMsaP8LJbeZEB-rGO7uxIcvcSGy2H7y3uknBXwBwxdYFV3IAZRx-jbl8iLCv-wG-cdLGz4G3iWH8REWhFJiKyD6Xa3cAsw7TtOR08i9HmZm4Q__N_LIgTVDjpBvNrmdO-EEFbCE04fn76iMfiwcdLRLgRP-eGuQ7fWXYBZPMG5a-kzrLbPeuskMEJ5PCBFSYecyx2FEfxvG1gtYdAj7siA"/>
+</div>
+</div>
+</header>
+<!-- Product Management Body -->
+<div class="p-8 space-y-8">
+<!-- Header Section -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline text-4xl font-bold tracking-tight text-on-surface">Products</h2>
+<p class="font-editorial italic text-lg text-secondary mt-1">Manage the exquisite collection of ethereal batik craftsmanship.</p>
+</div>
+<button class="plasma-gradient text-white px-8 py-3 font-body text-sm font-semibold tracking-widest uppercase flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-lg">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                    Add Product
+                </button>
+</div>
+<!-- Filters Bar -->
+<div class="bg-surface-container p-1 flex items-center gap-4">
+<div class="bg-surface-container-lowest flex-1 flex items-center p-2 rounded-lg gap-3">
+<span class="material-symbols-outlined text-neutral-400 pl-2">filter_list</span>
+<select class="bg-transparent border-none text-xs font-medium uppercase tracking-widest text-secondary focus:ring-0 cursor-pointer">
+<option>All Categories</option>
+<option>Silk Collection</option>
+<option>Hand-Drawn</option>
+<option>Contemporary</option>
+</select>
+<div class="w-px h-6 bg-surface-variant mx-2"></div>
+<select class="bg-transparent border-none text-xs font-medium uppercase tracking-widest text-secondary focus:ring-0 cursor-pointer">
+<option>Status: All</option>
+<option>Active</option>
+<option>Inactive</option>
+<option>Out of Stock</option>
+</select>
+<div class="w-px h-6 bg-surface-variant mx-2"></div>
+<select class="bg-transparent border-none text-xs font-medium uppercase tracking-widest text-secondary focus:ring-0 cursor-pointer">
+<option>Sort: Newest</option>
+<option>Price: High-Low</option>
+<option>Stock: Low-High</option>
+</select>
+</div>
+<button class="px-6 py-4 bg-surface-container-high text-on-surface text-xs font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-colors">
+                    Export CSV
+                </button>
+</div>
+<!-- Bulk Actions (Hidden by default, shown when items selected - conceptual) -->
+<div class="hidden flex items-center justify-between bg-inverse-surface text-white px-6 py-3 rounded-lg animate-in fade-in slide-in-from-bottom-4">
+<div class="flex items-center gap-4">
+<span class="text-sm font-medium">3 items selected</span>
+<div class="w-px h-4 bg-white/20"></div>
+<button class="text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors">Delete Selected</button>
+<button class="text-xs font-bold uppercase tracking-widest hover:text-white/80 transition-colors">Toggle Active</button>
+</div>
+<button class="material-symbols-outlined text-lg">close</button>
+</div>
+<!-- Products Table -->
+<div class="bg-surface-container-lowest overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container text-secondary text-[10px] uppercase tracking-[0.2em] font-bold">
+<th class="p-5 w-12 text-center">
+<input class="rounded-sm border-secondary text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+</th>
+<th class="p-5">Product Details</th>
+<th class="p-5">Category</th>
+<th class="p-5">Pricing</th>
+<th class="p-5">Inventory</th>
+<th class="p-5">Status</th>
+<th class="p-5 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Product Item 1 -->
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="p-5 text-center">
+<input class="rounded-sm border-secondary text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+</td>
+<td class="p-5">
+<div class="flex items-center gap-4">
+<div class="w-16 h-20 bg-surface-container overflow-hidden">
+<img alt="Silk Batik" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="close up of exquisite hand-drawn batik fabric with intricate crimson and gold floral patterns in soft ethereal lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASqnH-nMRAxmwS8EJA-Y9t1De8NntAczgO7lQVTKHBK2ZOC8qg6b34oZgYEumkmWQ520z2HLlfgYpf9XMSLZC57Ua1Q4TIixZz9wb4nKznu4ueLyx5YKK0GzH-SODZj1hgTEr4fJxSaiUWcySsSyui4xZzK126Kk3hTRQ1qn_o8o5baeDx_nV6g-93UnGepKBDjKfSSBgtNTANRRLpt__HynVzGrKROoXRZSXm7Ua0-W32nmVyVR150LYRVHd1ZGgp2IBQCAbLvMY"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface text-lg">Ethereal Crimson Veil</h4>
+<p class="font-editorial italic text-xs text-secondary">Traditional Tulis Technique</p>
+<div class="flex gap-1 mt-2">
+<span class="material-symbols-outlined text-[14px] text-primary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] text-secondary font-medium tracking-tighter">FEATURED</span>
+</div>
+</div>
+</div>
+</td>
+<td class="p-5">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-widest">Hand-Drawn</span>
+</td>
+<td class="p-5">
+<p class="font-body font-bold text-primary text-lg tracking-tight">$1,240.00</p>
+<p class="text-[10px] text-secondary font-medium mt-1">4 VARIANTS</p>
+</td>
+<td class="p-5">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<span class="text-sm font-medium">12 in Stock</span>
+</div>
+<p class="text-[10px] text-secondary">2,300 Total SKU Orders</p>
+</div>
+</td>
+<td class="p-5">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-[10px] font-bold uppercase tracking-widest text-on-surface">Active</span>
+</label>
+</td>
+<td class="p-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-secondary hover:text-primary transition-colors hover:bg-white rounded-lg">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-secondary hover:text-error transition-colors hover:bg-white rounded-lg">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Product Item 2 -->
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="p-5 text-center">
+<input class="rounded-sm border-secondary text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+</td>
+<td class="p-5">
+<div class="flex items-center gap-4">
+<div class="w-16 h-20 bg-surface-container overflow-hidden">
+<img alt="Mercury Scarf" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="minimalist overhead shot of folded light grey batik scarf with mercury silver highlights on a white textured marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7NRfrk9fmv1cREDe0btgGmC2kntjEy_2h89Gp-lcYWdmAvP_VovYC-925fXNVGvrwW3BVebguEiXOeYVmkX0kN0HRuEALzTsTbcfIOztyYC_VCqS8RmSFl1dMMGB-Kj-jg-p5Ik4xbywGL5rCGdiV9hFIpyJGhUFKiX05kCEgDo43g0XQJgM_lYRDxhbYkXlqQjwzgXJE7vJ_H_Dnernk742WlQXQuWn4HR-AJHBmD2-TFIRtLaoPeFn_DGS87fFil22NUBTwJt0"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface text-lg">Mercury Flow Scarf</h4>
+<p class="font-editorial italic text-xs text-secondary">Signature Silk Blend</p>
+</div>
+</div>
+</td>
+<td class="p-5">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-widest">Contemporary</span>
+</td>
+<td class="p-5">
+<p class="font-body font-bold text-primary text-lg tracking-tight">$450.00</p>
+<p class="text-[10px] text-secondary font-medium mt-1">2 VARIANTS</p>
+</td>
+<td class="p-5">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-orange-400"></div>
+<span class="text-sm font-medium">3 Low Stock</span>
+</div>
+</div>
+</td>
+<td class="p-5">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-[10px] font-bold uppercase tracking-widest text-on-surface">Active</span>
+</label>
+</td>
+<td class="p-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-secondary hover:text-primary transition-colors hover:bg-white rounded-lg">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-secondary hover:text-error transition-colors hover:bg-white rounded-lg">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Product Item 3 -->
+<tr class="group hover:bg-surface-container-low transition-colors">
+<td class="p-5 text-center">
+<input class="rounded-sm border-secondary text-primary focus:ring-primary w-4 h-4" type="checkbox"/>
+</td>
+<td class="p-5">
+<div class="flex items-center gap-4">
+<div class="w-16 h-20 bg-surface-container overflow-hidden">
+<img alt="Void Kaftan" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="luxury deep charcoal batik kaftan with subtle geometric patterns hanging in a dramatic sunlit corridor with sharp shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpT4oR3vKGioyXSCPjAKMysGMUL948SidWUikUEE4GMOR_iw2dKY3SDpXzmV-mWhI8DOnAZsLzD_LNz21RTZkKXiS7rjxbDI6sBXJyIYAz8yySzRogBJt-CxrHa7vFdbhv-vW0LhSUlhTBlY5qMXZEzrDyfrnQsMnlgWvMBOhDoBs3mYmaE1vv9SaVWIAUVBzpJrGSQmcEDL8BWob3sEEcgzhFBjcsUZVkYznyaEE4U5Dm6EMGdzRbRAMciVBBUQilMqjNmTSFT5A"/>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface text-lg">Obsidian Void Kaftan</h4>
+<p class="font-editorial italic text-xs text-secondary">Exclusive Midnight Series</p>
+</div>
+</div>
+</td>
+<td class="p-5">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-widest">Silk Collection</span>
+</td>
+<td class="p-5">
+<p class="font-body font-bold text-primary text-lg tracking-tight">$1,890.00</p>
+<p class="text-[10px] text-secondary font-medium mt-1">1 VARIANT</p>
+</td>
+<td class="p-5">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-red-600"></div>
+<span class="text-sm font-medium">Out of Stock</span>
+</div>
+</div>
+</td>
+<td class="p-5">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ml-3 text-[10px] font-bold uppercase tracking-widest text-neutral-400">Inactive</span>
+</label>
+</td>
+<td class="p-5 text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 text-secondary hover:text-primary transition-colors hover:bg-white rounded-lg">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-secondary hover:text-error transition-colors hover:bg-white rounded-lg">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-between border-t border-surface-container pt-6">
+<p class="text-xs text-secondary font-medium">SHOWING 1-10 OF 124 PRODUCTS</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center border border-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center bg-primary text-white text-xs font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center border border-surface-variant hover:bg-surface-container transition-colors text-xs font-bold">2</button>
+<button class="w-10 h-10 flex items-center justify-center border border-surface-variant hover:bg-surface-container transition-colors text-xs font-bold">3</button>
+<button class="w-10 h-10 flex items-center justify-center border border-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Decorative Watermark -->
+<div class="fixed bottom-0 right-0 p-12 opacity-[0.03] pointer-events-none select-none z-0">
+<h1 class="font-headline text-[15rem] leading-none uppercase tracking-tighter">CATTLEYA</h1>
+</div>
+</main>
+</body></html>

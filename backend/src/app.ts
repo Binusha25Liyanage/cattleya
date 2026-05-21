@@ -18,6 +18,7 @@ import paymentRoutes from "./routes/payment.routes";
 import reviewRoutes from "./routes/review.routes";
 import adminRoutes from "./routes/admin.routes";
 import userRoutes from "./routes/user.routes";
+import chatRoutes from "./routes/chat.routes";
 import { createSocketServer } from "./socket/socketServer";
 
 configurePassport();
@@ -41,6 +42,7 @@ app.use("/api/payment", paymentRoutes);
 app.use("/api/reviews", reviewRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/chat", chatRoutes);
 
 app.use(errorHandler);
 

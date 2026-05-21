@@ -17,15 +17,60 @@ model User {
   role          Role           @default(CUSTOMER)
   isActive      Boolean        @default(true)
   createdAt     DateTime       @default(now())
-  orders        Order[]
-  reviews       Review[]
-  customDesigns CustomDesign[]
-  addresses     Address[]
+  orders                   Order[]
+  reviews                  Review[]
+  customDesigns            CustomDesign[]
+  addresses                Address[]
+  customerConversations    Conversation[]  @relation("CustomerConversations")
+  sentMessages             Message[]       @relation("SentMessages")
 }
 
 enum Role {
   ADMIN
   CUSTOMER
+}
+
+model Conversation {
+  id               String              @id @default(cuid())
+  customerId       String
+  customer         User                @relation("CustomerConversations", fields: [customerId], references: [id])
+  status           ConversationStatus  @default(OPEN)
+  subject          String?
+  lastMessage      String?
+  lastMessageAt    DateTime?
+  unreadByAdmin    Int                 @default(0)
+  unreadByCustomer Int                 @default(0)
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+  messages         Message[]
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
+  senderId       String
+  sender         User         @relation("SentMessages", fields: [senderId], references: [id])
+  senderRole     Role
+  content        String?
+  messageType    MessageType  @default(TEXT)
+  fileUrl        String?
+  fileName       String?
+  fileSize       Int?
+  isRead         Boolean      @default(false)
+  createdAt      DateTime     @default(now())
+}
+
+enum ConversationStatus {
+  OPEN
+  CLOSED
+  RESOLVED
+}
+
+enum MessageType {
+  TEXT
+  IMAGE
+  FILE
 }
 
 model Product {

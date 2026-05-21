@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CATTLEYA | My Artisanal Archive</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Cormorant+Garamond:ital,wght@1,300;1,400;1,600&amp;family=Inter:wght@300;400;500;600&amp;family=Newsreader:ital,wght@0,300;0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#c00017",
+                    "tertiary-fixed": "#d2e4ff",
+                    "surface-dim": "#dcd9d9",
+                    "tertiary-container": "#006ab4",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#ffdfdc",
+                    "on-background": "#1c1b1b",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-surface": "#1c1b1b",
+                    "inverse-surface": "#313030",
+                    "surface-container-highest": "#e5e2e1",
+                    "secondary-container": "#dddddd",
+                    "surface-variant": "#e5e2e1",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#e7bdb8",
+                    "on-tertiary-fixed": "#001c37",
+                    "on-surface-variant": "#5d3f3c",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#9fcaff",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#5d5f5f",
+                    "on-tertiary-container": "#d9e8ff",
+                    "primary-fixed-dim": "#ffb3ac",
+                    "on-primary-fixed": "#410003",
+                    "tertiary": "#00518c",
+                    "background": "#fcf9f8",
+                    "surface-container-low": "#f6f3f2",
+                    "primary-container": "#d0021b",
+                    "surface-container-high": "#ebe7e7",
+                    "primary": "#a30012",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#f3f0ef",
+                    "on-secondary-fixed-variant": "#454747",
+                    "inverse-primary": "#ffb3ac",
+                    "primary-fixed": "#ffdad6",
+                    "surface": "#fcf9f8",
+                    "on-primary-fixed-variant": "#93000f",
+                    "on-tertiary-fixed-variant": "#00497e",
+                    "surface-container": "#f0edec",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#fcf9f8",
+                    "outline": "#926e6b",
+                    "on-secondary-container": "#606161",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader"],
+                    "body": ["Inter"],
+                    "label": ["Inter"],
+                    "cinzel": ["Cinzel"],
+                    "cormorant": ["Cormorant Garamond"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .plasma-gradient {
+        background: linear-gradient(135deg, #a30012 0%, #d0021b 100%);
+      }
+      .mercury-card-hover:hover {
+        border-left: 4px solid #a30012;
+        background-color: #e5e2e1;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-[#313030] dark:bg-[#1c1b1b] flex justify-between items-center px-12 h-20 w-full docked full-width top-0 z-50 shadow-2xl shadow-black/20">
+<div class="text-2xl font-light tracking-[0.2em] text-white font-['Newsreader'] uppercase">CATTLEYA</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-['Newsreader'] uppercase tracking-widest text-sm text-stone-300 hover:text-white transition-colors duration-300" href="#">Collections</a>
+<a class="font-['Newsreader'] uppercase tracking-widest text-sm text-stone-300 hover:text-white transition-colors duration-300" href="#">Bespoke</a>
+<a class="font-['Newsreader'] uppercase tracking-widest text-sm text-stone-300 hover:text-white transition-colors duration-300" href="#">Editorial</a>
+<a class="font-['Newsreader'] uppercase tracking-widest text-sm text-stone-300 hover:text-white transition-colors duration-300" href="#">Archive</a>
+</div>
+<div class="flex items-center gap-6 text-white">
+<button class="material-symbols-outlined hover:scale-95 duration-200" data-icon="shopping_bag">shopping_bag</button>
+<button class="material-symbols-outlined hover:scale-95 duration-200" data-icon="account_circle">account_circle</button>
+</div>
+</nav>
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="bg-[#f6f3f2] dark:bg-[#1c1b1b] h-screen w-72 fixed left-0 top-20 flex flex-col pt-12 z-40">
+<div class="px-8 mb-10">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high">
+<img alt="User profile portrait" data-alt="Portrait of a sophisticated man in a dark linen suit with soft cinematic lighting against a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLy_8d1ghwpZ3YYmXhvfvjZ3BqlguFmetAdOgNxwOndcDwYF-DTg-QhqDhApmgJuCAnDHm_d7_jerMjk2ti-QEw9AXm2Tv8Awf0Jul3pu9zPU10f3ajc7gEXFe20J_7Ew3MTMj0IZwAoKRPr8qHwjLgHpp1O3emgJqeX-AXVKdhgpILVWMhXN4rbcagiw_jXZy3HsxWDu1h-xaifkUc2aBihlou_nARUeqCY6PwpsKjfhs4LZF9QLVVfOD0Ixdt5CROCFbOANxmvc"/>
+</div>
+<div>
+<p class="font-headline italic text-lg capitalize text-on-surface">Valued Patron</p>
+<p class="text-xs tracking-widest uppercase opacity-60">Premium Member</p>
+</div>
+</div>
+</div>
+<nav class="flex flex-col">
+<a class="text-stone-600 dark:text-stone-400 pl-6 py-4 hover:bg-[#f0edec] font-headline italic text-lg capitalize hover:pl-8 transition-all duration-300 ease-out flex items-center gap-4" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="shopping_basket">shopping_basket</span>
+<span>Orders</span>
+</a>
+<a class="border-l-4 border-[#d0021b] bg-[#ebe7e7] dark:bg-stone-800 text-[#a30012] font-semibold pl-6 py-4 font-headline italic text-lg capitalize hover:pl-8 transition-all duration-300 ease-out flex items-center gap-4" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="palette" style="font-variation-settings: 'FILL' 1;">palette</span>
+<span>My Designs</span>
+</a>
+<a class="text-stone-600 dark:text-stone-400 pl-6 py-4 hover:bg-[#f0edec] font-headline italic text-lg capitalize hover:pl-8 transition-all duration-300 ease-out flex items-center gap-4" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="heart_plus">heart_plus</span>
+<span>Wishlist</span>
+</a>
+<a class="text-stone-600 dark:text-stone-400 pl-6 py-4 hover:bg-[#f0edec] font-headline italic text-lg capitalize hover:pl-8 transition-all duration-300 ease-out flex items-center gap-4" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="location_on">location_on</span>
+<span>Addresses</span>
+</a>
+<a class="text-stone-600 dark:text-stone-400 pl-6 py-4 hover:bg-[#f0edec] font-headline italic text-lg capitalize hover:pl-8 transition-all duration-300 ease-out flex items-center gap-4" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto p-8">
+<button class="plasma-gradient text-white w-full py-4 text-xs font-bold tracking-[0.2em] uppercase rounded shadow-lg shadow-primary/20 hover:scale-[0.98] transition-transform">
+                    Start New Design
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-72 pt-32 px-16 pb-20 bg-surface">
+<!-- Header Section -->
+<header class="mb-16">
+<h1 class="font-cinzel text-5xl tracking-[0.15em] text-on-background mb-4">MY ARTISANAL ARCHIVE</h1>
+<p class="font-cormorant text-2xl italic text-on-surface-variant max-w-2xl">A curated collection of your unique visions, waiting to be woven into reality.</p>
+</header>
+<!-- Search & Filter Bar -->
+<section class="mb-12 flex flex-col md:flex-row gap-6 items-center justify-between">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary rounded-lg pl-12 pr-4 py-4 text-sm font-label" placeholder="Search your archive..." type="text"/>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container border-none text-xs font-bold tracking-widest uppercase hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                        Sort By: Recent
+                    </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container border-none text-xs font-bold tracking-widest uppercase hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="grid_view">grid_view</span>
+                        View
+                    </button>
+</div>
+</section>
+<!-- Design Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Card 1: Approved -->
+<article class="group bg-surface-container-high mercury-card-hover transition-all duration-300 flex flex-col overflow-hidden">
+<div class="aspect-square overflow-hidden relative">
+<img alt="Batik Pattern" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Intricate indigo and cream batik pattern with celestial motifs, hand-drawn aesthetic, high-contrast textile detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT7k7PqZ1NVg-ASso9yZn83b7ACobSvPrsG8OSvz3_DY-zgxfmWeZCXMNHP3DLzjEiKHMFSR3hUbnaENufFQblBrEk5a0ahhnd_G1T3GuPjUD0SuHfn5sd7HwAG2_sclXwAz61D3a5Fu4G1U1ssGAoUQGHmHDOkf0kOY-otxJAYnMOicfNTSa2FXoJ-jYUshEGCxb6aMa4Q-ZuCrhDQ3nO4p_cAyTuwHvol6PTRlFKwkveAA5h1KeFsN3viFLZVn5qmY_o4Prj4TU"/>
+<div class="absolute top-4 right-4">
+<span class="bg-primary-container text-white px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full">Approved</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-1">
+<h3 class="font-headline text-xl mb-2 italic">Celestial Indigo Mandala</h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mb-6 font-label">"Deep ocean blues swirling with star-born geometry, reminiscent of Javanese night skies..."</p>
+<div class="mt-auto flex items-center justify-between">
+<button class="text-[10px] font-bold tracking-widest uppercase text-primary hover:underline decoration-2 underline-offset-4">Order on Fabric</button>
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-stone-400 hover:text-on-surface" data-icon="visibility">visibility</button>
+<button class="material-symbols-outlined text-stone-400 hover:text-error" data-icon="delete">delete</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 2: Generating -->
+<article class="group bg-surface-container-high mercury-card-hover transition-all duration-300 flex flex-col overflow-hidden">
+<div class="aspect-square relative flex items-center justify-center bg-surface-container-highest overflow-hidden">
+<div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]"></div>
+<div class="z-10 flex flex-col items-center gap-4">
+<div class="w-12 h-12 border-2 border-primary/20 border-t-primary rounded-full animate-spin"></div>
+<span class="text-[10px] font-bold tracking-widest uppercase text-tertiary-container">Generating Archival Art...</span>
+</div>
+<img alt="Blurry Pattern" class="absolute inset-0 w-full h-full object-cover blur-md opacity-30" data-alt="Abstract soft flow of crimson and gold paint swirling in water, ethereal blurred background texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1OYE9PRgXQt31u9x9aOGLKZidyOuKMKWJb76B5M97qYZMtAwpp5P_5NjQPJ2oSv1h2Zsa24CMfeY4zP-JU_fmsHMkNE-g-QFKXFgrtjb0o6TXZhvpj0Ix5QXwHjxjFR1Y_WsYg2C-PIy9B59xSUBozbpbZI5CoNhsM_CaZuu-j21TqsYvPW8BiBJqUJ-6vsdBjX1_RnvPMrzCnjkGvEeh9X4b8CQ4J1sNbM2GoK1S8UvKiF-pkAgAwiiufvLnFVtiZB0eNcTlrgY"/>
+</div>
+<div class="p-8 flex flex-col flex-1">
+<h3 class="font-headline text-xl mb-2 italic">Sunrise Over Borobudur</h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mb-6 font-label">"A gradient of saffron and terracotta, inspired by the ancient stone at dawn..."</p>
+<div class="mt-auto flex items-center justify-between opacity-50 pointer-events-none">
+<button class="text-[10px] font-bold tracking-widest uppercase">Order on Fabric</button>
+<div class="flex gap-4">
+<button class="material-symbols-outlined" data-icon="visibility">visibility</button>
+<button class="material-symbols-outlined" data-icon="delete">delete</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 3: Under Review -->
+<article class="group bg-surface-container-high mercury-card-hover transition-all duration-300 flex flex-col overflow-hidden">
+<div class="aspect-square overflow-hidden relative">
+<img alt="Batik Pattern" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Traditional Indonesian batik with earthy brown tones and organic floral shapes, fine wax-resist lines, artisan craftsmanship" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb3A8dKKiBk2zeoVDgKRYz12DIjb-zMmYgcgy1ul0bnDXbdyrvxoRncM5L1tUdp_I84OHmIYosY9g5rFyKi-x1lmkjEgUkbVP4AzyJ-_OT6dQg0iq_JThiFSOzcTCyREfqyr6UVZOS29UAdJFcbZYxvvdHim5n_1ssnnVSZ-Df4dhRreCbVpMZyP1h6lNJlpztLoomW1T_b-ce5-jJvalArjJKfAkND3Sel76xbLaNwrig_HcmHFo3YUXNqTt4MMPu5jWXtYabwqQ"/>
+<div class="absolute top-4 right-4">
+<span class="bg-orange-500 text-white px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full">Under Review</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-1">
+<h3 class="font-headline text-xl mb-2 italic">Sogan Earth Rhythm</h3>
+<p class="text-xs text-on-surface-variant line-clamp-2 mb-6 font-label">"Traditional Sogan hues meet contemporary minimalism, a study in balance and heritage."</p>
+<div class="mt-auto flex items-center justify-between">
+<button class="text-[10px] font-bold tracking-widest uppercase text-primary hover:underline decoration-2 underline-offset-4">Order on Fabric</button>
+<div class="flex gap-4">
+<button class="material-symbols-outlined text-stone-400 hover:text-on-surface" data-icon="visibility">visibility</button>
+<button class="material-symbols-outlined text-stone-400 hover:text-error" data-icon="delete">delete</button>
+</div>
+</div>
+</div>
+</article>
+</section>
+<!-- Empty State / Footer Call to Action -->
+<section class="mt-32 py-20 flex flex-col items-center text-center border-t border-surface-container-high">
+<span class="material-symbols-outlined text-6xl text-primary-fixed-dim mb-6" data-icon="auto_awesome">auto_awesome</span>
+<h2 class="font-cinzel text-3xl tracking-widest mb-4">BEGIN YOUR ARTISANAL JOURNEY</h2>
+<p class="font-cormorant text-xl italic text-on-surface-variant mb-10 max-w-md">The canvas of heaven is infinite. Forge your own legacy with our AI Studio.</p>
+<button class="plasma-gradient text-white px-12 py-5 text-sm font-bold tracking-[0.2em] uppercase rounded-sm hover:scale-[0.98] transition-all">
+                    Access AI Studio
+                </button>
+</section>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-[#313030] dark:bg-[#0d0d0d] flex flex-col items-center gap-8 w-full border-t border-stone-800 py-16">
+<div class="text-white opacity-50 text-2xl font-light tracking-[0.2em] font-headline uppercase">CATTLEYA</div>
+<div class="flex gap-12">
+<a class="font-['Newsreader'] text-xs tracking-wider uppercase text-stone-500 hover:text-[#d0021b] transition-colors" href="#">Artisanship</a>
+<a class="font-['Newsreader'] text-xs tracking-wider uppercase text-stone-500 hover:text-[#d0021b] transition-colors" href="#">Sustainability</a>
+<a class="font-['Newsreader'] text-xs tracking-wider uppercase text-stone-500 hover:text-[#d0021b] transition-colors" href="#">Concierge</a>
+<a class="font-['Newsreader'] text-xs tracking-wider uppercase text-stone-500 hover:text-[#d0021b] transition-colors" href="#">Heritage</a>
+</div>
+<p class="font-['Newsreader'] text-xs tracking-wider uppercase text-stone-500 mt-4">© 2024 CATTLEYA. THE IMMENSE BEAUTY OF HEAVEN.</p>
+</footer>
+</body></html>

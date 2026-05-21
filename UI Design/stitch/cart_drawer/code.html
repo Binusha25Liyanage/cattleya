@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;family=Inter:wght@300;400;600&amp;family=Newsreader:opsz,wght@6-72,400;6-72,700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-container": "#006ab4",
+                        "secondary-container": "#dddddd",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "background": "#fcf9f8",
+                        "inverse-primary": "#ffb3ac",
+                        "tertiary-fixed": "#d2e4ff",
+                        "on-tertiary-fixed-variant": "#00497e",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-container-high": "#ebe7e7",
+                        "on-primary-container": "#ffdfdc",
+                        "tertiary": "#00518c",
+                        "primary": "#a30012",
+                        "on-secondary-container": "#606161",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "surface-dim": "#dcd9d9",
+                        "primary-fixed": "#ffdad6",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "surface-tint": "#c00017",
+                        "on-tertiary-container": "#d9e8ff",
+                        "on-surface": "#1c1b1b",
+                        "on-surface-variant": "#5d3f3c",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#d0021b",
+                        "tertiary-fixed-dim": "#9fcaff",
+                        "secondary": "#5d5f5f",
+                        "outline": "#926e6b",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#001c37",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container": "#f0edec",
+                        "on-primary-fixed": "#410003",
+                        "outline-variant": "#e7bdb8",
+                        "surface-bright": "#fcf9f8",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-primary-fixed-variant": "#93000f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "cinzel": ["Cinzel"],
+                        "cormorant": ["Cormorant Garamond"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .plasma-gradient {
+            background: linear-gradient(135deg, #a30012 0%, #d0021b 100%);
+        }
+        .mercury-gradient {
+            background: linear-gradient(135deg, #e2e2e2 0%, #c6c6c6 100%);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased overflow-hidden">
+<!-- Main Content Background (Simulated Page) -->
+<main class="min-h-screen p-8 md:p-24 opacity-40 blur-sm">
+<header class="mb-24">
+<h1 class="font-cinzel text-6xl tracking-[0.4em] uppercase text-on-background mb-4">CATTLEYA</h1>
+<p class="font-cormorant italic text-2xl text-secondary">The Immense Beauty of Heaven</p>
+</header>
+<section class="grid grid-cols-2 gap-12">
+<div class="aspect-[3/4] bg-surface-container-high" data-alt="Close up of intricate red and gold batik fabric hanging in a minimalist luxury gallery setting"></div>
+<div class="aspect-[3/4] bg-surface-container-high" data-alt="Ethereal fashion editorial photo of a woman in flowing silk batik dress against a celestial background"></div>
+</section>
+</main>
+<!-- Overlay / Backdrop -->
+<div class="fixed inset-0 bg-on-background/30 backdrop-blur-sm z-[90]"></div>
+<!-- NavigationDrawer (Cart Drawer) Execution -->
+<aside class="fixed right-0 top-0 h-screen z-[100] w-full max-w-md bg-[#1c1b1b] text-[#fcf9f8] flex flex-col shadow-2xl transition-transform duration-500 transform font-cinzel">
+<!-- Header -->
+<div class="p-10 flex justify-between items-center border-b border-[#313030]">
+<div>
+<h2 class="text-2xl font-light tracking-[0.3em] uppercase">CATTLEYA</h2>
+<p class="font-cormorant italic tracking-normal text-sm text-surface-variant/60 mt-1 lowercase">your selected treasures</p>
+</div>
+<button class="hover:opacity-50 transition-opacity">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<!-- Cart Items Scrollable Area -->
+<div class="flex-1 overflow-y-auto hide-scrollbar p-10 space-y-12">
+<!-- Item 1 -->
+<div class="flex gap-6 group">
+<div class="w-24 h-32 flex-shrink-0 overflow-hidden bg-[#313030]">
+<img alt="Batik Silk Scarf" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Exquisite silk batik scarf with traditional Javanese patterns in deep red and cream tones, dramatic side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSPlhs4zpMzeX2trgYqaRo2AQhMdgjD-2lHbBVyoDXpvG1pM4HxruTtExEqzXrwlXNZ8IGd0Pjb03NDEI2hpFygbvFNtG9JUTA8CuvUVInsSFvqD6-9R3Z85nN_5knkLeFUDJ9hhLDRP2ElkZxKwYRAMwc_neSllAkxA8O0aFT-7SRZvW3DTSJ7pfBShss4xOTbdA6sg8VwaOCZawbdn_4JVox8SLs96YtbfQbnfPcVnz6HvEgOaoQ6X8ZGPh2ENCh2DqkfRKmlBU"/>
+</div>
+<div class="flex flex-col justify-between py-1 flex-1">
+<div>
+<h3 class="text-sm tracking-widest uppercase font-bold">Nirvana Silk Scarf</h3>
+<p class="font-cormorant italic text-sm text-[#ebe7e7]/60 tracking-normal mt-1 capitalize">Hand-drawn Canting Technique</p>
+<p class="text-[10px] tracking-[0.2em] text-[#d0021b] mt-2 uppercase">Variant: Crimson Gold</p>
+</div>
+<div class="flex justify-between items-end">
+<div class="flex items-center gap-4 text-xs border border-[#313030] px-3 py-1">
+<button class="hover:text-[#d0021b] transition-colors">-</button>
+<span class="font-body">01</span>
+<button class="hover:text-[#d0021b] transition-colors">+</button>
+</div>
+<p class="text-xs tracking-[0.1em] font-body">$450.00</p>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-6 group">
+<div class="w-24 h-32 flex-shrink-0 overflow-hidden bg-[#313030]">
+<img alt="Heritage Batik Robe" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Luxurious full-length batik robe with oversized floral motifs in indigo and mercury shades, editorial studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7fgcg02ufYZ9R0x7W3FTdJU9UIrm5Q_qgb2eBuXiVfuclvICIhwEh4_ruGVV6rDdfRZyzbmRqmV76kXjLVoF4l4H7_qdXp_omvsrw2ImCcISCsBw_XtqKg4xrEZhHNqOPfYMa3WAyN59njmRS5rg8SpPt03-Pa9npHqQApopNs5LS0sFsnDR_TkVyevGeN2oaMZqQVUrrPtBAIreKM1mQtl_r_dDMXDfQjynNCy-JZuTvWc6NkQxZM-5VfYMdeRAlclMk9qAzOzY"/>
+</div>
+<div class="flex flex-col justify-between py-1 flex-1">
+<div>
+<h3 class="text-sm tracking-widest uppercase font-bold">Celestial Kaftan</h3>
+<p class="font-cormorant italic text-sm text-[#ebe7e7]/60 tracking-normal mt-1 capitalize">Heritage Artisanal Series</p>
+<p class="text-[10px] tracking-[0.2em] text-[#d0021b] mt-2 uppercase">Size: One Size</p>
+</div>
+<div class="flex justify-between items-end">
+<div class="flex items-center gap-4 text-xs border border-[#313030] px-3 py-1">
+<button class="hover:text-[#d0021b] transition-colors">-</button>
+<span class="font-body">01</span>
+<button class="hover:text-[#d0021b] transition-colors">+</button>
+</div>
+<p class="text-xs tracking-[0.1em] font-body">$1,280.00</p>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex gap-6 group">
+<div class="w-24 h-32 flex-shrink-0 overflow-hidden bg-[#313030]">
+<img alt="Batik Pattern Detail" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Close up detail of hand-painted batik wax patterns on white linen, ethereal morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrDphExAQq2H3a5EAj--pJtz15ofVOSjZtg5ZNGFXvDRmAgvhFd-lGnyel_ZsERiBHvyJrVqEU-OmC3Mmk2HjziRMOFyES5bZyAeb-n7kG9FArizOH83FfIF7kLGzlxXovunPLMlw8TN_Z_kpYkiJWXdkrDceiQqbhCK4B1CkZKpmApvPNkvYvTQCOxpyPyjB_ENybDMUChFmuesNXrto-MXMggjjKC6QE-COpRq_74VEVdIpSPzuoSYZNXmLPQ6lKFdItcTm8TD0"/>
+</div>
+<div class="flex flex-col justify-between py-1 flex-1">
+<div>
+<h3 class="text-sm tracking-widest uppercase font-bold">Artisan Linen Wrap</h3>
+<p class="font-cormorant italic text-sm text-[#ebe7e7]/60 tracking-normal mt-1 capitalize">Summer Atelier Collection</p>
+<p class="text-[10px] tracking-[0.2em] text-[#d0021b] mt-2 uppercase">Variant: Mercury Mist</p>
+</div>
+<div class="flex justify-between items-end">
+<div class="flex items-center gap-4 text-xs border border-[#313030] px-3 py-1">
+<button class="hover:text-[#d0021b] transition-colors">-</button>
+<span class="font-body">02</span>
+<button class="hover:text-[#d0021b] transition-colors">+</button>
+</div>
+<p class="text-xs tracking-[0.1em] font-body">$640.00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Footer -->
+<div class="p-10 bg-[#0d0d0d] border-t border-[#313030]">
+<div class="flex justify-between items-center mb-8">
+<span class="text-xs tracking-[0.3em] uppercase opacity-60">Subtotal</span>
+<span class="text-lg tracking-[0.1em] font-body font-light">$2,370.00</span>
+</div>
+<div class="space-y-4">
+<!-- Proceed to Checkout (Plasma Red Filled) -->
+<button class="w-full plasma-gradient py-5 text-on-primary tracking-[0.3em] uppercase text-xs font-bold hover:opacity-90 transition-all active:scale-[0.98]">
+                    Proceed to Checkout
+                </button>
+<!-- View Cart (Mercury Outline) -->
+<button class="w-full border border-[#ebe7e7]/20 py-5 text-[#ebe7e7] tracking-[0.3em] uppercase text-xs hover:bg-[#ebe7e7]/5 transition-all">
+                    View Cart
+                </button>
+</div>
+<p class="mt-8 text-center text-[10px] text-[#606161] tracking-[0.1em] uppercase">
+                Complimentary Shipping &amp; Artful Packaging Included
+            </p>
+</div>
+</aside>
+<!-- Top Navigation (Background Reference) -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-20 bg-[#fcf9f8]/80 backdrop-blur-xl shadow-[0_32px_64px_-15px_rgba(28,27,27,0.04)]">
+<div class="text-2xl font-normal tracking-[0.3em] text-[#1c1b1b] font-cinzel">CATTLEYA</div>
+<div class="hidden md:flex gap-10 font-cinzel tracking-[0.2em] uppercase text-sm">
+<a class="text-[#313030] hover:text-[#d0021b] transition-colors" href="#">Collections</a>
+<a class="text-[#313030] hover:text-[#d0021b] transition-colors" href="#">Artisanal</a>
+<a class="text-[#d0021b] font-bold border-b-2 border-[#d0021b] pb-1" href="#">Gallery</a>
+<a class="text-[#313030] hover:text-[#d0021b] transition-colors" href="#">Heritage</a>
+</div>
+<div class="flex gap-6 items-center">
+<span class="material-symbols-outlined text-[#1c1b1b]">person</span>
+<div class="relative">
+<span class="material-symbols-outlined text-[#d0021b]" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-[#d0021b] rounded-full"></span>
+</div>
+</div>
+</nav>
+</body></html>

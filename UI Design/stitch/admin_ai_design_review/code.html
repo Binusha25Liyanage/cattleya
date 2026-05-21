@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CATTLEYA Admin | AI Design Review</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;family=Inter:wght@300;400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-container": "#006ab4",
+                        "secondary-container": "#dddddd",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "background": "#fcf9f8",
+                        "inverse-primary": "#ffb3ac",
+                        "tertiary-fixed": "#d2e4ff",
+                        "on-tertiary-fixed-variant": "#00497e",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-container-high": "#ebe7e7",
+                        "on-primary-container": "#ffdfdc",
+                        "tertiary": "#00518c",
+                        "primary": "#a30012",
+                        "on-secondary-container": "#606161",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "surface-dim": "#dcd9d9",
+                        "primary-fixed": "#ffdad6",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "surface-tint": "#c00017",
+                        "on-tertiary-container": "#d9e8ff",
+                        "on-surface": "#1c1b1b",
+                        "on-surface-variant": "#5d3f3c",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#d0021b",
+                        "tertiary-fixed-dim": "#9fcaff",
+                        "secondary": "#5d5f5f",
+                        "outline": "#926e6b",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#001c37",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container": "#f0edec",
+                        "on-primary-fixed": "#410003",
+                        "outline-variant": "#e7bdb8",
+                        "surface-bright": "#fcf9f8",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-primary-fixed-variant": "#93000f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "cinzel": ["Cinzel", "serif"],
+                        "garamond": ["Cormorant Garamond", "serif"],
+                        "inter": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .plasma-gradient {
+            background: linear-gradient(135deg, #a30012 0%, #d0021b 100%);
+        }
+        .mercury-glow {
+            box-shadow: 0 32px 64px -12px rgba(28, 27, 27, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-inter antialiased">
+<!-- SideNavBar Anchor -->
+<aside class="bg-[#313030] dark:bg-[#1c1b1b] rounded-none w-72 h-screen fixed left-0 top-0 shadow-2xl shadow-black/20 flex flex-col py-8 px-6 z-50">
+<div class="mb-10">
+<h1 class="font-cinzel tracking-[0.2em] uppercase text-white text-2xl font-black">CATTLEYA</h1>
+<p class="font-garamond italic text-[#ebe7e7]/60 text-sm">Admin Portal</p>
+</div>
+<button class="plasma-gradient text-white font-bold py-4 mb-10 rounded-sm flex items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined">add</span>
+            New Design
+        </button>
+<nav class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-4 px-4 py-3 text-[#ebe7e7]/60 hover:text-white hover:bg-[#ebe7e7]/10 transition-colors rounded-sm" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-inter">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#ebe7e7]/60 hover:text-white hover:bg-[#ebe7e7]/10 transition-colors rounded-sm" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-inter">Valued Patrons</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-white font-bold bg-[#d0021b] rounded-sm transition-all duration-300 shadow-lg shadow-[#d0021b]/20" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-inter">Design Review</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#ebe7e7]/60 hover:text-white hover:bg-[#ebe7e7]/10 transition-colors rounded-sm" href="#">
+<span class="material-symbols-outlined">palette</span>
+<span class="font-inter">Batik Gallery</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#ebe7e7]/60 hover:text-white hover:bg-[#ebe7e7]/10 transition-colors rounded-sm" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-inter">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 flex items-center gap-4 border-t border-white/10">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Admin Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional male creative director with glasses in a modern minimalist office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNCL6rnA9LNCaCZAXypFbmtHxgr3tSAbzSd0E0p-_smEWapb6EBK0sql9TgGr3OgsaxzrYuKWewlMmhychh6zke52T8WL9uvy9ju6E9islWO0qkNikwYbMyQQA6E_mtYi2pvcYxzV2zXGCZWd3-ZI1nkbgg4t0RZ8otks0ZxeTRj8TuxsHh_MWRpNkJyH9q52JUkQ3TOtetvilJvce-SVmKE5ZQR9W3Hu8W1Cu2rrbD_xbmNzuqJWNO-iCVwQomAdSY4ZvJkfgWR4"/>
+</div>
+<div>
+<p class="text-white text-sm font-bold">Julian Rossi</p>
+<p class="text-[#ebe7e7]/40 text-xs">Lead Curator</p>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-72 min-h-screen bg-background">
+<!-- TopAppBar Anchor -->
+<header class="bg-[#fcf9f8]/80 dark:bg-[#1c1b1b]/80 backdrop-blur-xl sticky top-0 z-40 flex justify-between items-center px-10 py-6 w-full">
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu_open</span>
+<h2 class="font-cinzel text-3xl tracking-widest text-on-background uppercase font-bold">Admin Overview</h2>
+</div>
+<div class="flex items-center gap-8">
+<div class="relative flex items-center bg-surface-container-low px-4 py-2 rounded-sm group">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 font-inter" placeholder="Search designs..." type="text"/>
+</div>
+<div class="flex items-center gap-6 text-on-surface-variant">
+<button class="hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="hover:text-primary transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Content Content -->
+<div class="p-10">
+<!-- Header Section -->
+<div class="mb-12">
+<p class="font-garamond italic text-primary text-xl mb-2">Pending Submissions</p>
+<h3 class="font-cinzel text-4xl tracking-tight text-on-background font-black mb-4">AI DESIGN REVIEW</h3>
+<div class="h-[1px] w-24 bg-primary-container"></div>
+</div>
+<!-- Review Grid (Asymmetric Bento-Inspired Layout) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Card 1 -->
+<div class="group flex flex-col bg-surface-container-high mercury-glow overflow-hidden transition-all duration-500 hover:bg-surface-container-highest border-l-0 hover:border-l-4 hover:border-primary">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img alt="Batik Design" class="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" data-alt="Intricate golden batik floral patterns on a deep indigo silk fabric with soft ethereal lighting reflecting off the sheen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_whoO9X82XvfaUJ4-CJNgz4SCB2klpw5wH5VrjS96-LcnEwxtvWp1v1DaV8if0xB6AWScXtVuxjRqf4X_q6r5TUqDaHfBszlt0TLXYGSqe1S5xSxsG1lbeGk-TCXT9z7x1_6uAkZZVQ8CirVnxu0QKU2R9InwBm_JR-hv6ezlG-lOVVnC9SV8fX3tGPPapXHskME1y4Vhz2i8u5c2vXEYgKwKb4VS_-2vQCga5PD0xpZ9e-v0k00nrxJrm3ReWvGlf85DLT6zoc8"/>
+<div class="absolute top-4 left-4 bg-primary px-3 py-1 text-white text-[10px] tracking-widest uppercase font-bold">Priority</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<p class="font-garamond italic text-primary mb-1">Customer</p>
+<h4 class="font-inter font-bold text-lg mb-4 text-on-surface uppercase tracking-tight">Elowen Vance</h4>
+<div class="bg-surface-container-low p-4 mb-8">
+<p class="text-xs text-on-surface-variant leading-relaxed font-inter italic">
+                                "Celestial motifs merged with traditional Parang patterns, focusing on nebula-like transitions in silk indigo and gold leaf."
+                            </p>
+</div>
+<div class="mt-auto grid grid-cols-2 gap-4">
+<button class="mercury-outline border border-outline-variant py-3 text-xs tracking-widest uppercase font-bold text-on-surface-variant hover:bg-on-background hover:text-white transition-all">Reject</button>
+<button class="plasma-gradient text-white py-3 text-xs tracking-widest uppercase font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all">Approve</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col bg-surface-container-high mercury-glow overflow-hidden transition-all duration-500 hover:bg-surface-container-highest border-l-0 hover:border-l-4 hover:border-primary">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img alt="Batik Design" class="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" data-alt="Abstract batik design featuring geometric crimson patterns mixed with organic vine-like movements on high-end heavy linen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9f5IlJVf1npXKopVOSZZ51gAEsxiH1ub-KNc2ijdypMNHPw6BuQ8sV0IwCGYWjPX8tocRKlykpLsIfwGE3KNw_Ev6q-JfvrjyEDjUtn1uvf8KoolPElId7_87s626SbH4-Xrcw06mt4jmLJ5ODec4JYNEICL243g8KLdQ-Ah8liWXg5KB0Pr8DYGOIWlvLdB8G1sBUw-90Y_H4A7_7csoSADLpu0g-c3oAhIBCkaEkzndjaFJONMK9WVFm9qclyr1xp7meSBVXk8"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<p class="font-garamond italic text-primary mb-1">Customer</p>
+<h4 class="font-inter font-bold text-lg mb-4 text-on-surface uppercase tracking-tight">Soren Kaelo</h4>
+<div class="bg-surface-container-low p-4 mb-8">
+<p class="text-xs text-on-surface-variant leading-relaxed font-inter italic">
+                                "A modern minimalist take on Megamendung clouds, using sharp geometric lines and a monochrome palette with blood-red accents."
+                            </p>
+</div>
+<div class="mt-auto grid grid-cols-2 gap-4">
+<button class="mercury-outline border border-outline-variant py-3 text-xs tracking-widest uppercase font-bold text-on-surface-variant hover:bg-on-background hover:text-white transition-all">Reject</button>
+<button class="plasma-gradient text-white py-3 text-xs tracking-widest uppercase font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all">Approve</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col bg-surface-container-high mercury-glow overflow-hidden transition-all duration-500 hover:bg-surface-container-highest border-l-0 hover:border-l-4 hover:border-primary">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img alt="Batik Design" class="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" data-alt="Traditional Indonesian Kawung pattern with a contemporary twist of emerald green and copper metallic thread highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx0m0ERsMlBR8CmKf6RXnB6Izd8CRz3aGAm0VM8_jZ9D8LuCq4qkREr7g0Pv0cq8kza3r5Ajvl3JgadN94qgusmgE2OCR3KE1GKeRHdnzPcmfFVfIJUqbee3G1zzO3IDPADMgJUCaxvuo_W-VywgFqJXU3fpzA4y8s_Ww0TCMGgMFBtFE1eVWV3NlbL2xkatbgU257KLUsEImjzKw9LiO2BDdmJJsKrKqd9mI-e9ZEm3Opt2ehXjA9tH45VG8xIGbqUKVIyy5VsNI"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<p class="font-garamond italic text-primary mb-1">Customer</p>
+<h4 class="font-inter font-bold text-lg mb-4 text-on-surface uppercase tracking-tight">Arianna Thorne</h4>
+<div class="bg-surface-container-low p-4 mb-8">
+<p class="text-xs text-on-surface-variant leading-relaxed font-inter italic">
+                                "Kawung patterns reimagined for high-fashion runway, emphasizing the circular geometry with emerald dyes and metallic finishes."
+                            </p>
+</div>
+<div class="mt-auto grid grid-cols-2 gap-4">
+<button class="mercury-outline border border-outline-variant py-3 text-xs tracking-widest uppercase font-bold text-on-surface-variant hover:bg-on-background hover:text-white transition-all">Reject</button>
+<button class="plasma-gradient text-white py-3 text-xs tracking-widest uppercase font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all">Approve</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group flex flex-col bg-surface-container-high mercury-glow overflow-hidden transition-all duration-500 hover:bg-surface-container-highest border-l-0 hover:border-l-4 hover:border-primary lg:col-span-2 md:flex-row">
+<div class="md:w-1/2 overflow-hidden relative">
+<img alt="Batik Design" class="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" data-alt="Macro photography of luxurious batik fabric with fine crackle wax texture and detailed floral motifs in earthy ochre tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj30xsQamKx-TBiUznETvOfNyM32B0tIIP2tGonMT51PfpT0K5DCAgf3_d8A3xpVHpuV8cLuEPMTVDj6jSW_9TE5qNuUPM_nvvEd0ixtl9nUBwxNpuzM0LZ00gG4Pi36WdlLtHa6QMheJMK2vbZzS3D2byk3tu5SA3XhpWSgqDtBNPLBweF3tUgOyHJxMSF0h9ZBbOB31OcTmORg64LPp-ucfwbxwD1Sy2tsvza2L3672AjhsD62BGgh6RvGXslLMyjHi7O2tge38"/>
+<div class="absolute bottom-4 right-4 bg-on-background px-3 py-1 text-white text-[10px] tracking-widest uppercase font-bold">Premium Tier</div>
+</div>
+<div class="p-10 flex flex-col flex-grow md:w-1/2">
+<p class="font-garamond italic text-primary mb-1">Customer</p>
+<h4 class="font-inter font-bold text-2xl mb-6 text-on-surface uppercase tracking-tight">Marcus Valerius</h4>
+<div class="bg-surface-container-low p-6 mb-10">
+<p class="text-sm text-on-surface-variant leading-relaxed font-inter italic">
+                                "An expansive narrative tapestry design representing the four seasons using traditional Indonesian flora and fauna. Earth tones with heavy crackle texture."
+                            </p>
+</div>
+<div class="mt-auto flex gap-4">
+<button class="mercury-outline border border-outline-variant px-8 py-4 text-xs tracking-widest uppercase font-bold text-on-surface-variant hover:bg-on-background hover:text-white transition-all flex-grow">Reject Design</button>
+<button class="plasma-gradient text-white px-8 py-4 text-xs tracking-widest uppercase font-bold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all flex-grow">Approve for Production</button>
+</div>
+</div>
+</div>
+<!-- Empty State/Stats Bento -->
+<div class="bg-inverse-surface p-10 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-primary text-6xl mb-6" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h5 class="text-white font-cinzel text-xl tracking-widest mb-4">AI ANALYTICS</h5>
+<p class="text-white/60 text-sm font-inter mb-8">89% of current designs align with Summer '24 editorial themes.</p>
+<div class="w-full h-1 bg-white/10 mb-2">
+<div class="w-4/5 h-full bg-primary"></div>
+</div>
+<div class="flex justify-between w-full text-[10px] uppercase font-bold tracking-tighter text-white/40">
+<span>Consistency Score</span>
+<span>82/100</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Visual Anchor -->
+<footer class="mt-20 px-10 py-12 bg-on-background text-white flex justify-between items-end">
+<div>
+<h2 class="font-cinzel text-xl tracking-[0.3em] mb-4">CATTLEYA</h2>
+<p class="font-garamond italic text-white/40 text-sm">"The Immense Beauty of Heaven"</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] uppercase tracking-widest text-white/30 mb-2">System Status</p>
+<div class="flex items-center gap-2 justify-end">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<p class="text-xs font-inter font-bold">Design Core Active</p>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

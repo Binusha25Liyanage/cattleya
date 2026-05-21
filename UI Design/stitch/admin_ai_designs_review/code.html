@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;family=Inter:wght@300;400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "on-primary-container": "#ffdfdc",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#606161",
+                    "tertiary-fixed": "#d2e4ff",
+                    "tertiary": "#00518c",
+                    "on-primary-fixed-variant": "#93000f",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#fcf9f8",
+                    "background": "#fcf9f8",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#ffb3ac",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#dcd9d9",
+                    "surface-container-high": "#ebe7e7",
+                    "surface-container": "#f0edec",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-background": "#1c1b1b",
+                    "primary-fixed-dim": "#ffb3ac",
+                    "surface-container-low": "#f6f3f2",
+                    "secondary-fixed": "#e2e2e2",
+                    "outline-variant": "#e7bdb8",
+                    "on-secondary-fixed-variant": "#454747",
+                    "tertiary-fixed-dim": "#9fcaff",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f3f0ef",
+                    "surface-tint": "#c00017",
+                    "outline": "#926e6b",
+                    "surface-variant": "#e5e2e1",
+                    "on-tertiary-fixed": "#001c37",
+                    "primary-container": "#d0021b",
+                    "primary": "#a30012",
+                    "secondary": "#5d5f5f",
+                    "primary-fixed": "#ffdad6",
+                    "surface-bright": "#fcf9f8",
+                    "surface-container-highest": "#e5e2e1",
+                    "secondary-container": "#dddddd",
+                    "on-surface": "#1c1b1b",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "tertiary-container": "#006ab4",
+                    "on-tertiary-fixed-variant": "#00497e",
+                    "inverse-surface": "#313030",
+                    "on-tertiary-container": "#d9e8ff",
+                    "on-primary-fixed": "#410003",
+                    "on-surface-variant": "#5d3f3c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Cinzel"],
+                    "editorial": ["Cormorant Garamond"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .plasma-gradient {
+        background: linear-gradient(135deg, #a30012 0%, #d0021b 100%);
+      }
+      .mercury-gradient {
+        background: linear-gradient(135deg, #e2e2e2 0%, #c6c6c6 100%);
+      }
+      .hide-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 bottom-0 flex flex-col py-8 bg-zinc-950 dark:bg-black w-64 shadow-2xl z-50">
+<div class="px-6 mb-12">
+<h1 class="font-headline text-lg text-white tracking-widest uppercase">CATTLEYA</h1>
+<p class="text-[10px] text-zinc-500 tracking-[0.3em] mt-1 uppercase">Ethereal Editorial</p>
+</div>
+<nav class="flex-1">
+<a class="text-zinc-400 hover:text-white px-6 py-4 flex items-center gap-3 font-['Inter'] text-xs font-light tracking-wide transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="insert_chart">insert_chart</span> Analytics
+            </a>
+<a class="text-zinc-400 hover:text-white px-6 py-4 flex items-center gap-3 font-['Inter'] text-xs font-light tracking-wide transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="group">group</span> Customers
+            </a>
+<!-- Active State for AI Reviews -->
+<a class="bg-red-700/10 text-red-500 border-l-4 border-red-700 px-6 py-4 flex items-center gap-3 font-['Inter'] text-xs font-light tracking-wide transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="psychology">psychology</span> AI Reviews
+            </a>
+<a class="text-zinc-400 hover:text-white px-6 py-4 flex items-center gap-3 font-['Inter'] text-xs font-light tracking-wide transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="grid_view">grid_view</span> Design Library
+            </a>
+<a class="text-zinc-400 hover:text-white px-6 py-4 flex items-center gap-3 font-['Inter'] text-xs font-light tracking-wide transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="settings">settings</span> Settings
+            </a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-3 plasma-gradient text-white text-[10px] font-bold tracking-[0.2em] uppercase rounded-lg hover:opacity-90 transition-opacity">
+                New Collection
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- Top Navigation Shell -->
+<header class="flex justify-between items-center px-12 py-6 w-full bg-white/80 backdrop-blur-xl sticky top-0 z-40 shadow-[0_32px_64px_rgba(28,27,27,0.04)]">
+<div>
+<h2 class="font-headline text-2xl font-light tracking-[0.4em] text-zinc-900">AI DESIGNS</h2>
+<p class="font-editorial italic text-on-surface-variant text-sm mt-1">Reviewing the Immense Beauty of Heaven</p>
+</div>
+<div class="flex items-center gap-8">
+<div class="flex gap-10 font-headline uppercase tracking-[0.2em] text-xs">
+<a class="text-zinc-500 hover:text-zinc-900 transition-opacity" href="#">Dashboard</a>
+<a class="text-zinc-500 hover:text-zinc-900 transition-opacity" href="#">Inventory</a>
+<a class="text-red-700 font-bold border-b-2 border-red-700" href="#">Collections</a>
+</div>
+<div class="flex items-center gap-4 text-zinc-600">
+<span class="material-symbols-outlined cursor-pointer hover:text-zinc-900" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-zinc-900" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<section class="p-12">
+<!-- Filter Bar Section -->
+<div class="flex justify-between items-end mb-12">
+<div class="flex gap-8">
+<button class="relative pb-2 text-xs font-bold tracking-[0.15em] uppercase border-b-2 border-primary text-primary">All Designs</button>
+<button class="pb-2 text-xs font-medium tracking-[0.15em] uppercase border-b-2 border-transparent text-zinc-400 hover:text-zinc-600">Pending</button>
+<button class="pb-2 text-xs font-medium tracking-[0.15em] uppercase border-b-2 border-transparent text-zinc-400 hover:text-zinc-600">Approved</button>
+<button class="pb-2 text-xs font-medium tracking-[0.15em] uppercase border-b-2 border-transparent text-zinc-400 hover:text-zinc-600">Rejected</button>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-low px-4 py-2 flex items-center gap-3">
+<span class="material-symbols-outlined text-zinc-400 text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs font-body tracking-wide w-48 placeholder:text-zinc-400" placeholder="Search by customer..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Bento-Style Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+<!-- Card 1 -->
+<div class="group bg-surface-container-high hover:bg-surface-container-highest transition-all duration-300 relative">
+<div class="absolute left-0 top-0 bottom-0 w-0 group-hover:w-1 bg-primary transition-all duration-300"></div>
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Intricate indigo batik fabric pattern with floral motifs and gold thread details in soft natural morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhCW-PQwnnks1E_D5tZhqZJqCKZJSDQCgKhtwu9pSg0gAM9R_CY2Ibwv8Mou5_selBpo1SUMUHk7A94Hl-BLCkl3Hnpk5Ch_AxuFg6zT_G6onvBWMSwMUehkrYlr08PZU8HOBkmuiyevLVX_iZhLVptJUypqcIrU4vs6lpT0223DkFBMGycuTdDqXraMhvpLSz82U2VHmwn7CDdGqZyQmsbB5mOA3e6lDQhvFTC8bXdGCZF-WEhBc2cJ3DJjcKShKBZELDQ-xhnJ4"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 text-[10px] font-bold tracking-widest uppercase text-zinc-900">
+                            Pending
+                        </div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-editorial italic text-primary text-lg mb-1">Traditional Indigo Flow</p>
+<p class="font-body text-xs text-zinc-500 uppercase tracking-widest">Aria Sterling • Silk Scarf</p>
+</div>
+</div>
+<div class="flex gap-3 mt-6">
+<button class="flex-1 plasma-gradient text-white text-[10px] font-bold tracking-[0.2em] uppercase py-3 rounded-lg hover:opacity-90 active:scale-95 transition-all">
+                                Approve
+                            </button>
+<button class="flex-1 border border-outline-variant text-zinc-600 text-[10px] font-bold tracking-[0.2em] uppercase py-3 rounded-lg hover:bg-zinc-100 active:scale-95 transition-all">
+                                Reject
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-high hover:bg-surface-container-highest transition-all duration-300 relative">
+<div class="absolute left-0 top-0 bottom-0 w-0 group-hover:w-1 bg-primary transition-all duration-300"></div>
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern abstract batik textile design with crimson and charcoal geometric shapes on textured cream canvas background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkY-YCJ8fFjbBUr5EMqiCNPeNnVzW06PCJ3x-rS-5puLRNCDwJZwuzKVUhcOFF4ML2oFwrTMFEhNmUAWEdWCHLcE1qxVmY0xrZxqMhxEH9ltGHhSSK1KdCjBF9bgGp0AU9_egeJ44ysP4z6lSYr7Z5Yae-T2_9JH-BnnS_eB1xSDgRDJXq-wgfF640exQhOqbO31UHVQkpdy6E_Qa4UwudcavtV_rLCrh_du9EllMPn_qIOLZ_G8BQSgdQ_Q_13VGPTd9IdVGzDbk"/>
+<div class="absolute top-4 right-4 bg-green-500/90 backdrop-blur px-3 py-1 text-[10px] font-bold tracking-widest uppercase text-white">
+                            Approved
+                        </div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-editorial italic text-primary text-lg mb-1">Geometric Red Sand</p>
+<p class="font-body text-xs text-zinc-500 uppercase tracking-widest">Julian Vance • Formal Shirt</p>
+</div>
+</div>
+<div class="flex gap-3 mt-6 opacity-40 grayscale pointer-events-none">
+<button class="flex-1 plasma-gradient text-white text-[10px] font-bold tracking-[0.2em] uppercase py-3 rounded-lg">Approve</button>
+<button class="flex-1 border border-outline-variant text-zinc-600 text-[10px] font-bold tracking-[0.2em] uppercase py-3 rounded-lg">Reject</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-high hover:bg-surface-container-highest transition-all duration-300 relative">
+<div class="absolute left-0 top-0 bottom-0 w-0 group-hover:w-1 bg-primary transition-all duration-300"></div>
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Ethereal marble-like batik pattern with soft gold veins and translucent white layers mimicking divine light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7HIFEA4sibn0CIwg40dvajvBge7iZLTK36FJLyODvzYgF56HJAGEYNK0_s4Mu73mQ6MaFEkw_6gjjiEcPHdhg-aNSkZiEINlKb-UpsAEh2_wkTBBofMxOPbJ2d3lOW7nUz-RXIiqLvuNW3Dglh3whP-5J5FvudFYpRlKsMyh6xDW0OTFIcApHQA0FJGq970zZZbWLrBUKcsIb3CsSVZidAtGV2ll887miQrS2CBjN9TS_YtfwNhK-kIa_rp2ynvyT7H0KYVETU0w"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 text-[10px] font-bold tracking-widest uppercase text-zinc-900">
+                            Pending
+                        </div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-editorial italic text-primary text-lg mb-1">Celestial Marble</p>
+<p class="font-body text-xs text-zinc-500 uppercase tracking-widest">Elena Rossi • Evening Gown</p>
+</div>
+</div>
+<div class="flex gap-3 mt-6">
+<button class="flex-1 plasma-gradient text-white text-[10px] font-bold tracking-[0.2em] uppercase py-3 rounded-lg hover:opacity-90 active:scale-95 transition-all">
+                                Approve
+                            </button>
+<button class="flex-1 border border-outline-variant text-zinc-600 text-[10px] font-bold tracking-[0.2em] uppercase py-3 rounded-lg hover:bg-zinc-100 active:scale-95 transition-all">
+                                Reject
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group bg-surface-container-high hover:bg-surface-container-highest transition-all duration-300 relative">
+<div class="absolute left-0 top-0 bottom-0 w-0 group-hover:w-1 bg-primary transition-all duration-300"></div>
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Bold black and white batik design with traditional Indonesian wave patterns in high contrast editorial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-oEpYjUHHOX1USfzRX9Ig8Qgt2-ZHYeVAbZbEuTJ23gh4rizcqA76TbCLFRgKhibTDU4kPBtLnaOqht06sQve7XnOhwaUpASaciqm77i4ARWJ5fiufFe6nsB0zm7TY6pCkPTtV9U3M3aoyIp8H5q-puFhgiKkUwLVKqMTUQuqSqlMt1YaAvI1XnoWr91m-zocfPoj3pgi75rtnyNM4YE8A7XZ88KPafT3LcpEO4fX-Jv9lvfwDTOa4Ur7MrKWYAmjSgX8yW0wew8"/>
+<div class="absolute top-4 right-4 bg-red-600/90 backdrop-blur px-3 py-1 text-[10px] font-bold tracking-widest uppercase text-white">
+                            Rejected
+                        </div>
+</div>
+<div class="p-8">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="font-editorial italic text-primary text-lg mb-1">Noir Oceanic Wave</p>
+<p class="font-body text-xs text-zinc-500 uppercase tracking-widest">Marcus Thorne • Wall Tapestry</p>
+</div>
+</div>
+<div class="flex gap-3 mt-6 opacity-40 grayscale pointer-events-none">
+<button class="flex-1 plasma-gradient text-white text-[10px] font-bold tracking-[0.2em] uppercase py-3 rounded-lg">Approve</button>
+<button class="flex-1 border border-outline-variant text-zinc-600 text-[10px] font-bold tracking-[0.2em] uppercase py-3 rounded-lg">Reject</button>
+</div>
+</div>
+</div>
+<!-- Card 5 (Large Bento Feature) -->
+<div class="group md:col-span-2 bg-surface-container-high hover:bg-surface-container-highest transition-all duration-300 flex flex-col md:flex-row relative">
+<div class="absolute left-0 top-0 bottom-0 w-0 group-hover:w-1 bg-primary transition-all duration-300"></div>
+<div class="w-full md:w-3/5 overflow-hidden relative aspect-video md:aspect-auto">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Premium close up of luxury textile with golden embroidery and deep crimson batik wax resist dyeing process" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgIMlVpG4nYltRyDUv6mY2MtlX_ZyCd0dUtWlLjcT88l9osohjX3qD0B37RUQAqWHkzhj65Ai02BZI9zLXNp4szmdxc47H_bY_nZpDe5kt8p1j0rdxWPn1ii5AOiP03AL7m7OkdqKbjHnP92hSC4CZFM6ntlNnEbw7l7htHr0GCHRwlTKMVDGCrNp26knKGgRmWYKHUhmyya7g8rRdZuQFUN7Mwj71ZTrvmI-Wu8drfWulYQDwcnH8F5no8Mc99Q2wK9Xg5Jdw0TE"/>
+<div class="absolute bottom-6 left-6 bg-zinc-900/90 backdrop-blur px-4 py-2 text-[10px] font-bold tracking-widest uppercase text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-xs" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span> AI Editor Choice
+                        </div>
+</div>
+<div class="p-10 flex-1 flex flex-col justify-center">
+<div class="mb-8">
+<h3 class="font-headline text-2xl tracking-[0.2em] uppercase text-zinc-900 mb-2">Imperial Crimson</h3>
+<p class="font-editorial italic text-zinc-500 text-lg mb-4">Designed for Sophia Laurent • Custom Couture</p>
+<p class="font-body text-sm text-zinc-600 leading-relaxed max-w-sm">
+                                A masterful blend of traditional wax-resist techniques with hyper-realistic AI-generated floral vectors. Our most complex generation to date.
+                            </p>
+</div>
+<div class="flex gap-3">
+<button class="px-8 plasma-gradient text-white text-[10px] font-bold tracking-[0.2em] uppercase py-3 rounded-lg hover:opacity-90 active:scale-95 transition-all">
+                                Finalize Approval
+                            </button>
+<button class="px-8 border border-outline-variant text-zinc-600 text-[10px] font-bold tracking-[0.2em] uppercase py-3 rounded-lg hover:bg-zinc-100 active:scale-95 transition-all">
+                                Dismiss
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Divine Footer -->
+<footer class="bg-on-background text-white py-20 px-12 mt-20">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center border-b border-zinc-800 pb-12 mb-12">
+<div>
+<h3 class="font-headline text-3xl tracking-[0.5em] uppercase mb-2">CATTLEYA</h3>
+<p class="font-editorial italic text-zinc-400">The Immense Beauty of Heaven</p>
+</div>
+<div class="flex gap-12 mt-8 md:mt-0">
+<div class="space-y-4">
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">Navigation</p>
+<ul class="text-xs font-light space-y-2 text-zinc-300">
+<li><a class="hover:text-primary transition-colors" href="#">Documentation</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">API Keys</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Legal</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">Contact</p>
+<p class="text-xs font-light text-zinc-300">editorial@cattleya.luxury</p>
+<p class="text-xs font-light text-zinc-300">Jakarta • Paris • Milan</p>
+</div>
+</div>
+</div>
+<div class="text-center">
+<p class="text-[10px] tracking-[0.3em] uppercase text-zinc-600 font-light">© 2024 Cattleya Editorial Management System. All Rights Reserved.</p>
+</div>
+</footer>
+</main>
+</body></html>

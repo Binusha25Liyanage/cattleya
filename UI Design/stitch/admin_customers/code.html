@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CATTLEYA | Valued Patrons</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;family=Inter:wght@300;400;600;700&amp;family=Newsreader:opsz,wght@6..72,400;6..72,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#454747",
+                        "tertiary-container": "#006ab4",
+                        "secondary-container": "#dddddd",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-low": "#f6f3f2",
+                        "surface": "#fcf9f8",
+                        "inverse-surface": "#313030",
+                        "background": "#fcf9f8",
+                        "inverse-primary": "#ffb3ac",
+                        "tertiary-fixed": "#d2e4ff",
+                        "on-tertiary-fixed-variant": "#00497e",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-container-high": "#ebe7e7",
+                        "on-primary-container": "#ffdfdc",
+                        "tertiary": "#00518c",
+                        "primary": "#a30012",
+                        "on-secondary-container": "#606161",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "surface-dim": "#dcd9d9",
+                        "primary-fixed": "#ffdad6",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "surface-tint": "#c00017",
+                        "on-tertiary-container": "#d9e8ff",
+                        "on-surface": "#1c1b1b",
+                        "on-surface-variant": "#5d3f3c",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#d0021b",
+                        "tertiary-fixed-dim": "#9fcaff",
+                        "secondary": "#5d5f5f",
+                        "outline": "#926e6b",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#001c37",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-container": "#f0edec",
+                        "on-primary-fixed": "#410003",
+                        "outline-variant": "#e7bdb8",
+                        "surface-bright": "#fcf9f8",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-primary-fixed-variant": "#93000f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "cinzel": ["Cinzel"],
+                        "garamond": ["Cormorant Garamond"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .plasma-gradient {
+            background: linear-gradient(135deg, #a30012 0%, #d0021b 100%);
+        }
+        .scale-98-on-click:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background antialiased">
+<!-- SideNavBar -->
+<aside class="bg-[#313030] dark:bg-[#1c1b1b] rounded-none w-72 h-screen fixed left-0 top-0 shadow-2xl shadow-black/20 flex flex-col h-full py-8 px-6 z-50">
+<div class="mb-12">
+<h1 class="font-cinzel tracking-[0.2em] uppercase text-white text-2xl">CATTLEYA</h1>
+<p class="font-garamond italic text-[#ebe7e7]/60 text-sm">Admin Portal</p>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 text-[#ebe7e7]/60 hover:text-white hover:bg-[#ebe7e7]/10 transition-colors scale-98-on-click" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-sm tracking-wide">Dashboard</span>
+</a>
+<!-- Active Tab: Valued Patrons -->
+<a class="flex items-center gap-4 px-4 py-3 text-white font-bold bg-[#d0021b] rounded-sm transition-all duration-300 scale-98-on-click" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label text-sm tracking-wide">Valued Patrons</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#ebe7e7]/60 hover:text-white hover:bg-[#ebe7e7]/10 transition-colors scale-98-on-click" href="#">
+<span class="material-symbols-outlined" data-icon="Auto_awesome">auto_awesome</span>
+<span class="font-label text-sm tracking-wide">Design Review</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#ebe7e7]/60 hover:text-white hover:bg-[#ebe7e7]/10 transition-colors scale-98-on-click" href="#">
+<span class="material-symbols-outlined" data-icon="palette">palette</span>
+<span class="font-label text-sm tracking-wide">Batik Gallery</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-[#ebe7e7]/60 hover:text-white hover:bg-[#ebe7e7]/10 transition-colors scale-98-on-click" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label text-sm tracking-wide">Settings</span>
+</a>
+</nav>
+<div class="mt-auto">
+<button class="plasma-gradient w-full py-4 text-white font-label text-xs uppercase tracking-widest rounded-sm scale-98-on-click shadow-lg shadow-primary/20">
+                New Design
+            </button>
+<div class="mt-8 flex items-center gap-3 px-2">
+<img alt="Admin Profile" class="w-10 h-10 rounded-full border border-white/10" data-alt="professional portrait of a high-end fashion house administrator in a sleek studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTxj-tSUKLLmKU5XdRKd2fAsYBTszFtXESACZ5WpWfDOCN_iDABI9X-OQ6pfbp_vb2LjDKbY6fltJtGXmsBvKKlhNUgEKOQVAXlkmz5D4YcQTIvOXqiEDJmGkuzTjoAJJLI15gV4OuG2XhONVGVAH_dg5Qe94hq3jJwA4vT5bbsQ2K7wtxxWZ73bzPal1r2hPeMWKdbU5weYpYuBmXt_Qs1wilguSUbRB2vh5i3yuD6-O456y73hr8XoiyuxLKVl-bPojPVApir70"/>
+<div>
+<p class="text-white text-xs font-semibold">Administrator</p>
+<p class="text-[#ebe7e7]/40 text-[10px] uppercase tracking-tighter">Premium Access</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-72 min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-[#fcf9f8]/80 dark:bg-[#1c1b1b]/80 backdrop-blur-xl sticky top-0 z-40 flex justify-between items-center px-10 py-6 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#d0021b] cursor-pointer" data-icon="menu_open">menu_open</span>
+<h2 class="font-cinzel text-3xl tracking-widest text-[#d0021b] uppercase">Admin Overview</h2>
+</div>
+<div class="flex items-center gap-8">
+<div class="flex gap-6 text-[#313030]/50">
+<span class="material-symbols-outlined hover:text-[#d0021b] transition-all cursor-pointer" data-icon="search">search</span>
+<span class="material-symbols-outlined hover:text-[#d0021b] transition-all cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined hover:text-[#d0021b] transition-all cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<section class="p-10">
+<!-- Breadcrumbs & Header -->
+<div class="mb-12">
+<p class="font-garamond italic text-primary text-xl mb-2">Curating Excellence</p>
+<h3 class="font-cinzel text-4xl font-black tracking-tight text-on-background">Valued Patrons</h3>
+</div>
+<!-- Stats Bar - Bento Style -->
+<div class="grid grid-cols-4 gap-6 mb-12">
+<div class="bg-surface-container-high p-6 rounded-none flex flex-col justify-between border-l-4 border-primary">
+<p class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary">Total Patrons</p>
+<p class="font-cinzel text-3xl font-bold mt-2">1,284</p>
+</div>
+<div class="bg-surface-container-high p-6 rounded-none flex flex-col justify-between">
+<p class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary">Active This Month</p>
+<p class="font-cinzel text-3xl font-bold mt-2">412</p>
+</div>
+<div class="bg-surface-container-high p-6 rounded-none flex flex-col justify-between">
+<p class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary">Aesthetic Tier</p>
+<p class="font-cinzel text-3xl font-bold mt-2">Gold</p>
+</div>
+<div class="bg-surface-container-high p-6 rounded-none flex flex-col justify-between">
+<p class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary">Total Revenue</p>
+<p class="font-cinzel text-3xl font-bold mt-2 text-primary">$124.5k</p>
+</div>
+</div>
+<!-- Filters and Search -->
+<div class="flex flex-col md:flex-row gap-6 mb-8 items-end">
+<div class="flex-1 w-full">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary mb-2 block">Search Directory</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary py-4 px-6 font-body text-sm placeholder:italic placeholder:text-outline/40" placeholder="Name, email or ID..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline/40" data-icon="search">search</span>
+</div>
+</div>
+<div class="w-full md:w-64">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary mb-2 block">Segment</label>
+<select class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary py-4 px-6 font-body text-sm appearance-none">
+<option>All Patrons</option>
+<option>Collectors</option>
+<option>First-time Buyers</option>
+<option>VIP Artisans</option>
+</select>
+</div>
+<div class="w-full md:w-64">
+<label class="font-label text-[10px] uppercase tracking-widest text-secondary mb-2 block">Status</label>
+<select class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary py-4 px-6 font-body text-sm appearance-none">
+<option>Any Status</option>
+<option>Active</option>
+<option>Inactive</option>
+</select>
+</div>
+<button class="bg-inverse-surface text-white p-4 h-[52px] flex items-center justify-center scale-98-on-click">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+<!-- Patron Table -->
+<div class="bg-surface-container-lowest overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container">
+<th class="py-6 px-8 font-cinzel text-[11px] tracking-[0.2em] uppercase text-secondary font-bold">Patron</th>
+<th class="py-6 px-8 font-cinzel text-[11px] tracking-[0.2em] uppercase text-secondary font-bold">Email</th>
+<th class="py-6 px-8 font-cinzel text-[11px] tracking-[0.2em] uppercase text-secondary font-bold text-center">Orders</th>
+<th class="py-6 px-8 font-cinzel text-[11px] tracking-[0.2em] uppercase text-secondary font-bold text-right">Total Spent</th>
+<th class="py-6 px-8 font-cinzel text-[11px] tracking-[0.2em] uppercase text-secondary font-bold text-center">Status</th>
+<th class="py-6 px-8 font-cinzel text-[11px] tracking-[0.2em] uppercase text-secondary font-bold"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-6 px-8">
+<div class="flex items-center gap-4">
+<img class="w-10 h-10 rounded-none object-cover border border-surface-container" data-alt="close-up of elegant mature woman with minimalist jewelry in a high-key lighting portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_AoXn3XAhJdDmXMjBFZAxhC47mABr2-2h3dfoRAcbxl34f_DMk_NiwIvlszwTtma1JkSyt1xGJFg03I1DejRYwDDAnsADEpfvmWIlGAhqrn_o3i7QQkygDmIj0Uhq_c4XXh5NcVTy7TlFcXKjVEQOKf2j7f7cfggZIKRMJpPkoek451ray5CY5n3xvBcQ43zHglgkyyGVXIDplWH9w4gBbL0XPbW9WUK2abhF6JUt8GOCx0Isoac8xlQmKzYcXTZEuiM_1spJLpw"/>
+<div>
+<p class="font-body font-semibold text-sm">Eleanor Vance</p>
+<p class="font-garamond italic text-xs text-secondary">Diamond Member</p>
+</div>
+</div>
+</td>
+<td class="py-6 px-8 text-sm text-secondary font-body">e.vance@celestial.com</td>
+<td class="py-6 px-8 text-sm font-body text-center">24</td>
+<td class="py-6 px-8 text-sm font-bold text-primary text-right tracking-tight">$14,250.00</td>
+<td class="py-6 px-8 text-center">
+<span class="px-3 py-1 bg-green-50 text-green-700 text-[10px] uppercase tracking-widest font-bold">Active</span>
+</td>
+<td class="py-6 px-8 text-right">
+<span class="material-symbols-outlined text-outline/30 group-hover:text-primary cursor-pointer transition-colors" data-icon="more_vert">more_vert</span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-6 px-8">
+<div class="flex items-center gap-4">
+<img class="w-10 h-10 rounded-none object-cover border border-surface-container" data-alt="studio portrait of a sophisticated young man wearing a silk scarf with soft dramatic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL-s30slsEvpRWgoVNC_3GBub8m979m_BDc9ZlAbBlHiqzZK-cq1ZRaa4-w_tDlFO0W6M0fzvmk8FNr1EkRnHPRIwOUjX1vK_O7uarU8TXH2Nv1ZWZrKnE4EGSlrV8QcaKXj4ey7GFjdWojgRQm-vj1YGIXufSJzu8TmJeH2QrjWgsVsHE5oFJtdYUljE1jE3LQrg9AI2LYEZ9fCrKF4w3is2-FfG2NQTjTu_VAqqrav1r3hmPJDIKXSqM7Bzqi5QDHDHqtpXDvrY"/>
+<div>
+<p class="font-body font-semibold text-sm">Julian Thorne</p>
+<p class="font-garamond italic text-xs text-secondary">Artisan Curator</p>
+</div>
+</div>
+</td>
+<td class="py-6 px-8 text-sm text-secondary font-body">j.thorne@atelier.net</td>
+<td class="py-6 px-8 text-sm font-body text-center">12</td>
+<td class="py-6 px-8 text-sm font-bold text-primary text-right tracking-tight">$8,920.00</td>
+<td class="py-6 px-8 text-center">
+<span class="px-3 py-1 bg-green-50 text-green-700 text-[10px] uppercase tracking-widest font-bold">Active</span>
+</td>
+<td class="py-6 px-8 text-right">
+<span class="material-symbols-outlined text-outline/30 group-hover:text-primary cursor-pointer transition-colors" data-icon="more_vert">more_vert</span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-6 px-8">
+<div class="flex items-center gap-4">
+<img class="w-10 h-10 rounded-none object-cover border border-surface-container" data-alt="portrait of a woman with braided hair wearing traditional high-end batik clothing in warm golden lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBKKY4So0KNnRcwcPVHaRcYZxw3cYAS0a0k-Klvm0U22EaFPuyG5903ZoA8mns-8NypW4gb5HObEudri-BumeKBBfg-FXF3rbfls4_-q9ArV1FouS0OT3TEhxEG_BcoTADMzQiQUI97yHIFrxc-woVfjbot4mORcKB3INFtwVFM2ZglGZOPAu82mtS7h11tbTbUH2AewqkjndANNPzjOAwCNzEFHp0kcaKQTaJIqg0FKrn4QDyZxabCnRVA82WfecCIu6Bz_xJRKE"/>
+<div>
+<p class="font-body font-semibold text-sm">Clara Montaigne</p>
+<p class="font-garamond italic text-xs text-secondary">Casual Patron</p>
+</div>
+</div>
+</td>
+<td class="py-6 px-8 text-sm text-secondary font-body">clara.m@heritage.fr</td>
+<td class="py-6 px-8 text-sm font-body text-center">2</td>
+<td class="py-6 px-8 text-sm font-bold text-primary text-right tracking-tight">$1,100.00</td>
+<td class="py-6 px-8 text-center">
+<span class="px-3 py-1 bg-surface-container text-secondary text-[10px] uppercase tracking-widest font-bold">Inactive</span>
+</td>
+<td class="py-6 px-8 text-right">
+<span class="material-symbols-outlined text-outline/30 group-hover:text-primary cursor-pointer transition-colors" data-icon="more_vert">more_vert</span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-6 px-8">
+<div class="flex items-center gap-4">
+<img class="w-10 h-10 rounded-none object-cover border border-surface-container" data-alt="minimalist portrait of an older man with glasses in a light airy architectural setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgYVz_vY2Tt9aPXfGorOQzp_vGwB8G8C6BzJQONRiEfySgddmnpYoOdELoN0mAv8wl70T46PrIM8aTHT8zORJpIo8I318W3S0i-lxMq0D0aW72M_nR5R0yhTzDDLRpQ9hUn01n8G8YMlmEBGGGGT01DZmIYSk5yS5VuvZD7k_DTAPn7NxJwTuJL9bGaoGnGbW-tWGr1aubFKV38iGB4CUsp8rDg_fJHYsXt21PXREmxIGsohKdRMCF1dQ6QdWoeaZ85VZnxzRNdSw"/>
+<div>
+<p class="font-body font-semibold text-sm">Arthur Penhaligon</p>
+<p class="font-garamond italic text-xs text-secondary">Legacy Collector</p>
+</div>
+</div>
+</td>
+<td class="py-6 px-8 text-sm text-secondary font-body">a.p@estates.co.uk</td>
+<td class="py-6 px-8 text-sm font-body text-center">45</td>
+<td class="py-6 px-8 text-sm font-bold text-primary text-right tracking-tight">$32,400.00</td>
+<td class="py-6 px-8 text-center">
+<span class="px-3 py-1 bg-green-50 text-green-700 text-[10px] uppercase tracking-widest font-bold">Active</span>
+</td>
+<td class="py-6 px-8 text-right">
+<span class="material-symbols-outlined text-outline/30 group-hover:text-primary cursor-pointer transition-colors" data-icon="more_vert">more_vert</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex justify-between items-center px-4">
+<p class="font-garamond italic text-secondary text-sm">Displaying 1–4 of 1,284 patrons</p>
+<div class="flex gap-4">
+<button class="px-6 py-2 bg-surface-container-high font-label text-[10px] uppercase tracking-widest hover:bg-surface-container-highest transition-colors">Previous</button>
+<button class="px-6 py-2 bg-inverse-surface text-white font-label text-[10px] uppercase tracking-widest scale-98-on-click">Next Page</button>
+</div>
+</div>
+</section>
+<!-- Decorative Footer Watermark -->
+<footer class="mt-20 pb-10 px-10 flex justify-center opacity-10">
+<h4 class="font-cinzel text-[8rem] font-black tracking-tighter leading-none select-none">CATTLEYA</h4>
+</footer>
+</main>
+</body></html>

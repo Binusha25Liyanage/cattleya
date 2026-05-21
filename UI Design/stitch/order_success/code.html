@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Success | CATTLEYA</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;family=Inter:wght@300;400;600&amp;family=Newsreader:opsz,wght@6..72,400;6..72,700&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#454747",
+                    "tertiary-container": "#006ab4",
+                    "secondary-container": "#dddddd",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#f3f0ef",
+                    "surface-container-low": "#f6f3f2",
+                    "surface": "#fcf9f8",
+                    "inverse-surface": "#313030",
+                    "background": "#fcf9f8",
+                    "inverse-primary": "#ffb3ac",
+                    "tertiary-fixed": "#d2e4ff",
+                    "on-tertiary-fixed-variant": "#00497e",
+                    "surface-variant": "#e5e2e1",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-container-high": "#ebe7e7",
+                    "on-primary-container": "#ffdfdc",
+                    "tertiary": "#00518c",
+                    "primary": "#a30012",
+                    "on-secondary-container": "#606161",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1c1b1b",
+                    "surface-dim": "#dcd9d9",
+                    "primary-fixed": "#ffdad6",
+                    "primary-fixed-dim": "#ffb3ac",
+                    "surface-tint": "#c00017",
+                    "on-tertiary-container": "#d9e8ff",
+                    "on-surface": "#1c1b1b",
+                    "on-surface-variant": "#5d3f3c",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#d0021b",
+                    "tertiary-fixed-dim": "#9fcaff",
+                    "secondary": "#5d5f5f",
+                    "outline": "#926e6b",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#001c37",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "surface-container": "#f0edec",
+                    "on-primary-fixed": "#410003",
+                    "outline-variant": "#e7bdb8",
+                    "surface-bright": "#fcf9f8",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "on-primary-fixed-variant": "#93000f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Newsreader"],
+                    "body": ["Inter"],
+                    "label": ["Inter"],
+                    "cinzel": ["Cinzel"],
+                    "garamond": ["Cormorant Garamond"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .plasma-gradient {
+            background: linear-gradient(135deg, #a30012 0%, #d0021b 100%);
+        }
+        .mercury-gradient {
+            background: linear-gradient(135deg, #e2e2e2 0%, #c6c6c6 100%);
+        }
+        .ethereal-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed overflow-x-hidden">
+<!-- Shell Suppression: This is a transactional success page. Global Nav and Footer are suppressed to focus on confirmation. -->
+<main class="min-h-screen flex flex-col items-center justify-center relative px-6 py-20">
+<!-- Background Artistic Element -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
+<div class="absolute -top-[20%] -right-[10%] w-[800px] h-[800px] rounded-full blur-[120px] bg-primary"></div>
+<div class="absolute -bottom-[20%] -left-[10%] w-[600px] h-[600px] rounded-full blur-[120px] bg-secondary-fixed"></div>
+</div>
+<!-- Success Content Container -->
+<div class="w-full max-w-2xl text-center z-10 space-y-12">
+<!-- Brand Logo -->
+<div class="mb-16">
+<h1 class="font-cinzel text-3xl font-normal tracking-[0.4em] text-on-background">CATTLEYA</h1>
+<p class="font-cinzel text-[10px] tracking-[0.5em] text-secondary mt-2">THE IMMENSE BEAUTY OF HEAVEN</p>
+</div>
+<!-- Success Icon Section -->
+<div class="flex flex-col items-center">
+<div class="w-24 h-24 plasma-gradient rounded-full flex items-center justify-center shadow-[0_32px_64px_-15px_rgba(163,0,18,0.3)] mb-8">
+<span class="material-symbols-outlined text-on-primary text-5xl" style="font-variation-settings: 'wght' 600;">check</span>
+</div>
+<!-- Headline -->
+<h2 class="font-cinzel text-5xl md:text-6xl font-light tracking-widest text-on-background mb-4">Order Placed!</h2>
+<p class="font-garamond italic text-2xl text-secondary">A piece of heaven is on its way to you.</p>
+</div>
+<!-- Order Information Card -->
+<div class="bg-surface-container-low p-8 md:p-12 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary transform origin-bottom transition-transform duration-500 scale-y-100"></div>
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-center md:text-left">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary block mb-1">Confirmation Number</span>
+<span class="font-cinzel text-2xl tracking-wider text-on-surface">#CTL-8829-XJ</span>
+</div>
+<div class="h-12 w-px bg-outline-variant/30 hidden md:block"></div>
+<div class="text-center md:text-right">
+<span class="font-label text-[10px] uppercase tracking-[0.2em] text-secondary block mb-1">Delivery Estimate</span>
+<span class="font-cinzel text-2xl tracking-wider text-on-surface">3-5 Business Days</span>
+</div>
+</div>
+<div class="mt-10 pt-10 border-t border-outline-variant/20">
+<div class="flex items-center justify-center gap-4 text-secondary">
+<span class="material-symbols-outlined text-sm">mail</span>
+<span class="font-body text-xs tracking-widest uppercase">Receipt sent to your email</span>
+</div>
+</div>
+</div>
+<!-- Visual Editorial Image -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-64">
+<div class="relative overflow-hidden rounded">
+<img alt="Batik Artistry" class="w-full h-full object-cover grayscale-[30%] hover:scale-105 transition-transform duration-1000" data-alt="Close-up of intricate hand-painted Indonesian batik fabric with deep red and cream patterns in soft dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1raZSAovlmqOMNtg2Lm427wsYBTSIeUxc0g0JmwQouK_sa2qEm8-jAHsoO2tg8Wg2AJJFEcPfbPAr_rBxzAYLM_S8xEjNsS3sFwn9AMGePWgGj8bxLrCN1OWZsyLopQmD_2Zt2q3bRwTaIB0ecmvVLHFCXnl0IJ7aj8cyrz-VdZMZGGPoa8yHEOWk6yAvAXCbvh-PfWp4qfdtnr5GHA1qiI65t1_07MDXRV7eWHgYy477ouzLBDlq9jSp5Hgsh3WV59bsp9MP_Lk"/>
+</div>
+<div class="hidden md:block relative overflow-hidden rounded">
+<img alt="Jewelry Details" class="w-full h-full object-cover grayscale-[30%] hover:scale-105 transition-transform duration-1000" data-alt="Exquisite gold and diamond necklace displayed on a white marble pedestal with soft ethereal window light and shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAywk9iNzHsY4RfK9kbLceStUYv4zSUNkkKDRrnke7abdmr6fYb8RbUh7by7qEA57PXy27CGoiRxmx8v3E9LWL6AaZ530--Ypn1x8uOneumDyKGzwW-Op-MV1Kh0ehGC0rPg2ZFQESZDSmhJgZ3HUJfbgms5FshXxnSQ0OOQJ6SiDijfbiru1jN08lLApm2jJm_oDsWbssCOvX8hQLf_nMBlJVGXA_og0434KlRNX2HYRAN9qe-Sw4o3HhuL0tmQ8q32Znx9CGpywk"/>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col md:flex-row items-center justify-center gap-6 pt-8">
+<a class="w-full md:w-auto plasma-gradient text-on-primary font-cinzel text-xs tracking-[0.2em] px-12 py-5 rounded-lg hover:opacity-90 transition-all active:scale-95 shadow-xl uppercase" href="#">
+                    View My Orders
+                </a>
+<a class="w-full md:w-auto bg-surface-container-high text-on-surface-variant font-cinzel text-xs tracking-[0.2em] px-12 py-5 rounded-lg hover:bg-surface-container-highest transition-all active:scale-95 uppercase" href="#">
+                    Continue Shopping
+                </a>
+</div>
+<!-- Support Footer (Minimal) -->
+<div class="pt-20">
+<p class="font-body text-[10px] text-secondary uppercase tracking-[0.1em]">
+                    Questions about your order? 
+                    <a class="text-primary hover:underline ml-2 transition-all" href="#">Contact The Atelier</a>
+</p>
+</div>
+</div>
+</main>
+<!-- Divine Spark Watermark -->
+<div class="fixed bottom-12 right-12 opacity-5 pointer-events-none select-none">
+<h3 class="font-cinzel text-8xl font-bold tracking-[0.5em] leading-none">C</h3>
+</div>
+</body></html>

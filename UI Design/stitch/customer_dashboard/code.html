@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Cormorant+Garamond:ital,wght@1,400;1,600&amp;family=Inter:wght@300;400;500;600&amp;family=Newsreader:ital,wght@0,300;0,400;0,500;1,400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#c00017",
+                        "tertiary-fixed": "#d2e4ff",
+                        "surface-dim": "#dcd9d9",
+                        "tertiary-container": "#006ab4",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#ffdfdc",
+                        "on-background": "#1c1b1b",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-surface": "#1c1b1b",
+                        "inverse-surface": "#313030",
+                        "surface-container-highest": "#e5e2e1",
+                        "secondary-container": "#dddddd",
+                        "surface-variant": "#e5e2e1",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#e7bdb8",
+                        "on-tertiary-fixed": "#001c37",
+                        "on-surface-variant": "#5d3f3c",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#9fcaff",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#5d5f5f",
+                        "on-tertiary-container": "#d9e8ff",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "on-primary-fixed": "#410003",
+                        "tertiary": "#00518c",
+                        "background": "#fcf9f8",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-container": "#d0021b",
+                        "surface-container-high": "#ebe7e7",
+                        "primary": "#a30012",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-primary": "#ffb3ac",
+                        "primary-fixed": "#ffdad6",
+                        "surface": "#fcf9f8",
+                        "on-primary-fixed-variant": "#93000f",
+                        "on-tertiary-fixed-variant": "#00497e",
+                        "surface-container": "#f0edec",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fcf9f8",
+                        "outline": "#926e6b",
+                        "on-secondary-container": "#606161",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "cinzel": ["Cinzel"],
+                        "cormorant": ["Cormorant Garamond"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .plasma-gradient {
+            background: linear-gradient(135deg, #a30012 0%, #d0021b 100%);
+        }
+        .mercury-gradient {
+            background: linear-gradient(135deg, #e2e2e2 0%, #c6c6c6 100%);
+        }
+        .ethereal-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-[#313030] dark:bg-[#1c1b1b] shadow-2xl shadow-black/20 docked full-width top-0 z-50 flex justify-between items-center px-12 h-20 w-full sticky">
+<div class="text-2xl font-light tracking-[0.2em] text-white font-headline">CATTLEYA</div>
+<nav class="hidden md:flex gap-10">
+<a class="font-['Newsreader'] uppercase tracking-widest text-sm text-stone-300 hover:text-white transition-colors duration-300" href="#">Collections</a>
+<a class="font-['Newsreader'] uppercase tracking-widest text-sm text-stone-300 hover:text-white transition-colors duration-300" href="#">Bespoke</a>
+<a class="font-['Newsreader'] uppercase tracking-widest text-sm text-stone-300 hover:text-white transition-colors duration-300" href="#">Editorial</a>
+<a class="font-['Newsreader'] uppercase tracking-widest text-sm text-stone-300 hover:text-white transition-colors duration-300" href="#">Archive</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="text-white hover:text-[#d0021b] transition-colors scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="text-[#d0021b] font-medium scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="account_circle" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</button>
+</div>
+</header>
+<div class="flex flex-1 relative">
+<!-- SideNavBar -->
+<aside class="bg-[#f6f3f2] dark:bg-[#1c1b1b] h-[calc(100vh-5rem)] w-72 fixed left-0 top-20 flex flex-col pt-12 z-40">
+<div class="px-8 mb-12">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden mercury-gradient">
+<img class="w-full h-full object-cover opacity-90" data-alt="Portrait of a sophisticated gentleman in a dark suit with soft atmospheric lighting, editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwTJmcDh2ew0S8DF_Zgg7-QuqYGTFbqIYyJhIqu7eI1bbz0T_bMu_sqYpYT_UCi9PycFBZrRc0k1uWkA6SY5qUt7pS3mMG2dLSHJeQBteOHstLCVg0A_Fj02A0D1CRFEA2YXRTwcYB9SLvX3UEggPaE0qPaEpf2GbcI4Yn7iPt2KT6HBKcIDLDZD9KMnTk04a_chxabPmBwaoMh2eHsnOs6HRHlcijQ2qvZUx0CBSs5ru8GhjeX-ZgydLIYOqSt5hdopbN17NTbVQ"/>
+</div>
+<div>
+<p class="font-headline italic text-lg capitalize text-[#a30012]">Valued Patron</p>
+<p class="text-xs tracking-widest uppercase text-stone-500">Premium Member</p>
+</div>
+</div>
+<button class="plasma-gradient text-white w-full py-3 text-xs tracking-widest uppercase font-semibold rounded-lg hover:shadow-lg transition-all active:scale-95">
+                    Start New Design
+                </button>
+</div>
+<nav class="flex flex-col">
+<a class="border-l-4 border-[#d0021b] bg-[#ebe7e7] dark:bg-stone-800 text-[#a30012] font-semibold pl-6 py-4 flex items-center gap-4 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+<span class="font-headline italic text-lg capitalize">Orders</span>
+</a>
+<a class="text-stone-600 dark:text-stone-400 pl-6 py-4 flex items-center gap-4 hover:bg-[#f0edec] hover:pl-8 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="palette">palette</span>
+<span class="font-headline italic text-lg capitalize">My Designs</span>
+</a>
+<a class="text-stone-600 dark:text-stone-400 pl-6 py-4 flex items-center gap-4 hover:bg-[#f0edec] hover:pl-8 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="heart_plus">heart_plus</span>
+<span class="font-headline italic text-lg capitalize">Wishlist</span>
+</a>
+<a class="text-stone-600 dark:text-stone-400 pl-6 py-4 flex items-center gap-4 hover:bg-[#f0edec] hover:pl-8 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-headline italic text-lg capitalize">Addresses</span>
+</a>
+<a class="text-stone-600 dark:text-stone-400 pl-6 py-4 flex items-center gap-4 hover:bg-[#f0edec] hover:pl-8 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-headline italic text-lg capitalize">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-72 flex-1 p-12 bg-surface">
+<!-- Welcome Header -->
+<section class="mb-16">
+<h1 class="font-cinzel text-5xl tracking-widest text-on-background mb-2">Welcome back, Julian</h1>
+<p class="font-cormorant italic text-2xl text-stone-500">Your portal to the immense beauty of heaven.</p>
+</section>
+<!-- Stats Summary Cards - Bento Grid Style -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+<div class="bg-surface-container-high p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<p class="text-xs uppercase tracking-[0.2em] text-stone-500 mb-4">Total Orders</p>
+<h3 class="font-cinzel text-4xl mb-2">08</h3>
+<p class="font-cormorant italic text-lg text-primary">View history</p>
+<div class="absolute -right-4 -bottom-4 opacity-5 text-8xl material-symbols-outlined">shopping_bag</div>
+</div>
+<div class="bg-surface-container-high p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<p class="text-xs uppercase tracking-[0.2em] text-stone-500 mb-4">My Designs</p>
+<h3 class="font-cinzel text-4xl mb-2">14</h3>
+<p class="font-cormorant italic text-lg text-primary">Continue crafting</p>
+<div class="absolute -right-4 -bottom-4 opacity-5 text-8xl material-symbols-outlined">brush</div>
+</div>
+<div class="bg-surface-container-high p-8 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<p class="text-xs uppercase tracking-[0.2em] text-stone-500 mb-4">Wishlist Items</p>
+<h3 class="font-cinzel text-4xl mb-2">23</h3>
+<p class="font-cormorant italic text-lg text-primary">Open gallery</p>
+<div class="absolute -right-4 -bottom-4 opacity-5 text-8xl material-symbols-outlined">favorite</div>
+</div>
+</section>
+<!-- Recent Activity & Featured Batik Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+<!-- Recent Activity -->
+<div class="lg:col-span-3">
+<h2 class="font-cinzel text-xl tracking-widest uppercase mb-8 border-b border-outline-variant pb-4">Recent Activity</h2>
+<div class="space-y-10">
+<div class="flex gap-6 items-start">
+<div class="w-24 h-24 flex-shrink-0 bg-surface-container overflow-hidden rounded">
+<img class="w-full h-full object-cover" data-alt="Close-up of intricate indigo Batik pattern on silk fabric with soft dramatic shadows and highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPQdGImwxJIj4g06qj6__jtubq00KDrJnVktZTdVK_fczIxPtSPdhDkA-50FEbuVGeF0W6zdmD1T_50iWG1HgtXzcrkmE4ezD8qF3BWTPoPWfsHQyWzUW3z-DXX1i9bZhtAILP0VlDBJGc3blViJKrFXswupPZU7x0I-mtzbPj31M0J8Onmq4-5TBbhTKw6r3tDU_TwaNcgoUiVGHOm_JOBweQ6LggiFG454wKNNnhrzHZ78DgJNTd-BC-yDGNDteybhDsdAF9mIo"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-medium text-lg">Order #CT-9921</h4>
+<span class="text-[10px] uppercase tracking-widest bg-primary-container text-white px-2 py-0.5 rounded">In Transit</span>
+</div>
+<p class="text-stone-500 text-sm mb-3">Midnight Bloom Silk Pashmina - Bespoke Collection</p>
+<p class="font-cormorant italic text-base">Arriving by Thursday, Oct 24th.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-24 h-24 flex-shrink-0 bg-surface-container overflow-hidden rounded">
+<img class="w-full h-full object-cover" data-alt="Abstract batik workshop with fabric hanging and artisans working in a sun-drenched airy studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSgpuElcCHkFcQ7qeBeo2_APcRmVaY_MqDbHS7YkgJfTe-V12Ef0b_dupoi9twCClqqg7maPNMWLsEG3oDu3Btced9064hNiUfZ6Giwt8WfqpL4Y8py-vtYntd9bs6vJFygNfdDRvemv0ODNCh-GxImxYmd5l0FLcJBCyhyXYJmb1QCDiEe5XmDbjUCqI4pDBf9-XoYXX_uXdO1oXyCzfTBo1GnivLFqRYf6TUPyMaA5WmiSEVxV-E-zH984eG8NuDI0h_JrRqeWU"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline font-medium text-lg">Design Update: Celestial Batik</h4>
+<span class="text-[10px] uppercase tracking-widest bg-secondary text-white px-2 py-0.5 rounded">Draft</span>
+</div>
+<p class="text-stone-500 text-sm mb-3">Modified pattern layers and color saturation for 'Deep Ocean' variant.</p>
+<p class="font-cormorant italic text-base">Last edited 2 hours ago.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Promotional / Editorial Card -->
+<div class="lg:col-span-2">
+<div class="relative bg-[#1c1b1b] text-white p-10 h-full rounded-lg flex flex-col justify-end overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="Luxury fashion editorial featuring a model draped in flowing gold and crimson Batik silk, ethereal lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbJnKoHsTAp8ElgW6azACqeV-Aq1xVrowz4hGG4rcPbnY5MI1NARgWQArbMvygapHFt-njfmwA_8shteJeEM1xs533ruE4-yXSnbKVGmiTf2FqLQMQROLPg8NgkR3gvOKgOuFXL5OvEuruo4qH0cH6OPjQOaTR4_3T1PpxcMMzLpg6mWHs6G4Fprd6zcm4v9uBugL-mplXMJMuga2is58Kd2tWYdpaujHgVxCjoSgkLYRMtErvJQYdGf5FJggTP6GU6L54H9ek4IE"/>
+<div class="relative z-10">
+<p class="font-cinzel text-xs tracking-[0.3em] text-primary mb-4">THE HERITAGE SERIES</p>
+<h3 class="font-cinzel text-3xl mb-4 leading-tight">THE ANCESTRAL GLOW</h3>
+<p class="font-cormorant italic text-lg text-stone-300 mb-8">Discover our new series of hand-waxed masterpieces, inspired by the 17th-century courts.</p>
+<a class="inline-flex items-center gap-3 text-sm tracking-widest uppercase font-semibold border-b border-white pb-1 hover:text-primary hover:border-primary transition-colors" href="#">
+                                Explore Archive
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-[#313030] dark:bg-[#0d0d0d] full-width py-16 flex flex-col items-center gap-8 w-full border-t border-stone-800 mt-auto">
+<div class="text-white opacity-50 text-2xl font-light tracking-[0.2em] font-headline">CATTLEYA</div>
+<div class="flex gap-12">
+<a class="font-['Newsreader'] text-xs tracking-wider uppercase text-stone-500 hover:text-[#d0021b] transition-colors" href="#">Artisanship</a>
+<a class="font-['Newsreader'] text-xs tracking-wider uppercase text-stone-500 hover:text-[#d0021b] transition-colors" href="#">Sustainability</a>
+<a class="font-['Newsreader'] text-xs tracking-wider uppercase text-stone-500 hover:text-[#d0021b] transition-colors" href="#">Concierge</a>
+<a class="font-['Newsreader'] text-xs tracking-wider uppercase text-stone-500 hover:text-[#d0021b] transition-colors" href="#">Heritage</a>
+</div>
+<div class="text-[#d0021b] font-headline text-xs tracking-widest uppercase">
+            © 2024 CATTLEYA. THE IMMENSE BEAUTY OF HEAVEN.
+        </div>
+</footer>
+</body></html>

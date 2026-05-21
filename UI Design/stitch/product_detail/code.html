@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CATTLEYA | Product Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Inter:wght@300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#001c37",
+                    "inverse-primary": "#ffb3ac",
+                    "on-primary-fixed": "#410003",
+                    "surface-bright": "#fcf9f8",
+                    "secondary": "#5d5f5f",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f3f0ef",
+                    "secondary-container": "#dddddd",
+                    "inverse-surface": "#313030",
+                    "secondary-fixed": "#e2e2e2",
+                    "primary-fixed": "#ffdad6",
+                    "on-surface": "#1c1b1b",
+                    "background": "#fcf9f8",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#d0021b",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dcd9d9",
+                    "outline": "#926e6b",
+                    "outline-variant": "#e7bdb8",
+                    "surface-container-highest": "#e5e2e1",
+                    "tertiary-fixed-dim": "#9fcaff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fcf9f8",
+                    "on-tertiary-container": "#d9e8ff",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f6f3f2",
+                    "primary-fixed-dim": "#ffb3ac",
+                    "on-background": "#1c1b1b",
+                    "surface-tint": "#c00017",
+                    "surface-container-high": "#ebe7e7",
+                    "primary": "#a30012",
+                    "tertiary": "#00518c",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#d2e4ff",
+                    "on-surface-variant": "#5d3f3c",
+                    "on-secondary-container": "#606161",
+                    "surface-container": "#f0edec",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#454747",
+                    "on-primary-container": "#ffdfdc",
+                    "on-tertiary-fixed-variant": "#00497e",
+                    "on-primary-fixed-variant": "#93000f",
+                    "tertiary-container": "#006ab4",
+                    "surface-variant": "#e5e2e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Cinzel", "serif"],
+                    "editorial": ["Cormorant Garamond", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .plasma-gradient {
+            background: linear-gradient(135deg, #a30012 0%, #d0021b 100%);
+        }
+        .mercury-gradient {
+            background: linear-gradient(135deg, #e2e2e2 0%, #c6c6c6 100%);
+        }
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-thumb { background: #d0021b; border-radius: 10px; }
+        ::-webkit-scrollbar-track { background: #f0edec; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0D0D0D] text-[#e2e2e2] shadow-2xl shadow-black/20 flex justify-between items-center px-12 py-6">
+<div class="text-2xl font-light tracking-[0.3em] uppercase text-[#e2e2e2]">CATTLEYA</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#e2e2e2] hover:text-[#ffffff] transition-colors uppercase Cinzel tracking-widest text-xs" href="#">Collections</a>
+<a class="text-[#e2e2e2] hover:text-[#ffffff] transition-colors uppercase Cinzel tracking-widest text-xs" href="#">Artisanal</a>
+<a class="text-[#e2e2e2] hover:text-[#ffffff] transition-colors uppercase Cinzel tracking-widest text-xs" href="#">Heritage</a>
+<a class="text-[#e2e2e2] hover:text-[#ffffff] transition-colors uppercase Cinzel tracking-widest text-xs" href="#">Men</a>
+<a class="text-[#e2e2e2] hover:text-[#ffffff] transition-colors uppercase Cinzel tracking-widest text-xs" href="#">Women</a>
+<a class="text-[#e2e2e2] hover:text-[#ffffff] transition-colors uppercase Cinzel tracking-widest text-xs" href="#">Bespoke</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:text-[#d0021b] transition-all duration-300 transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="hover:text-[#d0021b] transition-all duration-300 transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 md:px-12 max-w-[1440px] mx-auto">
+<!-- Breadcrumbs -->
+<nav class="mb-8 flex gap-2 text-[10px] uppercase tracking-widest text-secondary font-label">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span>/</span>
+<a class="hover:text-primary transition-colors" href="#">Collections</a>
+<span>/</span>
+<a class="hover:text-primary transition-colors" href="#">Heritage Silk</a>
+<span>/</span>
+<span class="text-on-surface">The Celestial Batik Scarf</span>
+</nav>
+<!-- Product Hero Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<!-- Left: Gallery -->
+<div class="space-y-6 sticky top-32">
+<div class="relative group aspect-square overflow-hidden bg-surface-container-low cursor-crosshair">
+<img alt="Celestial Batik Scarf" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="High-resolution close-up of an intricate silk batik scarf with celestial patterns in deep crimson and gold, soft directional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAXe863U28yl8jnxLbqZodt_XjYGEnQrxOw9mrmBKsXwZjrfoAsxFPTyYTqyUYh5wVTJ3Z5aRQm3SkIYlMpvU-aWGgw_uk8OoShAmzC82ekywL-tbBvqn1PGu2zntPkZxXirVklrg7PGNNoue113xuFmPcL94Q0IKkv8kDYEqd7mXusePnrUVTTvRCGKQCCLRxtHkT9nkqUFfPkI-gajOAIJk8AGGIT8SHlPWWxCKJKM4YRm-2iBPDSKv37cQUcB1IEWu1SVKnQUE"/>
+<!-- Customization Badge -->
+<div class="absolute top-6 left-6 plasma-gradient text-white px-6 py-2 text-[10px] uppercase tracking-[0.2em] font-bold shadow-xl z-10">
+                        Customize This Product
+                    </div>
+<div class="absolute bottom-6 right-6 bg-white/10 backdrop-blur-md p-2 rounded-full">
+<span class="material-symbols-outlined text-white" data-icon="zoom_in">zoom_in</span>
+</div>
+</div>
+<div class="grid grid-cols-5 gap-4">
+<button class="aspect-square border-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Thumbnail of silk batik scarf draped elegantly over a mercury stone pedestal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCphZ6hfxCuwM-KBuSKi1jPrm6nodYiklfvMvO1uAJRwgYMqWLW9tkBJZjU8Btl3v5ZUr8foR_o7e3ZcgvhuYnNq8Uyq50eo1DNBmNbkCkyPiilKC7WZQNYzw1vnw3NIQQonc5vz70AhnM7hWOOXUBxZDX4F03TqQTHR8xLlLdMiSN2R2MXQldM3AoOGTYpyAGlY5zlAKcVWPhm__QpVw4KA2mu4fP931NWVZ2mrtd83_EyrujSz-We-DUpTcIQnAYystR9Gm0PNZ0"/>
+</button>
+<button class="aspect-square border border-transparent hover:border-outline-variant transition-colors overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up detail of hand-painted batik wax patterns on premium silk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAewg9uTknBqTUzKBBaGrrkno54tWyLAD06qRZPUYBf9euEG6-oftFN40_5w8YaOi-RbtvPOCkqkZpUk8QCo9i0o0HwYUsZHG-IGjofaBeHXxsMd09ejseT2-aR8vcvOH76V1yL-IXAxQ5P_Pw_KAA2UkCwnMxtb9wIFmbE74mCLul07ITs6WWQ8Bp-YfwXnVh6QY16mtsGAuayONQJCQiMjrXqL85d6n9HfoZtjhT_kQikGqd7WHKYlWl2kcJwCFcSWbXSn9yx2Qw"/>
+</button>
+<button class="aspect-square border border-transparent hover:border-outline-variant transition-colors overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Batik scarf worn by a model in a high-fashion editorial setting with ethereal lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF7f8LZdg1JAHoxWBQWm1tGBSXy7JDM1qySC920Z9fL_OlaeRfMMiwk5XAYKXjXa7BlRwCc_mETtO1D6fjMgTcS4Uf-t4JDuSVOUTESeXfJJgfciKKGUu1P90YRddpInFluvy0kcxn9Ws1--66DLw1MYuCtUf6n9fnkAs6VwO3O4-ulP6kzQQCK9URCa4JQSx_4SwVsWVaS3wCFqSM3OzRXLzn2qgVbWj9wZELYo1jVC1VpYYHrNV-RIzXOudm6xeG4sZyIKSmaVE"/>
+</button>
+<button class="aspect-square border border-transparent hover:border-outline-variant transition-colors overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Wide shot of the batik scarf hanging in a sun-drenched atelier" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsCgBpmyiygyiPLSybW1_PFCI2PRHq-ke8FCOkWJPbkZfVIhHKq3CEgRM6rT9GJWlgxZvB9dhbcyxw6iHEFFWu76ds9sc4W5OhaMNDxZxFD0ZLZVlKEGtR6I_eq_6DeSuO7TM-pxDch87BBliBYSwPPcZLu3iKIADYhQYHzP6LyEZzmpiRDh1A9BXtYjIZE5vZFZdSCiwjnUgHKbhH7BBq7zXlqRX6BlJbpRNt9-WyitIJfXmXAT6PO6jhKIXviElA1GLzhcVBqeE"/>
+</button>
+<button class="aspect-square border border-transparent hover:border-outline-variant transition-colors overflow-hidden flex items-center justify-center bg-surface-container">
+<span class="material-symbols-outlined text-secondary" data-icon="play_circle">play_circle</span>
+</button>
+</div>
+</div>
+<!-- Right: Details -->
+<div class="space-y-10">
+<header class="space-y-4">
+<h1 class="text-4xl md:text-[32px] font-headline uppercase tracking-[0.1em] text-on-surface">The Celestial Batik Scarf</h1>
+<p class="text-[28px] font-body font-light text-primary-container tracking-tight">$1,240.00</p>
+<p class="font-editorial italic text-xl text-secondary leading-relaxed">A testament to the Immense Beauty of Heaven, hand-drawn by master artisans using century-old canting techniques on the finest organic mulberry silk.</p>
+</header>
+<!-- Configuration -->
+<div class="space-y-8">
+<!-- Size Selector -->
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Select Size</label>
+<button class="text-[10px] uppercase tracking-widest text-primary hover:underline transition-all">Size Guide</button>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-3 border border-primary-container bg-primary-container text-white text-xs tracking-widest uppercase transition-all">Standard</button>
+<button class="px-6 py-3 border border-outline-variant hover:border-primary-container text-on-surface text-xs tracking-widest uppercase transition-all">Grand</button>
+<button class="px-6 py-3 border border-outline-variant hover:border-primary-container text-on-surface text-xs tracking-widest uppercase transition-all">Bespoke</button>
+</div>
+</div>
+<!-- Color Selector -->
+<div class="space-y-4">
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Signature Color: <span class="text-on-surface">Crimson Nebula</span></label>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full border-2 border-primary p-0.5 transform scale-110">
+<div class="w-full h-full rounded-full bg-[#a30012]"></div>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant p-0.5 hover:scale-105 transition-transform">
+<div class="w-full h-full rounded-full bg-[#1c1b1b]"></div>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant p-0.5 hover:scale-105 transition-transform">
+<div class="w-full h-full rounded-full bg-[#00518c]"></div>
+</button>
+</div>
+</div>
+<!-- Quantity Stepper -->
+<div class="space-y-4">
+<label class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">Quantity</label>
+<div class="flex items-center w-32 border border-outline-variant">
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="remove">remove</span>
+</button>
+<span class="flex-1 text-center font-body text-sm">1</span>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="space-y-4 pt-6">
+<button class="w-full plasma-gradient text-white py-5 px-8 text-xs font-bold uppercase tracking-[0.3em] hover:opacity-90 transition-opacity shadow-lg">
+                        Add to Cart
+                    </button>
+<button class="w-full border border-primary-container text-primary-container py-5 px-8 text-xs font-bold uppercase tracking-[0.3em] hover:bg-primary-container/5 transition-colors">
+                        Buy Now
+                    </button>
+<button class="w-full bg-[#0D0D0D] text-white py-5 px-8 text-xs font-bold uppercase tracking-[0.3em] flex items-center justify-center gap-3 hover:bg-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="auto_awesome">auto_awesome</span>
+                        Customize with AI
+                    </button>
+</div>
+<div class="pt-8 border-t border-outline-variant/30 grid grid-cols-2 gap-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="local_shipping">local_shipping</span>
+<span class="text-[10px] uppercase tracking-widest text-secondary">Complimentary Shipping</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+<span class="text-[10px] uppercase tracking-widest text-secondary">Certificate of Authenticity</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Tabs Section -->
+<section class="mt-32">
+<div class="bg-surface-container p-1 pt-0">
+<div class="flex border-b border-outline-variant/20">
+<button class="px-12 py-6 text-[11px] uppercase tracking-[0.2em] font-bold text-on-surface border-b-2 border-primary-container bg-surface-bright">Description</button>
+<button class="px-12 py-6 text-[11px] uppercase tracking-[0.2em] font-medium text-secondary hover:text-on-surface transition-colors">Size Guide</button>
+<button class="px-12 py-6 text-[11px] uppercase tracking-[0.2em] font-medium text-secondary hover:text-on-surface transition-colors">Care Instructions</button>
+</div>
+<div class="p-12 bg-surface-bright space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<div class="space-y-6">
+<h3 class="text-2xl font-headline uppercase tracking-wider">The Artisanal Journey</h3>
+<p class="text-secondary leading-loose">Each Celestial Batik Scarf begins as a vision of the night sky over the Javanese highlands. Our master artisans spend up to 45 days meticulously applying hot wax to fine silk, creating a resist pattern that will eventually hold our signature deep crimson dye.</p>
+<p class="text-secondary leading-loose">The result is a unique piece of wearable art where no two lines are identical—a true celebration of the "Immense Beauty of Heaven."</p>
+</div>
+<div class="space-y-4">
+<h4 class="text-xs uppercase tracking-widest font-bold">Details</h4>
+<ul class="space-y-4 text-sm text-secondary font-body">
+<li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-primary"></span> 100% Organic Mulberry Silk</li>
+<li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-primary"></span> Hand-drawn Batik patterns</li>
+<li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-primary"></span> Natural mineral-based dyes</li>
+<li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-primary"></span> Hand-rolled edges</li>
+<li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-primary"></span> Dimensions: 110cm x 110cm</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Products Section -->
+<section class="mt-32 space-y-12">
+<div class="flex justify-between items-end">
+<h2 class="text-3xl font-headline uppercase tracking-[0.2em]">Curated for You</h2>
+<a class="text-xs uppercase tracking-widest font-bold text-primary group flex items-center gap-2" href="#">
+                    View Collection <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="flex overflow-x-auto gap-8 pb-12 snap-x">
+<!-- Related Item 1 -->
+<div class="min-w-[320px] snap-start group space-y-4">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Luxurious silk kaftan with matching batik motifs in a minimalist architectural setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7cRP3zAURvipJBBMJL9SqpNOgCXXdymceR2zsNzSr2sa0VgixNhcqhi9lCoSPxjDEHB97Hc_uEAtt6BbX7F_XdywDXV9r4XbUbT9D24QCMjHHKi68JRm6GtPIX67AyyOJfeYGdUc506NdSfq-Fu_Onv-QZdrHNaS9kFILeMX6TqeIoflpKxtQECygV-It_uyYj6phKI_OoYsW6na-TBbwgjNUg9sCxiVnSDZd2pfT_ZNcKOCJfrT3slF8W_T88X9hbt9lDBV2rzM"/>
+<button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
+<span class="material-symbols-outlined text-on-surface" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] uppercase tracking-widest text-secondary">Collections / Heritage</p>
+<h4 class="font-headline uppercase tracking-wider text-sm">Celestial Silk Kaftan</h4>
+<p class="text-primary-container font-medium">$3,450</p>
+</div>
+</div>
+<!-- Related Item 2 -->
+<div class="min-w-[320px] snap-start group space-y-4">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Handcrafted leather handbag with batik silk lining accent in gold and mahogany tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfuu704fcgoVs3GnOFPYUkHZ3Y9xssCvQ0iaFAgf6MzVbT-WhXfc3CMmYjWYeCH65zHK-GHtRpHjv0hCZ7QONzgwYPoOON4bBFYddyX4ENHsF6z7Lgf00Iw_bLoF19Di5R-iWEW6_GQxsIiP928d_vPK32sO8GD0AdKT4dmdLvdN68P7SV7DgJzH0_JHhughcULKgIfVz1wYprFW35fDM0dW7LqrfMrY56ppw1nWMJtreFk0qaibB9wzkSX_cv-P8ZZP93k1uDQnU"/>
+<button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
+<span class="material-symbols-outlined text-on-surface" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] uppercase tracking-widest text-secondary">Accessories / Bespoke</p>
+<h4 class="font-headline uppercase tracking-wider text-sm">Aria Batik Clutch</h4>
+<p class="text-primary-container font-medium">$1,890</p>
+</div>
+</div>
+<!-- Related Item 3 -->
+<div class="min-w-[320px] snap-start group space-y-4">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Tailored silk shirt for men featuring subtle indigo batik embroidery on the collar and cuffs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwNBMd5Iqq-6gJdgzhrPkSLDR0XtTMkpjo5kru8jwL6yy1RjSP31EKygYf3viy52RVVVbmCxQolKk9nm3VNgSciim4peLJNkFwXLvkaMfJ_t07YdsUYpEx2GxVg3IuYJvEkY1M8cfFLud6kMDFyY0tVcZnH9bW03pF8dd_pc9ovZ6zETUq7WqyLmAL-ez_RHlv6UCdYqWD5uW7AqcaBrRY8R-EXELl1o1FIDWXxzmPIpXMDUm1zZVa3UPEAKjIaAcwY7m3SbAs4X8"/>
+<button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
+<span class="material-symbols-outlined text-on-surface" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] uppercase tracking-widest text-secondary">Men / Artisanal</p>
+<h4 class="font-headline uppercase tracking-wider text-sm">Midnight Batik Shirt</h4>
+<p class="text-primary-container font-medium">$1,100</p>
+</div>
+</div>
+<!-- Related Item 4 -->
+<div class="min-w-[320px] snap-start group space-y-4">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-low relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Set of four silk batik cushions in varied oceanic blue and teal patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiB4He-6ibsYT8_boEp_hIoIv_0tibNF7zB-kWnKiGG54p98iEPIdkkbfye9CiZN6c8JxISU-TRbtmnJ3_0IkYYvjRCyMTp70xFfNV9RLLII_UiX0sPvKW3J0frvSUOcrjf02r8Psl9PIsgUfSUkC1L-aOvAV5Xv4jMLmFr6Vyv83Fv4hFd_tHzyVQrKKz4spYfP_sgVBJfdzETXlYS7Xbwwp5w2QCgLcgWEUCinw-pxppuBIND57Pj6F_cbu4KuzsuZQ3r4a5C0M"/>
+<button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0">
+<span class="material-symbols-outlined text-on-surface" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] uppercase tracking-widest text-secondary">Home / Living</p>
+<h4 class="font-headline uppercase tracking-wider text-sm">Oceanica Cushion Set</h4>
+<p class="text-primary-container font-medium">$2,200</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="mt-32">
+<h2 class="text-3xl font-headline uppercase tracking-[0.2em] mb-12">The House Reflections</h2>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+<!-- Rating Breakdown -->
+<div class="space-y-8">
+<div class="space-y-2">
+<div class="flex items-baseline gap-4">
+<span class="text-6xl font-headline">4.9</span>
+<div class="flex text-primary">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-[10px] uppercase tracking-widest font-bold text-secondary">Based on 148 verified reviews</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-bold w-4">5</span>
+<div class="flex-1 h-1.5 bg-surface-container overflow-hidden">
+<div class="h-full plasma-gradient w-[92%]"></div>
+</div>
+<span class="text-[10px] text-secondary">92%</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-bold w-4">4</span>
+<div class="flex-1 h-1.5 bg-surface-container overflow-hidden">
+<div class="h-full plasma-gradient w-[6%]"></div>
+</div>
+<span class="text-[10px] text-secondary">6%</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-bold w-4">3</span>
+<div class="flex-1 h-1.5 bg-surface-container overflow-hidden">
+<div class="h-full plasma-gradient w-[2%]"></div>
+</div>
+<span class="text-[10px] text-secondary">2%</span>
+</div>
+<div class="flex items-center gap-4 opacity-50">
+<span class="text-[10px] font-bold w-4">2</span>
+<div class="flex-1 h-1.5 bg-surface-container"></div>
+<span class="text-[10px] text-secondary">0%</span>
+</div>
+<div class="flex items-center gap-4 opacity-50">
+<span class="text-[10px] font-bold w-4">1</span>
+<div class="flex-1 h-1.5 bg-surface-container"></div>
+<span class="text-[10px] text-secondary">0%</span>
+</div>
+</div>
+<button class="w-full border border-on-surface py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-on-surface hover:text-white transition-all">Write a Review</button>
+</div>
+<!-- Review Items -->
+<div class="lg:col-span-2 space-y-12">
+<div class="space-y-4 pb-12 border-b border-outline-variant/30">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<div class="flex text-primary scale-75 origin-left">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h5 class="text-xs font-bold uppercase tracking-widest">Masterpiece of Craftsmanship</h5>
+</div>
+<span class="text-[10px] text-secondary uppercase tracking-widest">Oct 12, 2023</span>
+</div>
+<p class="font-editorial text-lg italic text-secondary">"The depth of the crimson color is breathtaking. You can truly feel the texture of the hand-painted wax. It's more than a scarf; it's an heirloom."</p>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of an elegant woman with minimalist jewelry" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG1vkJybRHUQTVpnM9bB5otL23kSS9Azx2C6fNeT13WUaWLtJaKm8He4iBnZVshg_lhiIQyP7zbXOXudUXdDQtWN61NfQ1SPMaMCk98elCohGPRgWXik49EK8att7FX4MeH-g0_3R5Wk4ToKkw1xUITQTrNdEaiFGeVkv99mWpVIwD99iTDdc2MHuiQjpTCfn9ReGuymqmxe9r6B5aE5yBsCjT5q_TIzyl1InooVUrRxDwgtsgCBQ3OE2lr2aApAZD-ly4DAhAQak"/>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-widest">Eleanor V. <span class="text-primary ml-2">Verified Collector</span></p>
+</div>
+</div>
+<div class="space-y-4 pb-12">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<div class="flex text-primary scale-75 origin-left">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h5 class="text-xs font-bold uppercase tracking-widest">Ethereal Silk Texture</h5>
+</div>
+<span class="text-[10px] text-secondary uppercase tracking-widest">Sep 28, 2023</span>
+</div>
+<p class="font-editorial text-lg italic text-secondary">"The way it drapes is unlike any other silk I own. The AI customization tool helped me select the perfect border motif to match my evening gown."</p>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Profile of a sophisticated gentleman in a dark suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX73v9X1H_QyW7Mdp3LF9TXiU_jqt8G-816-ppI51EmHItmL89rGEkalBd59SYzTH7EoDGvG3Vc4OJgM1AlhrtvYCmn53x1UNyKT21k__g0q0w6Za7NEV6t-A3UMdQx3BaUXgvKNzYhOTvMepo5m5vxzDfHE7Mk5mkzpiF18FZKoGYPD3xeVou9Lys_-53fFEAnlDT9yaeotFiUxxoVQuDyGKamyqGuP-6umepNG44b-3X4YX7GlPrwUCmBzh6aElJdLdbfhKIghY"/>
+</div>
+<p class="text-[10px] font-bold uppercase tracking-widest">Julian M. <span class="text-primary ml-2">Verified Collector</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0D0D0D] text-[#d0021b] pt-20 pb-10">
+<div class="text-center mb-16">
+<h2 class="text-6xl font-light tracking-[0.5em] uppercase text-white mb-4">CATTLEYA</h2>
+<p class="text-4xl italic Cormorant Garamond text-white/80">IMMENSE BEAUTY OF HEAVEN.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-7xl mx-auto border-t border-white/10 pt-16">
+<div class="space-y-6">
+<h6 class="text-white text-xs uppercase tracking-widest font-bold">The House</h6>
+<ul class="space-y-3">
+<li><a class="text-[#606161] hover:text-[#e2e2e2] text-xs transition-colors" href="#">Our Heritage</a></li>
+<li><a class="text-[#606161] hover:text-[#e2e2e2] text-xs transition-colors" href="#">Craftsmanship</a></li>
+<li><a class="text-[#606161] hover:text-[#e2e2e2] text-xs transition-colors" href="#">Sustainability</a></li>
+<li><a class="text-[#606161] hover:text-[#e2e2e2] text-xs transition-colors" href="#">Boutiques</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h6 class="text-white text-xs uppercase tracking-widest font-bold">Client Care</h6>
+<ul class="space-y-3">
+<li><a class="text-[#606161] hover:text-[#e2e2e2] text-xs transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-[#606161] hover:text-[#e2e2e2] text-xs transition-colors" href="#">Contact Us</a></li>
+<li><a class="text-[#606161] hover:text-[#e2e2e2] text-xs transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-[#606161] hover:text-[#e2e2e2] text-xs transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="md:col-span-2 space-y-6">
+<h6 class="text-white text-xs uppercase tracking-widest font-bold">Newsletter</h6>
+<p class="text-[#606161] text-xs leading-relaxed">Join the inner circle of Cattleya and be the first to experience our ethereal new collections.</p>
+<div class="flex h-12">
+<input class="flex-1 bg-white/5 border-none text-white text-xs px-4 focus:ring-1 focus:ring-[#d0021b]" placeholder="Email Address" type="email"/>
+<button class="plasma-gradient text-white px-8 text-[10px] uppercase font-bold tracking-widest hover:opacity-90 transition-all">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="mt-20 text-center px-12">
+<p class="text-[#606161] text-[10px] tracking-[0.3em] uppercase">© 2024 CATTLEYA. IMMENSE BEAUTY OF HEAVEN.</p>
+</div>
+</footer>
+</body></html>
