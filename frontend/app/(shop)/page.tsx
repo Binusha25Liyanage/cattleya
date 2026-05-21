@@ -20,7 +20,7 @@ export default async function HomePage() {
           <p className="mt-4 font-heading text-xl sm:text-2xl">Immense Beauty of Heaven</p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link href="/products" className="rounded-full bg-gold px-6 py-3 text-sm font-medium text-cattleya-black">Shop Collection</Link>
-            <Link href="/customize" className="rounded-full border border-gold px-6 py-3 text-sm font-medium text-gold">Design Yours</Link>
+            <Link href="/design-studio" className="rounded-full border border-gold px-6 py-3 text-sm font-medium text-gold">Design Yours</Link>
           </div>
         </div>
       </section>
