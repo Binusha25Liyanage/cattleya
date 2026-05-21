@@ -13,6 +13,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     ? "customers"
     : normalizedPath.startsWith("/admin/orders")
     ? "orders"
+    : normalizedPath.startsWith("/admin/products")
+    ? "products"
     : normalizedPath.startsWith("/admin/patrons")
     ? "patrons"
     : normalizedPath.startsWith("/admin/dashboard") || normalizedPath === "/admin"
@@ -24,10 +26,19 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     : undefined;
 
   const sidebarWidthClass =
-    activePage === "customers" ? "w-60" : activePage === "overview" || activePage === "orders" ? "w-56" : "w-52";
+    activePage === "customers"
+      ? "w-60"
+      : activePage === "overview" || activePage === "orders" || activePage === "products"
+      ? "w-56"
+      : "w-52";
   const mainMarginClass =
-    activePage === "customers" ? "ml-60" : activePage === "overview" || activePage === "orders" ? "ml-56" : "ml-52";
-  const showTopBar = activePage !== "customers" && activePage !== "overview" && activePage !== "orders";
+    activePage === "customers"
+      ? "ml-60"
+      : activePage === "overview" || activePage === "orders" || activePage === "products"
+      ? "ml-56"
+      : "ml-52";
+  const showTopBar =
+    activePage !== "customers" && activePage !== "overview" && activePage !== "orders" && activePage !== "products";
 
   return (
     <div className="flex min-h-screen bg-[#f5f3f0]">

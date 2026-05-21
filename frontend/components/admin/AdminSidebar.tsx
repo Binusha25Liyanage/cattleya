@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 
 type AdminSidebarProps = {
-  activePage?: "overview" | "dashboard" | "orders" | "customers" | "patrons" | "design-review" | "analytics";
+  activePage?: "overview" | "dashboard" | "orders" | "products" | "customers" | "patrons" | "design-review" | "analytics";
 };
 
 const overviewNav = [
@@ -60,6 +60,15 @@ const customersNav = [
   { href: "/admin/settings", label: "Settings", icon: Settings },
 ];
 
+const productsNav = [
+  { href: "/admin/dashboard", label: "Dashboard", icon: LayoutGrid },
+  { href: "/admin/products", label: "PRODUCTS", icon: Package },
+  { href: "/admin/orders", label: "ORDERS", icon: ShoppingBag },
+  { href: "/admin/inventory", label: "INVENTORY", icon: Archive },
+  { href: "/admin/customers", label: "CUSTOMERS", icon: Users },
+  { href: "/admin/settings", label: "SETTINGS", icon: Settings },
+];
+
 const patronsNav = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/patrons", label: "Valued Patrons", icon: Users },
@@ -85,6 +94,8 @@ export function AdminSidebar({ activePage }: AdminSidebarProps) {
       ? "overview"
       : normalizedPath.startsWith("/admin/customers")
       ? "customers"
+      : normalizedPath.startsWith("/admin/products")
+      ? "products"
       : normalizedPath.startsWith("/admin/patrons")
       ? "patrons"
       : normalizedPath.startsWith("/admin/dashboard") || normalizedPath === "/admin"
@@ -100,6 +111,8 @@ export function AdminSidebar({ activePage }: AdminSidebarProps) {
       ? overviewNav
       : resolvedPage === "orders"
       ? ordersNav
+      : resolvedPage === "products"
+      ? productsNav
       : resolvedPage === "dashboard"
       ? dashboardNav
       : resolvedPage === "customers"
@@ -109,18 +122,22 @@ export function AdminSidebar({ activePage }: AdminSidebarProps) {
       : designReviewNav;
   const activeHref = normalizedPath;
   const sidebarBg =
-    resolvedPage === "overview" || resolvedPage === "customers" || resolvedPage === "orders"
+    resolvedPage === "overview" || resolvedPage === "customers" || resolvedPage === "orders" || resolvedPage === "products"
       ? "bg-[#111111]"
       : resolvedPage === "dashboard"
       ? "bg-[#1e1e1e]"
       : "bg-[#2a2a2a]";
   const sidebarWidthClass =
-    resolvedPage === "customers" ? "w-60" : resolvedPage === "overview" || resolvedPage === "orders" ? "w-56" : "w-52";
+    resolvedPage === "customers"
+      ? "w-60"
+      : resolvedPage === "overview" || resolvedPage === "orders" || resolvedPage === "products"
+      ? "w-56"
+      : "w-52";
   const topTitle =
     resolvedPage === "customers"
       ? "MANAGEMENT"
-      : resolvedPage === "orders"
-      ? "LUXURY BATIK ADMIN"
+      : resolvedPage === "orders" || resolvedPage === "products"
+      ? "LUXURY EDITORIAL ADMIN"
       : "ADMIN PORTAL";
 
   return (
@@ -143,9 +160,13 @@ export function AdminSidebar({ activePage }: AdminSidebarProps) {
                   : "text-gray-500 hover:text-white hover:bg-white/10"
               }`}
             >
-              {resolvedPage === "orders" && item.href === "/admin/orders" && isActive ? (
+              {(resolvedPage === "orders" || resolvedPage === "products") && item.href === "/admin/orders" && isActive ? (
                 <div className="flex h-5 w-5 items-center justify-center rounded-sm bg-[#D0021B]">
                   <ShoppingBag className="h-3 w-3 text-white" />
+                </div>
+              ) : (resolvedPage === "products" && item.href === "/admin/products" && isActive) ? (
+                <div className="flex h-5 w-5 items-center justify-center rounded-sm bg-[#D0021B]">
+                  <Package className="h-3 w-3 text-white" />
                 </div>
               ) : item.icon === "grid" ? (
                 <div className="grid grid-cols-2 gap-0.5 w-4 h-4 shrink-0">
