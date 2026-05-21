@@ -11,6 +11,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     ? "overview"
     : normalizedPath.startsWith("/admin/customers")
     ? "customers"
+    : normalizedPath.startsWith("/admin/orders")
+    ? "orders"
     : normalizedPath.startsWith("/admin/patrons")
     ? "patrons"
     : normalizedPath.startsWith("/admin/dashboard") || normalizedPath === "/admin"
@@ -21,9 +23,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     ? "analytics"
     : undefined;
 
-  const sidebarWidthClass = activePage === "customers" ? "w-60" : activePage === "overview" ? "w-56" : "w-52";
-  const mainMarginClass = activePage === "customers" ? "ml-60" : activePage === "overview" ? "ml-56" : "ml-52";
-  const showTopBar = activePage !== "customers" && activePage !== "overview";
+  const sidebarWidthClass =
+    activePage === "customers" ? "w-60" : activePage === "overview" || activePage === "orders" ? "w-56" : "w-52";
+  const mainMarginClass =
+    activePage === "customers" ? "ml-60" : activePage === "overview" || activePage === "orders" ? "ml-56" : "ml-52";
+  const showTopBar = activePage !== "customers" && activePage !== "overview" && activePage !== "orders";
 
   return (
     <div className="flex min-h-screen bg-[#f5f3f0]">

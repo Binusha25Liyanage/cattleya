@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  Archive,
   BarChart2,
   BookOpen,
   HelpCircle,
@@ -12,16 +13,17 @@ import {
   LayoutGrid,
   LogOut,
   Package,
+  Scissors,
   Settings,
   Settings2,
-  ShoppingBag,
   ShoppingCart,
+  ShoppingBag,
   Sparkles,
   Users,
 } from "lucide-react";
 
 type AdminSidebarProps = {
-  activePage?: "overview" | "dashboard" | "customers" | "patrons" | "design-review" | "analytics";
+  activePage?: "overview" | "dashboard" | "orders" | "customers" | "patrons" | "design-review" | "analytics";
 };
 
 const overviewNav = [
@@ -39,6 +41,15 @@ const dashboardNav = [
   { href: "/admin/orders", label: "Orders", icon: ShoppingBag },
   { href: "/admin/ai-metrics", label: "AI Metrics", icon: Sparkles },
   { href: "/admin/inventory", label: "Inventory", icon: Package },
+];
+
+const ordersNav = [
+  { href: "/admin/dashboard", label: "DASHBOARD", icon: LayoutGrid },
+  { href: "/admin/orders", label: "ORDERS", icon: ShoppingBag },
+  { href: "/admin/inventory", label: "INVENTORY", icon: Archive },
+  { href: "/admin/customers", label: "CUSTOMERS", icon: Users },
+  { href: "/admin/artisans", label: "ARTISANS", icon: Scissors },
+  { href: "/admin/settings", label: "SETTINGS", icon: Settings },
 ];
 
 const customersNav = [
@@ -87,6 +98,8 @@ export function AdminSidebar({ activePage }: AdminSidebarProps) {
   const navItems =
     resolvedPage === "overview"
       ? overviewNav
+      : resolvedPage === "orders"
+      ? ordersNav
       : resolvedPage === "dashboard"
       ? dashboardNav
       : resolvedPage === "customers"
@@ -96,13 +109,19 @@ export function AdminSidebar({ activePage }: AdminSidebarProps) {
       : designReviewNav;
   const activeHref = normalizedPath;
   const sidebarBg =
-    resolvedPage === "overview" || resolvedPage === "customers"
+    resolvedPage === "overview" || resolvedPage === "customers" || resolvedPage === "orders"
       ? "bg-[#111111]"
       : resolvedPage === "dashboard"
       ? "bg-[#1e1e1e]"
       : "bg-[#2a2a2a]";
-  const sidebarWidthClass = resolvedPage === "customers" ? "w-60" : resolvedPage === "overview" ? "w-56" : "w-52";
-  const topTitle = resolvedPage === "customers" ? "MANAGEMENT" : "ADMIN PORTAL";
+  const sidebarWidthClass =
+    resolvedPage === "customers" ? "w-60" : resolvedPage === "overview" || resolvedPage === "orders" ? "w-56" : "w-52";
+  const topTitle =
+    resolvedPage === "customers"
+      ? "MANAGEMENT"
+      : resolvedPage === "orders"
+      ? "LUXURY BATIK ADMIN"
+      : "ADMIN PORTAL";
 
   return (
     <aside className={`fixed left-0 top-0 z-20 flex h-screen ${sidebarWidthClass} flex-col ${sidebarBg} text-white`}>
@@ -124,7 +143,11 @@ export function AdminSidebar({ activePage }: AdminSidebarProps) {
                   : "text-gray-500 hover:text-white hover:bg-white/10"
               }`}
             >
-              {item.icon === "grid" ? (
+              {resolvedPage === "orders" && item.href === "/admin/orders" && isActive ? (
+                <div className="flex h-5 w-5 items-center justify-center rounded-sm bg-[#D0021B]">
+                  <ShoppingBag className="h-3 w-3 text-white" />
+                </div>
+              ) : item.icon === "grid" ? (
                 <div className="grid grid-cols-2 gap-0.5 w-4 h-4 shrink-0">
                   {[0, 1, 2, 3].map((i) => (
                     <div key={i} className="bg-[#D0021B] rounded-[1px]" />
