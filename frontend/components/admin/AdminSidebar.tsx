@@ -8,16 +8,18 @@ import {
   HelpCircle,
   Image as ImageIcon,
   LayoutDashboard,
+  LayoutGrid,
   LogOut,
   Package,
   Settings,
+  Settings2,
   ShoppingBag,
   Sparkles,
   Users,
 } from "lucide-react";
 
 type AdminSidebarProps = {
-  activePage?: "dashboard" | "patrons" | "design-review" | "analytics";
+  activePage?: "dashboard" | "customers" | "patrons" | "design-review" | "analytics";
 };
 
 const dashboardNav = [
@@ -26,6 +28,14 @@ const dashboardNav = [
   { href: "/admin/orders", label: "Orders", icon: ShoppingBag },
   { href: "/admin/ai-metrics", label: "AI Metrics", icon: Sparkles },
   { href: "/admin/inventory", label: "Inventory", icon: Package },
+];
+
+const customersNav = [
+  { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/admin/customers", label: "Customers", icon: Users },
+  { href: "/admin/design-review", label: "Design Review", icon: Sparkles },
+  { href: "/admin/batik-gallery", label: "Design Library", icon: LayoutGrid },
+  { href: "/admin/settings", label: "Settings", icon: Settings },
 ];
 
 const patronsNav = [
@@ -49,7 +59,9 @@ export function AdminSidebar({ activePage }: AdminSidebarProps) {
   const normalizedPath = pathname?.replace(/\/+$/, "") || "";
   const resolvedPage =
     activePage ||
-    (normalizedPath.startsWith("/admin/patrons")
+    (normalizedPath.startsWith("/admin/customers")
+      ? "customers"
+      : normalizedPath.startsWith("/admin/patrons")
       ? "patrons"
       : normalizedPath.startsWith("/admin/dashboard") || normalizedPath === "/admin"
       ? "dashboard"
@@ -60,20 +72,23 @@ export function AdminSidebar({ activePage }: AdminSidebarProps) {
       : "design-review");
 
   const navItems =
-    resolvedPage === "dashboard" ? dashboardNav : resolvedPage === "patrons" ? patronsNav : designReviewNav;
-  const activeHref =
     resolvedPage === "dashboard"
-      ? normalizedPath === "/admin"
-        ? "/admin/dashboard"
-        : normalizedPath
-      : normalizedPath;
-  const sidebarBg = resolvedPage === "dashboard" ? "bg-[#1e1e1e]" : "bg-[#2a2a2a]";
+      ? dashboardNav
+      : resolvedPage === "customers"
+      ? customersNav
+      : resolvedPage === "patrons"
+      ? patronsNav
+      : designReviewNav;
+  const activeHref = normalizedPath;
+  const sidebarBg = resolvedPage === "customers" ? "bg-[#111111]" : resolvedPage === "dashboard" ? "bg-[#1e1e1e]" : "bg-[#2a2a2a]";
+  const sidebarWidthClass = resolvedPage === "customers" ? "w-60" : "w-52";
+  const topTitle = resolvedPage === "customers" ? "MANAGEMENT" : "Admin Portal";
 
   return (
-    <aside className={`fixed left-0 top-0 z-20 flex h-screen w-52 flex-col ${sidebarBg} text-white`}>
+    <aside className={`fixed left-0 top-0 z-20 flex h-screen ${sidebarWidthClass} flex-col ${sidebarBg} text-white`}>
       <div className="p-6">
         <div className="font-serif text-xl font-bold">CATTLEYA</div>
-        <div className="mt-1 text-xs text-gray-400">Admin Portal</div>
+        <div className="mt-1 text-xs text-gray-400">{topTitle}</div>
       </div>
 
       <nav className="mt-6 flex flex-col gap-1 px-3">
