@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   BarChart2,
+  BookOpen,
   HelpCircle,
   Image as ImageIcon,
   LayoutDashboard,
@@ -14,13 +15,23 @@ import {
   Settings,
   Settings2,
   ShoppingBag,
+  ShoppingCart,
   Sparkles,
   Users,
 } from "lucide-react";
 
 type AdminSidebarProps = {
-  activePage?: "dashboard" | "customers" | "patrons" | "design-review" | "analytics";
+  activePage?: "overview" | "dashboard" | "customers" | "patrons" | "design-review" | "analytics";
 };
+
+const overviewNav = [
+  { href: "/admin/overview", label: "OVERVIEW", icon: "grid" as const },
+  { href: "/admin/catalogue", label: "CATALOGUE", icon: BookOpen },
+  { href: "/admin/orders", label: "ORDERS", icon: ShoppingCart },
+  { href: "/admin/customers", label: "CUSTOMERS", icon: Users },
+  { href: "/admin/ai-designs", label: "AI DESIGNS", icon: Sparkles },
+  { href: "/admin/analytics", label: "ANALYTICS", icon: BarChart2 },
+];
 
 const dashboardNav = [
   { href: "/admin/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -59,7 +70,9 @@ export function AdminSidebar({ activePage }: AdminSidebarProps) {
   const normalizedPath = pathname?.replace(/\/+$/, "") || "";
   const resolvedPage =
     activePage ||
-    (normalizedPath.startsWith("/admin/customers")
+    (normalizedPath.startsWith("/admin/overview")
+      ? "overview"
+      : normalizedPath.startsWith("/admin/customers")
       ? "customers"
       : normalizedPath.startsWith("/admin/patrons")
       ? "patrons"
@@ -72,7 +85,9 @@ export function AdminSidebar({ activePage }: AdminSidebarProps) {
       : "design-review");
 
   const navItems =
-    resolvedPage === "dashboard"
+    resolvedPage === "overview"
+      ? overviewNav
+      : resolvedPage === "dashboard"
       ? dashboardNav
       : resolvedPage === "customers"
       ? customersNav
@@ -80,9 +95,14 @@ export function AdminSidebar({ activePage }: AdminSidebarProps) {
       ? patronsNav
       : designReviewNav;
   const activeHref = normalizedPath;
-  const sidebarBg = resolvedPage === "customers" ? "bg-[#111111]" : resolvedPage === "dashboard" ? "bg-[#1e1e1e]" : "bg-[#2a2a2a]";
-  const sidebarWidthClass = resolvedPage === "customers" ? "w-60" : "w-52";
-  const topTitle = resolvedPage === "customers" ? "MANAGEMENT" : "Admin Portal";
+  const sidebarBg =
+    resolvedPage === "overview" || resolvedPage === "customers"
+      ? "bg-[#111111]"
+      : resolvedPage === "dashboard"
+      ? "bg-[#1e1e1e]"
+      : "bg-[#2a2a2a]";
+  const sidebarWidthClass = resolvedPage === "customers" ? "w-60" : resolvedPage === "overview" ? "w-56" : "w-52";
+  const topTitle = resolvedPage === "customers" ? "MANAGEMENT" : "ADMIN PORTAL";
 
   return (
     <aside className={`fixed left-0 top-0 z-20 flex h-screen ${sidebarWidthClass} flex-col ${sidebarBg} text-white`}>
@@ -93,37 +113,58 @@ export function AdminSidebar({ activePage }: AdminSidebarProps) {
 
       <nav className="mt-6 flex flex-col gap-1 px-3">
         {navItems.map((item) => {
-          const Icon = item.icon;
           const isActive = item.href === activeHref;
           return (
             <Link
               key={item.href}
               href={item.href}
-              className={`flex items-center gap-3 rounded px-3 py-2.5 text-sm transition ${
-                isActive ? "bg-[#D0021B] text-white" : "text-gray-400 hover:text-white hover:bg-white/10"
+              className={`flex items-center gap-3 rounded px-4 py-3 text-sm uppercase tracking-widest transition ${
+                isActive
+                  ? "bg-[#1a1a1a] border-l-2 border-[#D0021B] text-white"
+                  : "text-gray-500 hover:text-white hover:bg-white/10"
               }`}
             >
-              <Icon className="h-4 w-4" />
-              <span>{item.label}</span>
+              {item.icon === "grid" ? (
+                <div className="grid grid-cols-2 gap-0.5 w-4 h-4 shrink-0">
+                  {[0, 1, 2, 3].map((i) => (
+                    <div key={i} className="bg-[#D0021B] rounded-[1px]" />
+                  ))}
+                </div>
+              ) : (
+                <item.icon className="h-4 w-4" />
+              )}
+              <span className="text-xs tracking-[0.15em]">{item.label}</span>
             </Link>
           );
         })}
       </nav>
 
-      {resolvedPage === "patrons" ? (
+      {resolvedPage === "customers" ? (
         <div className="mt-auto px-4 pb-6 pt-4">
           <button className="w-full rounded bg-[#D0021B] px-4 py-3 text-xs tracking-widest text-white transition hover:bg-red-800">
-            NEW DESIGN
+            NEW COLLECTION
           </button>
           <div className="mt-4 border-t border-white/10 pt-4">
             <div className="flex items-center gap-3">
-              <div className="relative h-9 w-9 overflow-hidden rounded-full bg-gray-500">
+              <div className="relative h-10 w-10 overflow-hidden rounded-full bg-gray-600">
                 <Image src="/images/admin-avatar.jpg" alt="Admin avatar" fill className="object-cover" />
               </div>
               <div>
-                <div className="text-sm font-medium text-white">Administrator</div>
-                <div className="text-xs text-gray-400">PREMIUM ACCESS</div>
+                <div className="text-sm font-semibold text-white">ADMIN USER</div>
+                <div className="text-[10px] tracking-widest text-gray-500 uppercase">ETHEREAL EDITORIAL</div>
               </div>
+            </div>
+          </div>
+        </div>
+      ) : resolvedPage === "overview" ? (
+        <div className="mt-auto border-t border-white/10 p-5">
+          <div className="flex items-center gap-3">
+            <div className="relative h-10 w-10 overflow-hidden rounded-full bg-gray-600">
+              <Image src="/images/admin-avatar.jpg" alt="Admin avatar" fill className="object-cover" />
+            </div>
+            <div>
+              <div className="text-sm font-bold text-white tracking-wide">ADRIAN VANCE</div>
+              <div className="text-[10px] tracking-widest text-gray-500 uppercase">SYSTEM ADMIN</div>
             </div>
           </div>
         </div>

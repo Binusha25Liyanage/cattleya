@@ -7,7 +7,9 @@ import { AdminTopBar } from "@/components/admin/AdminTopBar";
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const normalizedPath = pathname?.replace(/\/+$/, "") || "";
-  const activePage = normalizedPath.startsWith("/admin/customers")
+  const activePage = normalizedPath.startsWith("/admin/overview")
+    ? "overview"
+    : normalizedPath.startsWith("/admin/customers")
     ? "customers"
     : normalizedPath.startsWith("/admin/patrons")
     ? "patrons"
@@ -19,9 +21,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     ? "analytics"
     : undefined;
 
-  const sidebarWidthClass = activePage === "customers" ? "w-60" : "w-52";
-  const mainMarginClass = activePage === "customers" ? "ml-60" : "ml-52";
-  const showTopBar = activePage !== "customers";
+  const sidebarWidthClass = activePage === "customers" ? "w-60" : activePage === "overview" ? "w-56" : "w-52";
+  const mainMarginClass = activePage === "customers" ? "ml-60" : activePage === "overview" ? "ml-56" : "ml-52";
+  const showTopBar = activePage !== "customers" && activePage !== "overview";
 
   return (
     <div className="flex min-h-screen bg-[#f5f3f0]">
